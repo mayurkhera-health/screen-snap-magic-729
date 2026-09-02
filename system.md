@@ -180,7 +180,14 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 - Capability deck downloads or "Book a Consultation" CTAs.
 - Named customer references; use industry descriptors (e.g., "Global consumer-electronics company").
 - Recoloring the logo or placing it on dark backgrounds.
-- Heavy imagery or decorative illustrations.
+- Heavy imagery, photography, or decorative illustration.
+- The one sanctioned graphic is the hero mark (`src/components/hero-mark.tsx`):
+  four stacked planes drawn from the site's own tokens, standing in for the
+  photograph a two-column hero would otherwise need. It is geometric, carries
+  no gradient, inherits the brand red, and is hidden below 1024px rather than
+  stacked — on a phone it would push the CTA below the fold. Adding a second
+  decorative graphic anywhere else needs a deliberate decision, not this
+  precedent.
 - Background gradients, glows, particle fields or animated backdrops. The one sanctioned motion on the site is the hero headline "ink" treatment (`.ink-type`): a narrow band of brand red travelling through the letterforms on a paper-white, otherwise static page. Motion belongs in the type, not behind it.
 
 ### Tone
