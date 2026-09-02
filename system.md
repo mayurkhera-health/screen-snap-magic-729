@@ -226,3 +226,49 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 5. Pull copy from `useLanguage()` or add new keys to both `en` and `fr` objects in `src/lib/i18n.tsx`.
 6. Prefer white sections with hairline separators; use `.section-dark` only for contrast bands.
 7. Keep CTAs minimal: contact link, email, or form. No downloads or consultation booking.
+
+---
+
+## 10. Service Pages, About and Placeholder Content
+
+Seven service pages are served by one data-driven template at
+`src/routes/services_.$slug.tsx`, with content in `src/lib/service-pages.ts`:
+
+`/services/ai-data`, `/services/analytics`, `/services/gis-geospatial`,
+`/services/guidewire`, `/services/sap`, `/services/product-engineering`,
+`/services/offshore-nearshore`
+
+Each follows the same seven-part structure: hero, problems we solve,
+capabilities, how we work, technologies, related services, CTA.
+
+The homepage capability rows link into these pages. A capability with no
+matching slug renders as a plain row rather than a link to nowhere, so adding
+an eighth service to `i18n` without a page degrades instead of breaking.
+
+### Placeholder discipline
+
+`DRAFT_SERVICE_PAGES` in `src/lib/service-pages.ts` is currently `true`. While
+it is:
+
+- every service page and `/about` shows a loud amber draft banner,
+- every one of those pages emits `robots: noindex, nofollow`.
+
+The sample copy contains **no metrics, client names, dates or outcome numbers**,
+because those cannot be invented. `/about` goes further and marks each field
+`[PLACEHOLDER]` — its leadership and industries sections must not be published
+until the named people and claims are confirmed.
+
+Set the flag to `false` only once the copy is real. Do not remove the banner
+while keeping placeholder text.
+
+### Colour rule that constrains layout
+
+Brand red at eyebrow size clears 4.5:1 on `--background` (4.71) and `--surface`
+(4.55) but **not** on `--secondary` (4.39). Red small text — eyebrows, row
+numbers, small links — is therefore only ever placed on `--background` or
+`--surface`. This is why the capability row hover uses `--surface` rather than
+the darker wash a design spec might suggest.
+
+On dark sections, red text uses `--accent` (`#F4485B`), which clears 4.5:1 on
+every dark surface including the deepest card. `--primary` stays the exact brand
+red because white sits on top of it.

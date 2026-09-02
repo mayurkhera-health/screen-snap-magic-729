@@ -9,6 +9,7 @@ import logoAsset from "@/assets/zedventures-logo.png.asset.json";
 const NAV = [
   { to: "/services", key: "services" },
   { to: "/case-studies", key: "caseStudies" },
+  { to: "/about", key: "about" },
 ] as const;
 
 export function Header() {
