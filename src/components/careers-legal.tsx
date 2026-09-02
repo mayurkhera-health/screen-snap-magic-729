@@ -3,8 +3,8 @@ import { SectionHeader } from "@/components/section-header";
 
 /**
  * The statements the careers page carries alongside every posting: benefits,
- * equal opportunity, work authorization, pre-employment checks and how an
- * application is handled.
+ * equal opportunity, reasonable accommodation, work authorization,
+ * pre-employment checks and how an application is handled.
  *
  * Rendered on the careers index and on every posting detail page, so a candidate
  * who arrives on a role link from a recruiter sees them without having to find
@@ -14,8 +14,13 @@ import { SectionHeader } from "@/components/section-header";
  * points, so they get no cards, no icons and no accent colour. Several still
  * contain bracketed placeholders — search for "[" in i18n.tsx before launch.
  *
- * Removed at the client's request, not by oversight: reasonable accommodation,
- * recruitment fraud, and unsolicited agency resumes.
+ * Removed at the client's request, not by oversight: recruitment fraud, and
+ * unsolicited agency resumes.
+ *
+ * The accommodation block is not optional dressing: the postings direct
+ * applicants to mail a paper resume, which is the only listed route in. Under
+ * the ADA and California's FEHA an applicant must have a way to ask for an
+ * alternative, so the copy names that alternative explicitly.
  */
 export function LegalBlocks() {
   const { t } = useLanguage();
@@ -25,6 +30,7 @@ export function LegalBlocks() {
   const blocks = [
     { heading: L.benefitsHeading, body: L.benefits },
     { heading: L.eeoHeading, body: L.eeo },
+    { heading: L.accommodationHeading, body: L.accommodation },
     { heading: L.authHeading, body: L.auth },
     { heading: L.screeningHeading, body: L.screening },
     { heading: L.privacyHeading, body: L.privacy },

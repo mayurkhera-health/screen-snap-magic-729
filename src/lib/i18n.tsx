@@ -184,6 +184,9 @@ const en = {
         "Eligible employees receive medical, dental and vision coverage, a 401(k) retirement plan, paid time off and paid holidays. Eligibility, cost and what each plan covers depend on the role, the location and the hours worked, and are governed by the plan documents in effect at the time. We go through the details that apply to your role before you accept an offer.",
       eeoHeading: "Equal employment opportunity",
       eeo: "ZEDventures Inc. is an equal opportunity employer. We consider all qualified applicants for employment without regard to race, color, religion, sex, pregnancy, sexual orientation, gender identity or expression, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, marital status, military or veteran status, or any other characteristic protected by federal, state or local law.",
+      accommodationHeading: "Reasonable accommodation",
+      accommodation:
+        "If you need a reasonable accommodation to apply for a role or to take part in our hiring process — including a way to send us your application other than by post — write to [HR email] or call [phone]. Tell us what you need and we will work out an arrangement with you.",
       authHeading: "Work authorization",
       auth: "All roles require authorization to work in the United States. ZEDventures sponsors employment-based visas for some positions; each posting states whether sponsorship is available.",
       screeningHeading: "Pre-employment checks",
@@ -443,6 +446,9 @@ const fr: Copy = {
         "Les employés éligibles bénéficient d'une couverture médicale, dentaire et optique, d'un plan de retraite 401(k), de congés payés et de jours fériés payés. L'éligibilité, le coût et l'étendue de chaque régime dépendent du poste, du lieu et du nombre d'heures travaillées, et sont régis par les documents du régime en vigueur. Nous passons en revue les modalités qui s'appliquent à votre poste avant que vous n'acceptiez une offre.",
       eeoHeading: "Égalité des chances en matière d'emploi",
       eeo: "ZEDventures Inc. souscrit au principe de l'égalité des chances en matière d'emploi. Nous étudions toutes les candidatures qualifiées sans distinction de race, couleur, religion, sexe, grossesse, orientation sexuelle, identité ou expression de genre, origine nationale, ascendance, âge, handicap physique ou mental, état de santé, information génétique, situation de famille, statut militaire ou d'ancien combattant, ni aucune autre caractéristique protégée par la loi fédérale, d'État ou locale.",
+      accommodationHeading: "Aménagements raisonnables",
+      accommodation:
+        "Si vous avez besoin d'un aménagement raisonnable pour postuler ou participer à notre processus de recrutement — y compris un autre moyen que le courrier postal pour nous envoyer votre candidature — écrivez à [courriel RH] ou appelez le [téléphone]. Dites-nous ce dont vous avez besoin et nous trouverons une solution avec vous.",
       authHeading: "Autorisation de travail",
       auth: "Tous les postes exigent une autorisation de travail aux États-Unis. ZEDventures parraine des visas de travail pour certains postes ; chaque annonce précise si le parrainage est disponible.",
       screeningHeading: "Vérifications préalables à l'embauche",
