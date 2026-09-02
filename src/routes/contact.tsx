@@ -55,24 +55,24 @@ function ContactPageBody() {
               href={`mailto:${p.email}`}
               className="group flex items-start gap-4 bg-card p-6 transition-colors hover:bg-muted"
             >
-              <Mail className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <Mail className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {p.emailLabel}
                 </span>
-                <span className="mt-1 block font-display text-lg group-hover:text-primary">{p.email}</span>
+                <span className="mt-1 block font-display text-lg group-hover:text-accent">{p.email}</span>
               </span>
             </a>
             <a
               href={`tel:${p.phone.replace(/[^+\d]/g, "")}`}
               className="group flex items-start gap-4 bg-card p-6 transition-colors hover:bg-muted"
             >
-              <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <Phone className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {p.phoneLabel}
                 </span>
-                <span className="mt-1 block font-display text-lg group-hover:text-primary">{p.phone}</span>
+                <span className="mt-1 block font-display text-lg group-hover:text-accent">{p.phone}</span>
               </span>
             </a>
           </div>
@@ -81,12 +81,12 @@ function ContactPageBody() {
 
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary">{p.officesEyebrow}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">{p.officesEyebrow}</p>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {p.offices.map((office, i) => (
               <div key={office.city} className="bg-card p-6">
                 <div className="flex items-center justify-between">
-                  <span className="font-display text-xs text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
                   <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 </div>
                 <p className="font-display mt-4 text-2xl">{office.city}</p>

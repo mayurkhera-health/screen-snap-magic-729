@@ -8,19 +8,21 @@ export function Services() {
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         <div className="flex justify-center">
-          <SectionHeader eyebrow={t.services.eyebrow} heading={t.services.heading} sub={t.services.sub} />
+          <SectionHeader
+            headingId="services-heading"
+            eyebrow={t.services.eyebrow}
+            heading={t.services.heading}
+            sub={t.services.sub}
+          />
         </div>
-        <h2 id="services-heading" className="sr-only">
-          {t.services.heading}
-        </h2>
         <ul className="mt-12">
           {t.services.items.map((item, i) => (
             <li key={item.title} className="group border-t border-border py-6 last:border-b sm:py-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10">
-                <span className="eyebrow text-primary">
+                <span className="eyebrow text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-3xl transition-colors group-hover:text-primary sm:text-4xl lg:text-5xl">
+                <h3 className="font-display text-3xl transition-colors group-hover:text-accent sm:text-4xl lg:text-5xl">
                   {item.title}
                 </h3>
                 <p className="max-w-md text-sm leading-relaxed text-muted-foreground sm:ml-auto sm:text-right">

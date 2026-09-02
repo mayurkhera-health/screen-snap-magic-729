@@ -130,8 +130,10 @@ const en = {
     company: "Company",
     message: "What are you looking to build?",
     submit: "Send message",
-    successTitle: "Message sent",
-    successBody: "Thanks for reaching out — we'll follow up within one business day.",
+    successTitle: "Your message is ready to send",
+    successBody:
+      "We've opened your email app with everything filled in — press send there and we'll follow up within one business day.",
+    successFallback: "Nothing opened? Write to us directly at",
     required: "This field is required",
     invalidEmail: "Please enter a valid work email",
     page: {
@@ -162,6 +164,8 @@ const en = {
   a11y: {
     switchTo: "Passer au français",
     logoAlt: "ZEDVentures logo",
+    openMenu: "Open navigation menu",
+    menuTitle: "Menu",
   },
 };
 
@@ -295,8 +299,10 @@ const fr: Copy = {
     company: "Entreprise",
     message: "Que souhaitez-vous réaliser?",
     submit: "Envoyer le message",
-    successTitle: "Message envoyé",
-    successBody: "Merci de nous avoir contactés — nous vous répondrons en un jour ouvrable.",
+    successTitle: "Votre message est prêt à être envoyé",
+    successBody:
+      "Nous avons ouvert votre application de courriel avec le message déjà rempli — envoyez-le et nous vous répondrons en un jour ouvrable.",
+    successFallback: "Rien ne s'est ouvert? Écrivez-nous directement à",
     required: "Ce champ est requis",
     invalidEmail: "Veuillez saisir un courriel professionnel valide",
     page: {
@@ -327,6 +333,8 @@ const fr: Copy = {
   a11y: {
     switchTo: "Switch to English",
     logoAlt: "Logo ZEDVentures",
+    openMenu: "Ouvrir le menu de navigation",
+    menuTitle: "Menu",
   },
 };
 
@@ -346,10 +354,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (stored === "en" || stored === "fr") setLangState(stored);
   }, []);
 
+  // Keep <html lang> in step with the rendered copy on every path — including
+  // the restore-from-storage path above, which previously left it at "en".
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   const setLang = (l: Lang) => {
     setLangState(l);
     window.localStorage.setItem("zv-lang", l);
-    document.documentElement.lang = l;
   };
 
   return (

@@ -54,7 +54,7 @@ function CaseStudiesPageBody() {
       <section className="border-b border-border bg-background px-5 py-10 sm:px-8 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl">
           <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
-            <p className="eyebrow text-primary">{p.eyebrow}</p>
+            <p className="eyebrow text-accent">{p.eyebrow}</p>
             <h1 className="font-display mt-2 text-5xl leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
               {p.heading}
             </h1>
@@ -77,7 +77,7 @@ function CaseStudiesPageBody() {
             <div className="mx-auto max-w-6xl">
               <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-[120px_1fr]">
                 <span
-                  className="font-display text-5xl leading-none text-primary sm:text-6xl"
+                  className="font-display text-5xl leading-none text-accent sm:text-6xl"
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -95,7 +95,7 @@ function CaseStudiesPageBody() {
 
                   <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <p className="eyebrow text-primary">{p.outcomesLabel}</p>
+                      <p className="eyebrow text-accent">{p.outcomesLabel}</p>
                       <ul className="mt-3 space-y-2">
                         {item.outcomes.map((o) => (
                           <li
@@ -112,7 +112,7 @@ function CaseStudiesPageBody() {
                       </ul>
                     </div>
                     <div>
-                      <p className="eyebrow text-primary">{p.stackLabel}</p>
+                      <p className="eyebrow text-accent">{p.stackLabel}</p>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {item.stack.map((sItem) => (
                           <span
