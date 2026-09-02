@@ -39,8 +39,8 @@ const en = {
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
       {
-        title: "Offshore Delivery",
-        desc: "Dedicated offshore engineering teams embedded in your roadmap — design, development, QA, and support — so you scale delivery without adding overhead.",
+        title: "Offshore & Nearshore Delivery",
+        desc: "Extend your team with dedicated engineering talent where it makes sense. Offshore delivery in India gives you deep, cost-efficient capacity for design, development, QA, and support. Nearshore delivery across the Americas provides closer time-zone overlap for real-time collaboration and faster feedback loops. One engagement model, global scale.",
       },
     ],
   },
@@ -88,7 +88,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and offshore delivery teams.",
+    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and offshore & nearshore delivery teams.",
     cta: "View open roles",
   },
   contact: {
@@ -173,8 +173,8 @@ const fr: Copy = {
         desc: "Livraison logicielle complète — architecture, développement infonuagique natif et assurance qualité — pour des produits livrés à temps.",
       },
       {
-        title: "Livraison offshore",
-        desc: "Des équipes d'ingénierie offshore dédiées et intégrées à votre feuille de route — conception, développement, assurance qualité et soutien — pour passer à l'échelle sans surcoût.",
+        title: "Livraison offshore et nearshore",
+        desc: "Étendez votre équipe avec des talents d'ingénierie dédiés, là où c'est le plus pertinent. La livraison offshore en Inde offre une capacité approfondie et économique pour la conception, le développement, l'assurance qualité et le support. La livraison nearshore dans les Amériques garantit un meilleur recouvrement de fuseaux horaires pour une collaboration en temps réel et des boucles de feedback plus rapides. Un modèle d'engagement, une échelle mondiale.",
       },
     ],
   },
@@ -222,7 +222,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de livraison offshore.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de livraison offshore et nearshore.",
     cta: "Voir les postes ouverts",
   },
   contact: {

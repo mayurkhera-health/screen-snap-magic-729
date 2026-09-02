@@ -11,7 +11,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore Zedventures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore Delivery.",
+          "Explore Zedventures' capabilities: AI & Data, Analytics, GIS & Geospatial, Guidewire, SAP, Product Engineering, and Offshore & Nearshore Delivery.",
       },
       { property: "og:title", content: "Services — Zedventures" },
       {
