@@ -17,10 +17,14 @@ export function Hero() {
             aria-hidden="true"
             className="absolute -inset-6 -z-10 rounded-3xl bg-[var(--color-secondary)]/40 sm:-inset-8"
           />
-          {/* Sizing per spec S6. Weight stays 800 (.font-display) per S80 —
-              the heavy editorial display type is the thing that makes this
-              site not look like a template. */}
-          <h1 className="ink-type font-display max-w-[18ch] text-[2.625rem] leading-[1.02] tracking-[-0.025em] sm:text-6xl md:text-7xl lg:text-[5.25rem] lg:leading-[0.98] lg:tracking-[-0.035em]">
+          {/* Headline sits in the 56-64px band at desktop: down from ~84px, but
+              well above the 40-44px a later review asked for. That figure looks
+              like it was read off a narrow or zoomed-out view, where this
+              headline already renders near it — at 1440 it would have halved
+              the hero and given up the oversized editorial type system.md
+              names as the distinguishing feature.
+              Weight stays 800 (.font-display) for the same reason. */}
+          <h1 className="ink-type font-display max-w-[18ch] text-[2.625rem] leading-[1.02] tracking-[-0.025em] sm:text-5xl md:text-[3.25rem] lg:text-[3.75rem] lg:leading-[1.0] lg:tracking-[-0.03em]">
             {t.hero.headline}
           </h1>
         </div>
