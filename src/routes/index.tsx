@@ -1,24 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LanguageProvider } from "@/lib/i18n";
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Services } from "@/components/services";
+import { DeckStrip } from "@/components/deck-strip";
+import { Careers } from "@/components/careers";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Zedventures — AI, Data & Product Engineering Partner" },
+      {
+        name: "description",
+        content:
+          "Zedventures designs, builds, and runs AI, analytics, and digital platforms that hold up in production. Download our capability deck.",
+      },
+      { property: "og:title", content: "Zedventures — Technology Partner" },
+      {
+        property: "og:description",
+        content:
+          "Engineering intelligence into every enterprise. AI & Data, Analytics, Product Engineering, Managed Services.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <LanguageProvider>
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <DeckStrip />
+        <Careers />
+        <Contact />
+      </main>
+      <Footer />
+      <MobileCtaBar />
+    </LanguageProvider>
   );
 }
