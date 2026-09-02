@@ -20,7 +20,8 @@ happened once on another project. You must name the target every time.
 
 ```
 npm install          # once, or after package.json changes
-npm run dev          # http://localhost:3000
+npm run dev          # http://localhost:8080 (port comes from the Lovable vite preset,
+                     # not from us; 3000 is the CONTAINER port on Fly)
 ```
 
 Edit a file and the page reloads. Nothing here reaches anyone. This is where
