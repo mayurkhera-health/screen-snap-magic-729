@@ -205,7 +205,7 @@ const en = {
     deliveryEyebrow: "Global delivery",
     deliveryHeading: "Where our teams are",
     deliveryBody:
-      "[PLACEHOLDER] Describe the actual US, offshore and nearshore footprint. Only list locations where Zed Ventures genuinely has people.",
+      "Engineering teams in San Jose and Dallas in the United States, and in Hyderabad, India — offshore capacity with US time-zone overlap where the work needs it.",
     ctaHeading: "Talk to Zed Ventures.",
     ctaSub: "[PLACEHOLDER] Replace with a short closing line.",
   },
@@ -422,7 +422,7 @@ const fr: Copy = {
     deliveryEyebrow: "Livraison mondiale",
     deliveryHeading: "Où sont nos équipes",
     deliveryBody:
-      "[ESPACE RÉSERVÉ] Décrire la présence réelle aux États-Unis, en délocalisé et en proximité. N'indiquer que les lieux où Zed Ventures a réellement des personnes.",
+      "Des équipes d'ingénierie à San Jose et à Dallas aux États-Unis, ainsi qu'à Hyderabad, en Inde — une capacité délocalisée avec chevauchement horaire américain là où le travail l'exige.",
     ctaHeading: "Parlons-en.",
     ctaSub: "[ESPACE RÉSERVÉ] À remplacer par une courte phrase de conclusion.",
   },

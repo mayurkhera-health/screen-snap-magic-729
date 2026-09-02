@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -111,6 +111,24 @@ function AboutBody() {
           <p className="mt-8 max-w-[46rem] text-[1.0625rem] leading-[1.65] text-muted-foreground">
             {a.deliveryBody}
           </p>
+          {/* Rendered from t.contact.page.offices, the same source the contact
+              page uses. One list, so an address can never be right in one place
+              and stale in the other. */}
+          <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
+            {t.contact.page.offices.map((office, i) => (
+              <li key={office.city} className="flex flex-col bg-card p-7">
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <MapPin className="h-4 w-4 text-subtle-foreground" aria-hidden="true" />
+                </div>
+                <p className="font-display mt-4 text-2xl leading-[1.1] tracking-[-0.02em]">
+                  {office.city}
+                </p>
+                <p className="mt-1 text-[0.9375rem] text-muted-foreground">{office.region}</p>
+                <p className="mt-4 text-sm leading-relaxed text-subtle-foreground">{office.address}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
