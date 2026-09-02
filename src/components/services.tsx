@@ -12,7 +12,7 @@ export function Services() {
         <h2 id="services-heading" className="sr-only">
           {t.services.eyebrow}
         </h2>
-        <ul className="mt-10">
+        <ul className="mt-8">
           {t.services.items.map((item, i) => (
             <li key={item.title} className="group border-t border-border py-6 last:border-b sm:py-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10">

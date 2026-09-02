@@ -9,7 +9,7 @@ export function Hero() {
         <h1 className="font-display max-w-5xl text-5xl leading-[1.02] sm:text-7xl lg:text-8xl">
           {t.hero.headline}
         </h1>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
           {t.hero.subhead}
         </p>
       </div>
