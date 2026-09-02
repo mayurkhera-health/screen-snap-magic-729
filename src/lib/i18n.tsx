@@ -29,6 +29,11 @@ const en = {
         desc: "End-to-end work across PolicyCenter, BillingCenter, and ClaimCenter — implementation, configuration, upgrades, and cloud migration.",
       },
       {
+        title: "SAP",
+        desc: "S/4HANA, BTP, and Fiori work with a clean-core discipline — integrations, extensions, and SAP-grounded AI agents that reach real ERP context.",
+      },
+
+      {
         title: "Product Engineering",
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
@@ -52,7 +57,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, Guidewire, and engineering teams.",
+    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, and engineering teams.",
     cta: "View open roles",
   },
   contact: {
@@ -108,6 +113,11 @@ const fr: Copy = {
         desc: "Services complets pour PolicyCenter, BillingCenter et ClaimCenter — implantation, configuration, mises à niveau et migration infonuagique.",
       },
       {
+        title: "SAP",
+        desc: "S/4HANA, BTP et Fiori selon une discipline « clean core » — intégrations, extensions et agents d'IA branchés au contexte réel de l'ERP.",
+      },
+
+      {
         title: "Ingénierie produit",
         desc: "Livraison logicielle complète — architecture, développement infonuagique natif et assurance qualité — pour des produits livrés à temps.",
       },
@@ -131,7 +141,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de Guidewire et d'ingénierie.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire et d'ingénierie.",
     cta: "Voir les postes ouverts",
   },
   contact: {
