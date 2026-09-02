@@ -179,6 +179,14 @@ const fr: Copy = {
         desc: "Une entreprise mondiale de déménagement n'avait aucune visibilité centralisée sur ses opérations multinationales. Les silos de données régionaux obligeaient les équipes à compiler manuellement les rapports, ce qui ralentissait la prise de décision et masquait les coûts, les retours clients et les écarts de performance. Nous avons conçu une plateforme d'analytique unifiée sur SQL Azure, Azure Data Lake et Microsoft SQL Server, avec Azure Data Factory et Logic Apps pour intégrer les données des systèmes régionaux. Power BI et Birst Connect fournissent des tableaux de bord mondiaux en temps réel, appuyés par des applications personnalisées en C# .NET et WPF et par un CI/CD Azure DevOps. Résultat : une visibilité en temps réel à 100 % sur les processus de déménagement et les points de contact client, des rapports standardisés pour la rentabilité des comptes, et la capacité d'isoler immédiatement les opportunités de croissance et les zones de performance faible.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
       },
+      {
+        tag: "Étude de cas 04",
+        date: "2026",
+        client: "Samsung",
+        title: "Migration infonuagique et résidence des données pour la conformité mondiale",
+        desc: "Samsung exploitait 195 systèmes hérités sur un cluster Apache Hadoop local, enfermée dans des contrats de matériel rigides, avec du calcul surprovisionné et sans l'architecture nécessaire pour répondre aux exigences de résidence des données de la CCPA. Nous avons dirigé une migration complète vers le cloud qui a dissocié les données des consommateurs américains des lacs de données mondiaux et réarchitecturé l'écosystème sur Google Cloud Platform. Hive, Presto et Spark alimentent l'analytique distribuée sur un stockage objet séparé ; IAM, Kerberos et le chiffrement côté client via KMS appliquent des contrôles d'accès et de confidentialité stricts ; des clusters multi-maîtres et des scripts de nœuds auto-cicatrisants assurent la résilience. Résultat : requêtes 3 à 5 fois plus rapides, ingestion entièrement élastique, gain de productivité de 25 %, déploiement des fonctionnalités 20,66 % plus rapide, et une plateforme résiliente aux pannes qui respecte la souveraineté des données régionales.",
+        stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Clusters auto-cicatrisants"],
+      },
     ],
   },
   careers: {
