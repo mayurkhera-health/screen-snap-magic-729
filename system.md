@@ -73,7 +73,15 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 ### Section Rhythm
 
 - Sections are separated by `border-t` or `border-b` hairlines.
-- Default vertical padding: `py-10 sm:py-14`.
+- Section spacing comes from `.section-y`, whose padding is HALF the intended
+  gap because sections sit edge to edge and each seam gets two of them.
+  Current scale: 32 / 40 / 48 per side, giving seams of 64 / 80 / 96.
+- Section headers on the homepage stay centred (the `SectionHeader` default).
+  This is a deliberate choice with a known cost: the hero is left-aligned, so
+  at each seam the eye travels ~560px sideways to reach the next heading. The
+  96px seam is the agreed compromise. If a future pass wants the seams to feel
+  tighter still, left-aligning the headers removes the travel without removing
+  any space.
 - Dark sections use `.section-dark` and sit between white sections for contrast.
 
 ### Section Header Component
