@@ -105,6 +105,14 @@ const fr: Copy = {
         desc: "Tableaux de bord BI, entrepôts de données et analytique prédictive qui transforment des données dispersées en décisions fiables.",
       },
       {
+        title: "SIG et géospatial",
+        desc: "Données spatiales, cartographie et analytique de localisation — cartographie de l'exposition, évaluation des risques par imagerie et pipelines géospatiaux.",
+      },
+      {
+        title: "Guidewire",
+        desc: "Services complets pour PolicyCenter, BillingCenter et ClaimCenter — implantation, configuration, mises à niveau et migration infonuagique.",
+      },
+      {
         title: "Ingénierie produit",
         desc: "Livraison logicielle complète — architecture, développement infonuagique natif et assurance qualité — pour des produits livrés à temps.",
       },
