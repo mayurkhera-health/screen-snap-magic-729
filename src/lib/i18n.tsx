@@ -11,7 +11,7 @@ const en = {
     eyebrow: "Zedventures — Technology Partner",
     headline: "Engineering intelligence into every enterprise",
     subhead:
-      "We design, build, and run AI, analytics, and digital platforms that hold up in production.",
+      "We design, build, and run AI, analytics, geospatial, and core insurance platforms that hold up in production.",
     deckCta: "Download Capability Deck",
     consultCta: "Book a consultation",
   },
