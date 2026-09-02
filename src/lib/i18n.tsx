@@ -48,11 +48,11 @@ const en = {
     items: [
       {
         tag: "Case study 01",
-        date: "",
-        client: "",
+        date: "2026",
+        client: "Enterprise software company",
         title: "AI-assisted help, grounded in approved product knowledge",
-        desc: "A conversational help experience that lets users ask product questions from web, mobile, or in-product interfaces. A Python orchestration API manages authentication, conversation state, prompt construction, and guardrails — while retrieval-augmented generation over Azure AI Search grounds every answer in the customer's approved documentation, not the model's general knowledge.",
-        stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration"],
+        desc: "Product users were struggling to find quick, accurate answers across sprawling knowledge bases, driving repetitive support tickets, slow resolution, and the risk of misinformation from ungrounded AI. We built an omnichannel AI-assisted Help Chat integrated into web, mobile, and in-product interfaces. A Python orchestration API handles authentication, conversation history, dynamic prompt engineering, and validation guardrails — while retrieval-augmented generation over Azure AI Search grounds every response in verified documentation. The result: near-zero hallucinations, sub-second answers, and a projected 70% deflection of routine Tier-1 support.",
+        stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration", "Omnichannel UI"],
       },
       {
         tag: "Case study 02",
