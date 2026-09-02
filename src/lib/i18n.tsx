@@ -4,7 +4,6 @@ export type Lang = "en" | "fr";
 
 const en = {
   nav: {
-    deck: "Download deck",
     talk: "Book a consultation",
   },
   hero: {
@@ -12,7 +11,6 @@ const en = {
     headline: "Engineering intelligence into every enterprise",
     subhead:
       "We design, build, and run AI, analytics, geospatial, and core insurance platforms that hold up in production.",
-    deckCta: "Download Capability Deck",
     consultCta: "Book a consultation",
   },
   services: {
@@ -44,10 +42,17 @@ const en = {
       },
     ],
   },
-  deck: {
-    eyebrow: "Capability deck",
-    line: "See our full capabilities — services, delivery model, and engagement options.",
-    cta: "Download the deck",
+  caseStudies: {
+    eyebrow: "AI in production",
+    heading: "What we're building right now",
+    items: [
+      {
+        tag: "Case study 01",
+        title: "AI-assisted help, grounded in approved product knowledge",
+        desc: "A conversational help experience that lets users ask product questions from web, mobile, or in-product interfaces. A Python orchestration API manages authentication, conversation state, prompt construction, and guardrails — while retrieval-augmented generation over Azure AI Search grounds every answer in the customer's approved documentation, not the model's general knowledge.",
+        stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration"],
+      },
+    ],
   },
   careers: {
     eyebrow: "Join us",
@@ -82,7 +87,6 @@ export type Copy = typeof en;
 
 const fr: Copy = {
   nav: {
-    deck: "Télécharger la présentation",
     talk: "Réserver une consultation",
   },
   hero: {
@@ -90,7 +94,6 @@ const fr: Copy = {
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
       "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique, de géomatique et d'assurance prêtes pour la production.",
-    deckCta: "Télécharger la présentation",
     consultCta: "Réserver une consultation",
   },
   services: {
@@ -122,10 +125,17 @@ const fr: Copy = {
       },
     ],
   },
-  deck: {
-    eyebrow: "Présentation",
-    line: "Découvrez toutes nos capacités — services, modèle de livraison et options d'engagement.",
-    cta: "Télécharger la présentation",
+  caseStudies: {
+    eyebrow: "L'IA en production",
+    heading: "Ce que nous développons en ce moment",
+    items: [
+      {
+        tag: "Étude de cas 01",
+        title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
+        desc: "Une expérience d'aide conversationnelle permettant aux utilisateurs de poser des questions sur le produit depuis le web, le mobile ou l'interface du produit. Une API d'orchestration Python gère l'authentification, l'état des conversations, la construction des invites et les garde-fous, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation approuvée du client — et non dans les connaissances générales du modèle.",
+        stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM"],
+      },
+    ],
   },
   careers: {
     eyebrow: "Rejoignez-nous",
