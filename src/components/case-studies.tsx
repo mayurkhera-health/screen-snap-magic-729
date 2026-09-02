@@ -16,6 +16,11 @@ export function CaseStudies() {
           {t.caseStudies.items.map((cs) => (
             <article key={cs.title} className="bg-background p-8 sm:p-10">
               <p className="eyebrow text-muted-foreground">{cs.tag}</p>
+              {(cs.date || cs.client) && (
+                <p className="mt-2 text-xs text-muted-foreground">
+                  {[cs.client, cs.date].filter(Boolean).join(" · ")}
+                </p>
+              )}
               <h3 className="font-display mt-4 text-xl leading-snug sm:text-2xl">
                 {cs.title}
               </h3>
