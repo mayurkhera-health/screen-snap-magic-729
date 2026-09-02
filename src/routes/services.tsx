@@ -16,7 +16,7 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Seven disciplines, one standard: systems that hold up in production.",
+          "Engineering, data, and geospatial systems built to run.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://screen-snap-magic-729.lovable.app/services" },
@@ -50,14 +50,14 @@ function ServicesPageBody() {
 
   return (
     <>
-      <section className="border-b border-border bg-background px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+      <section className="border-b border-border bg-background px-5 py-10 sm:px-8 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl">
-          <div className="border-l-4 border-primary pl-6 sm:pl-8 md:pl-12">
+          <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
             <p className="eyebrow text-primary">{s.eyebrow}</p>
-            <h1 className="font-display mt-4 text-5xl leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+            <h1 className="font-display mt-2 text-5xl leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
               {s.heading}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               {s.sub}
             </p>
           </div>
@@ -69,7 +69,7 @@ function ServicesPageBody() {
         return (
           <section
             key={item.title}
-            className={`border-b border-border px-5 py-12 sm:px-8 sm:py-14 ${
+            className={`border-b border-border px-5 py-8 sm:px-8 sm:py-10 ${
               isDark ? "section-dark" : "bg-background"
             }`}
           >
