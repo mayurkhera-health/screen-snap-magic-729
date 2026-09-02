@@ -89,7 +89,7 @@ const fr: Copy = {
     eyebrow: "Zedventures — Partenaire technologique",
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
-      "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique et numériques prêtes pour la production.",
+      "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique, de géomatique et d'assurance prêtes pour la production.",
     deckCta: "Télécharger la présentation",
     consultCta: "Réserver une consultation",
   },
