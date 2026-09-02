@@ -1,0 +1,15 @@
+node_modules
+.output
+.nitro
+.vinxi
+.tanstack
+.wrangler
+.git
+.github
+dist
+dist-ssr
+*.log
+.DS_Store
+.vscode
+.idea
+fly.toml
