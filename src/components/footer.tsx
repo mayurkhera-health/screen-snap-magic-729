@@ -1,6 +1,5 @@
 import { useLanguage } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
-import logoAsset from "@/assets/zedventures-logo.png.asset.json";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -12,7 +11,13 @@ export function Footer() {
           {/* The logo is never recoloured and only sits on a light ground,
               so it keeps its own white chip inside the dark footer. */}
           <span className="inline-flex rounded-md bg-white px-3 py-2">
-            <img src={logoAsset.url} alt={t.a11y.logoAlt} className="h-5 w-auto" />
+            <img
+              src="/zedventures-logo.png"
+              alt={t.a11y.logoAlt}
+              width={798}
+              height={208}
+              className="h-5 w-auto"
+            />
           </span>
           <p className="mt-3 text-sm text-muted-foreground">{t.footer.tagline}</p>
         </div>

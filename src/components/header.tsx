@@ -4,7 +4,21 @@ import { ArrowRight, Menu } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import logoAsset from "@/assets/zedventures-logo.png.asset.json";
+
+/**
+ * Served straight from public/. The previous source was a Lovable asset-manifest
+ * JSON whose url pointed at /__l5e/assets-v1/... — a path that only resolves on
+ * the Lovable preview host, so the logo rendered as alt text on every other
+ * deploy, in both the header and the footer.
+ *
+ * The file is 798x208 RGB with no alpha channel, so it carries a white
+ * background. That is why the footer keeps it on a white chip rather than
+ * placing it directly on the dark ground. Width and height are declared to stop
+ * the header reflowing while it loads.
+ */
+const LOGO_SRC = "/zedventures-logo.png";
+const LOGO_W = 798;
+const LOGO_H = 208;
 
 const NAV = [
   { to: "/services", key: "services" },
@@ -40,8 +54,10 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link to="/" className="flex shrink-0 items-center">
           <img
-            src={logoAsset.url}
+            src={LOGO_SRC}
             alt={t.a11y.logoAlt}
+            width={LOGO_W}
+            height={LOGO_H}
             className={`w-auto transition-[height] duration-200 ${scrolled ? "h-9 sm:h-10" : "h-10 sm:h-12"}`}
             style={{ transitionTimingFunction: "var(--ease)" }}
           />
