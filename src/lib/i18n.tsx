@@ -29,6 +29,11 @@ const en = {
         desc: "End-to-end work across PolicyCenter, BillingCenter, and ClaimCenter — implementation, configuration, upgrades, and cloud migration.",
       },
       {
+        title: "SAP",
+        desc: "S/4HANA, BTP, and Fiori work with a clean-core discipline — integrations, extensions, and SAP-grounded AI agents that reach real ERP context.",
+      },
+
+      {
         title: "Product Engineering",
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
