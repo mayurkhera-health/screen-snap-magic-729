@@ -75,7 +75,7 @@ export function Contact() {
     <section id="contact" className="border-t border-border">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+          <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
             {t.contact.eyebrow}
           </p>
           <h2 className="font-display mt-3 text-4xl leading-tight sm:text-5xl">

@@ -6,7 +6,7 @@ export function Services() {
   return (
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-        <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+        <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
           {t.services.eyebrow}
         </p>
         <h2 id="services-heading" className="sr-only">
