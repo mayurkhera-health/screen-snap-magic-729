@@ -11,7 +11,7 @@ const en = {
     eyebrow: "Zedventures — Technology Partner",
     headline: "Engineering intelligence into every enterprise",
     subhead:
-      "We design, build, and run AI, analytics, and digital platforms that hold up in production.",
+      "We design, build, and run AI, analytics, geospatial, and core insurance platforms that hold up in production.",
     deckCta: "Download Capability Deck",
     consultCta: "Book a consultation",
   },
@@ -25,6 +25,14 @@ const en = {
       {
         title: "Analytics",
         desc: "BI dashboards, data warehousing, and predictive analytics that turn scattered data into decisions leadership trusts.",
+      },
+      {
+        title: "GIS & Geospatial",
+        desc: "Spatial data, mapping, and location analytics — exposure mapping, imagery-based risk assessment, and geospatial pipelines.",
+      },
+      {
+        title: "Guidewire",
+        desc: "End-to-end work across PolicyCenter, BillingCenter, and ClaimCenter — implementation, configuration, upgrades, and cloud migration.",
       },
       {
         title: "Product Engineering",
@@ -43,7 +51,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, and engineering teams.",
+    line: "We're growing our AI, analytics, GIS, Guidewire, and engineering teams.",
     cta: "View open roles",
   },
   contact: {
@@ -81,7 +89,7 @@ const fr: Copy = {
     eyebrow: "Zedventures — Partenaire technologique",
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
-      "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique et numériques prêtes pour la production.",
+      "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique, de géomatique et d'assurance prêtes pour la production.",
     deckCta: "Télécharger la présentation",
     consultCta: "Réserver une consultation",
   },
@@ -95,6 +103,14 @@ const fr: Copy = {
       {
         title: "Analytique",
         desc: "Tableaux de bord BI, entrepôts de données et analytique prédictive qui transforment des données dispersées en décisions fiables.",
+      },
+      {
+        title: "SIG et géospatial",
+        desc: "Données spatiales, cartographie et analytique de localisation — cartographie de l'exposition, évaluation des risques par imagerie et pipelines géospatiaux.",
+      },
+      {
+        title: "Guidewire",
+        desc: "Services complets pour PolicyCenter, BillingCenter et ClaimCenter — implantation, configuration, mises à niveau et migration infonuagique.",
       },
       {
         title: "Ingénierie produit",
@@ -113,7 +129,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique et d'ingénierie.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de Guidewire et d'ingénierie.",
     cta: "Voir les postes ouverts",
   },
   contact: {
