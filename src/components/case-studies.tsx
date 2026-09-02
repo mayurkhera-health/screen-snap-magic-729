@@ -9,9 +9,9 @@ export function CaseStudies() {
         <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
           {t.caseStudies.eyebrow}
         </p>
-        <h2 className="font-display mt-3 max-w-3xl text-3xl leading-tight sm:text-5xl">
+        <p className="font-display mt-3 max-w-3xl text-xl leading-tight text-muted-foreground sm:text-2xl">
           {t.caseStudies.heading}
-        </h2>
+        </p>
         <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2">
           {t.caseStudies.items.map((cs) => (
             <article key={cs.title} className="bg-background p-8 sm:p-10">
