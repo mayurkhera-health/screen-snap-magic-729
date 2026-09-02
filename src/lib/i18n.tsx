@@ -239,7 +239,7 @@ const en = {
       emailLabel: "Email",
       email: "info@zedventures.com",
       phoneLabel: "Phone",
-      phone: "+1 (408) 555-0134",
+      phone: "+1 (408) 829-7029",
       officesEyebrow: "Our offices",
       offices: [
         { city: "San Jose", region: "California, USA", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
@@ -251,6 +251,58 @@ const en = {
   footer: {
     tagline: "Enterprise systems, built to stay up.",
     rights: "© 2026 Zedventures. All rights reserved.",
+    exploreHeading: "Explore",
+    companyHeading: "Company",
+    legalHeading: "Legal",
+    privacy: "Privacy policy",
+    terms: "Terms of use",
+  },
+  /**
+   * Privacy and Terms.
+   *
+   * PLACEHOLDER BODIES. Section headings are the ones a US company's policies
+   * normally carry, so the structure is right and the routes are real, but every
+   * body is a bracketed marker. A privacy policy is a statement about what a
+   * company actually does with data — retention, processors, whether GDPR
+   * applies through the French side of this site — and none of that can be
+   * written from outside the company. Both pages are noindex and carry a draft
+   * banner until the markers are gone.
+   */
+  legalPages: {
+    lastUpdatedLabel: "Last updated",
+    lastUpdated: "[PLACEHOLDER — date]",
+    draftNotice:
+      "Draft — every section below is a placeholder. These pages must be reviewed by counsel before publication.",
+    privacy: {
+      eyebrow: "Legal",
+      heading: "Privacy policy",
+      sub: "How ZEDventures collects, uses and keeps personal information.",
+      sections: [
+        { heading: "Who we are", body: "[PLACEHOLDER — the legal entity, its registered address, and how to reach the person responsible for privacy questions.]" },
+        { heading: "What we collect", body: "[PLACEHOLDER — what the site and the business actually collect: contact form submissions, job applications, anything analytics gathers, anything set by cookies.]" },
+        { heading: "Why we collect it", body: "[PLACEHOLDER — the purpose for each category above, and the lawful basis if GDPR applies through the French-language site.]" },
+        { heading: "Who we share it with", body: "[PLACEHOLDER — every processor that touches the data: the mail provider, the host, analytics, any CRM or ATS.]" },
+        { heading: "How long we keep it", body: "[PLACEHOLDER — retention period per category. Job applications in particular, since the careers page already promises a number.]" },
+        { heading: "Your rights", body: "[PLACEHOLDER — CCPA/CPRA rights for California residents, GDPR rights if applicable, and the address requests go to.]" },
+        { heading: "Cookies", body: "[PLACEHOLDER — what is set, by whom, and whether consent is required. Delete this section if the site sets none.]" },
+        { heading: "Changes to this policy", body: "[PLACEHOLDER — how changes are notified and where the effective date appears.]" },
+      ],
+    },
+    terms: {
+      eyebrow: "Legal",
+      heading: "Terms of use",
+      sub: "The terms that apply to visitors of this website.",
+      sections: [
+        { heading: "Acceptance", body: "[PLACEHOLDER — that using the site means accepting these terms.]" },
+        { heading: "Use of this site", body: "[PLACEHOLDER — permitted and prohibited use.]" },
+        { heading: "Intellectual property", body: "[PLACEHOLDER — ownership of the content, marks and code on this site.]" },
+        { heading: "No professional advice", body: "[PLACEHOLDER — that material here is general information, not engineering, legal or financial advice, and that engagements are governed by their own signed agreements.]" },
+        { heading: "Third-party links", body: "[PLACEHOLDER — disclaimer for sites linked from here.]" },
+        { heading: "Disclaimers and liability", body: "[PLACEHOLDER — warranty disclaimer and limitation of liability. Counsel should write this one, not a template.]" },
+        { heading: "Governing law", body: "[PLACEHOLDER — governing law and venue.]" },
+        { heading: "Contact", body: "[PLACEHOLDER — where questions about these terms go.]" },
+      ],
+    },
   },
   nav: {
     services: "Services",
@@ -518,7 +570,7 @@ const fr: Copy = {
       emailLabel: "Courriel",
       email: "info@zedventures.com",
       phoneLabel: "Téléphone",
-      phone: "+1 (408) 555-0134",
+      phone: "+1 (408) 829-7029",
       officesEyebrow: "Nos bureaux",
       offices: [
         { city: "San Jose", region: "Californie, États-Unis", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
@@ -530,6 +582,47 @@ const fr: Copy = {
   footer: {
     tagline: "Des systèmes d'entreprise conçus pour tenir.",
     rights: "© 2026 Zedventures. Tous droits réservés.",
+    exploreHeading: "Explorer",
+    companyHeading: "Entreprise",
+    legalHeading: "Mentions légales",
+    privacy: "Politique de confidentialité",
+    terms: "Conditions d'utilisation",
+  },
+  legalPages: {
+    lastUpdatedLabel: "Dernière mise à jour",
+    lastUpdated: "[ESPACE RÉSERVÉ — date]",
+    draftNotice:
+      "Brouillon — chaque section ci-dessous est un espace réservé. Ces pages doivent être revues par un conseil juridique avant publication.",
+    privacy: {
+      eyebrow: "Mentions légales",
+      heading: "Politique de confidentialité",
+      sub: "Comment ZEDventures recueille, utilise et conserve les données personnelles.",
+      sections: [
+        { heading: "Qui nous sommes", body: "[ESPACE RÉSERVÉ — l'entité juridique, son siège social et le contact responsable des questions de confidentialité.]" },
+        { heading: "Ce que nous recueillons", body: "[ESPACE RÉSERVÉ — ce que le site et l'entreprise recueillent réellement : formulaires de contact, candidatures, données d'analyse, cookies.]" },
+        { heading: "Pourquoi nous le recueillons", body: "[ESPACE RÉSERVÉ — la finalité de chaque catégorie ci-dessus, et la base légale si le RGPD s'applique via la version française du site.]" },
+        { heading: "Avec qui nous le partageons", body: "[ESPACE RÉSERVÉ — chaque sous-traitant : fournisseur de messagerie, hébergeur, analytique, CRM ou ATS.]" },
+        { heading: "Durée de conservation", body: "[ESPACE RÉSERVÉ — durée par catégorie. En particulier les candidatures, la page carrières annonçant déjà une durée.]" },
+        { heading: "Vos droits", body: "[ESPACE RÉSERVÉ — droits CCPA/CPRA pour les résidents de Californie, droits RGPD le cas échéant, et l'adresse à laquelle adresser les demandes.]" },
+        { heading: "Cookies", body: "[ESPACE RÉSERVÉ — ce qui est déposé, par qui, et si un consentement est requis. Supprimer cette section si le site n'en dépose aucun.]" },
+        { heading: "Modifications", body: "[ESPACE RÉSERVÉ — comment les modifications sont signalées et où figure la date d'entrée en vigueur.]" },
+      ],
+    },
+    terms: {
+      eyebrow: "Mentions légales",
+      heading: "Conditions d'utilisation",
+      sub: "Les conditions applicables aux visiteurs de ce site.",
+      sections: [
+        { heading: "Acceptation", body: "[ESPACE RÉSERVÉ — l'utilisation du site vaut acceptation des présentes conditions.]" },
+        { heading: "Utilisation du site", body: "[ESPACE RÉSERVÉ — usages autorisés et interdits.]" },
+        { heading: "Propriété intellectuelle", body: "[ESPACE RÉSERVÉ — propriété du contenu, des marques et du code de ce site.]" },
+        { heading: "Absence de conseil professionnel", body: "[ESPACE RÉSERVÉ — le contenu est une information générale et non un conseil technique, juridique ou financier ; les prestations sont régies par leurs propres contrats signés.]" },
+        { heading: "Liens de tiers", body: "[ESPACE RÉSERVÉ — clause de non-responsabilité pour les sites liés depuis celui-ci.]" },
+        { heading: "Garanties et responsabilité", body: "[ESPACE RÉSERVÉ — exclusion de garanties et limitation de responsabilité. À rédiger par un conseil juridique, pas à partir d'un modèle.]" },
+        { heading: "Droit applicable", body: "[ESPACE RÉSERVÉ — droit applicable et juridiction compétente.]" },
+        { heading: "Contact", body: "[ESPACE RÉSERVÉ — où adresser les questions relatives aux présentes conditions.]" },
+      ],
+    },
   },
   nav: {
     services: "Expertises",

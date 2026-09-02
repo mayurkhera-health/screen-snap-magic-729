@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
 
@@ -23,32 +24,102 @@ const LOGO_KNOCKOUT_SRC = "/zedventures-logo-knockout.png";
 
 export function Footer() {
   const { t } = useLanguage();
+  const f = t.footer;
 
   return (
     <footer className="section-dark border-t border-border pb-24 sm:pb-0">
-      <div className="container-page flex flex-col gap-8 py-12 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          {/* Knockout variant, so the mark sits straight on the footer ground
-              instead of inside a white chip that read as a sticker. 28px rather
-              than the old 20px: with the chip gone there is nothing framing it,
-              and at 20px it read as small rather than restrained.
+      <div className="container-page py-14 sm:py-16">
+        {/* The brand column is wider than the link columns: it carries the mark,
+            the line and the language control, so it reads as the anchor rather
+            than a fourth list of the same weight. */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))] lg:gap-12">
+          <div>
+            <Link to="/" className="inline-flex">
+              <img
+                src={LOGO_KNOCKOUT_SRC}
+                alt={t.a11y.logoAlt}
+                width={798}
+                height={208}
+                className="h-7 w-auto"
+              />
+            </Link>
+            <p className="mt-4 max-w-[24rem] text-sm leading-relaxed text-muted-foreground">
+              {f.tagline}
+            </p>
+            <div className="mt-6">
+              <LanguageToggle dark />
+            </div>
+          </div>
 
-              Measured on #0a0a0b: the white wordmark is 19.79:1 and the red
-              mark 4.72:1, both clear of what a graphic element needs. */}
-          <img
-            src={LOGO_KNOCKOUT_SRC}
-            alt={t.a11y.logoAlt}
-            width={798}
-            height={208}
-            className="h-7 w-auto"
-          />
-          <p className="mt-3 text-sm text-muted-foreground">{t.footer.tagline}</p>
+          <FooterColumn heading={f.exploreHeading}>
+            <li>
+              <FooterLink to="/services">{t.nav.services}</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/case-studies">{t.nav.caseStudies}</FooterLink>
+            </li>
+          </FooterColumn>
+
+          <FooterColumn heading={f.companyHeading}>
+            <li>
+              <FooterLink to="/about">{t.nav.about}</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/careers">{t.nav.careers}</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/contact">{t.nav.contact}</FooterLink>
+            </li>
+          </FooterColumn>
+
+          <FooterColumn heading={f.legalHeading}>
+            <li>
+              <Link to="/legal/$doc" params={{ doc: "privacy" }} className={LINK_CLS}>
+                {f.privacy}
+              </Link>
+            </li>
+            <li>
+              <Link to="/legal/$doc" params={{ doc: "terms" }} className={LINK_CLS}>
+                {f.terms}
+              </Link>
+            </li>
+          </FooterColumn>
         </div>
-        <div className="flex flex-col items-start gap-4 sm:items-end">
-          <LanguageToggle dark />
-          <p className="text-xs text-muted-foreground">{t.footer.rights}</p>
+
+        <div className="mt-12 border-t border-border pt-6">
+          <p className="text-xs text-muted-foreground">{f.rights}</p>
         </div>
       </div>
     </footer>
+  );
+}
+
+/* min-h keeps every footer link a real tap target on a phone, where these are
+   the last thing a visitor reaches for and the easiest to miss. */
+const LINK_CLS =
+  "inline-flex min-h-[1.75rem] items-center text-sm text-foreground transition-colors duration-200 hover:text-accent";
+
+function FooterColumn({ heading, children }: { heading: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h2 className="text-[0.6875rem] font-bold uppercase tracking-[0.09em] text-subtle-foreground">
+        {heading}
+      </h2>
+      <ul className="mt-4 flex flex-col gap-3">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({
+  to,
+  children,
+}: {
+  to: "/services" | "/case-studies" | "/about" | "/careers" | "/contact";
+  children: React.ReactNode;
+}) {
+  return (
+    <Link to={to} className={LINK_CLS}>
+      {children}
+    </Link>
   );
 }
