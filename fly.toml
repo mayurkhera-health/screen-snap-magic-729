@@ -1,5 +1,5 @@
 # Rename `app` to whatever `fly launch` gives you — it must be globally unique.
-app = "zedventures-site"
+app = "zedventures-test"
 primary_region = "yyz"
 
 [build]
