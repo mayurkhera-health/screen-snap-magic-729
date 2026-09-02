@@ -6,12 +6,9 @@ export function CaseStudies() {
   return (
     <section aria-label={t.caseStudies.eyebrow} className="border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
-        <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
-          {t.caseStudies.eyebrow}
-        </p>
-        <p className="font-display mt-3 max-w-3xl text-xl leading-tight text-muted-foreground sm:text-2xl">
-          {t.caseStudies.heading}
-        </p>
+        <div className="flex justify-center">
+          <SectionHeader eyebrow={t.caseStudies.eyebrow} heading={t.caseStudies.heading} />
+        </div>
 
         <div className="mt-10 grid grid-cols-1 gap-y-14 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
           {t.caseStudies.items.map((cs, i) => (

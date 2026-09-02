@@ -75,15 +75,7 @@ export function Contact() {
     <section id="contact" className="border-t border-border">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-2 lg:gap-12">
         <div>
-          <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
-            {t.contact.eyebrow}
-          </p>
-          <h2 className="font-display mt-3 text-4xl leading-tight sm:text-5xl">
-            {t.contact.line}
-          </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-            {t.contact.sub}
-          </p>
+          <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.contact.line} sub={t.contact.sub} />
         </div>
         <div>
           {sent ? (
