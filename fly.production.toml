@@ -1,0 +1,35 @@
+# PRODUCTION — the site customers see.
+#
+#   fly deploy -c fly.production.toml
+#
+# Only deploy a commit here that is already running on staging. That is the
+# whole point of having two.
+#
+# BEFORE THE FIRST DEPLOY, set the app name below. `fly apps create <name>`
+# first; the name must be globally unique across Fly.
+
+app = "CHANGEME-zedventures-production"
+primary_region = "yyz"
+
+[build]
+  dockerfile = "Dockerfile"
+  [build.args]
+    VITE_SITE_ENV = "production"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  # Production does NOT scale to zero: a customer should never wait for a cold
+  # start. One machine always running.
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 200
+    hard_limit = 250
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

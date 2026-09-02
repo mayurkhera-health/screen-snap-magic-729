@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { EnvBadge } from "@/components/env-badge";
+import { IS_PRODUCTION } from "@/lib/site-env";
 
 function NotFoundComponent() {
   return (
@@ -91,6 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      // Anything that is not a production build is kept out of search results
+      // entirely, so a staging copy can never compete with the real site or
+      // leak draft copy into an index. See src/lib/site-env.ts — this is keyed
+      // on "is production" so a typo in the build arg fails safe.
+      ...(IS_PRODUCTION ? [] : [{ name: "robots", content: "noindex, nofollow" }]),
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -120,6 +127,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <EnvBadge />
         <Scripts />
       </body>
     </html>
