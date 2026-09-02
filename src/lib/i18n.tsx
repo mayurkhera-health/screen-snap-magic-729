@@ -76,6 +76,12 @@ const en = {
         title: "AI-assisted help, grounded in approved product knowledge",
         desc: "Product users were struggling to find quick, accurate answers across sprawling knowledge bases, driving repetitive support tickets, slow resolution, and the risk of misinformation from ungrounded AI. We built an omnichannel AI-assisted Help Chat integrated into web, mobile, and in-product interfaces. A Python orchestration API handles authentication, conversation history, dynamic prompt engineering, and validation guardrails — while retrieval-augmented generation over Azure AI Search grounds every response in verified documentation. The result: near-zero hallucinations, sub-second answers, and a projected 70% deflection of routine Tier-1 support.",
         stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration", "Omnichannel UI"],
+        outcomes: [
+          "70% projected deflection of Tier-1 support tickets",
+          "Near-zero hallucinations — every answer grounded in approved documentation",
+          "Sub-second response times replacing manual document browsing",
+          "Higher feature adoption through in-product guidance",
+        ],
       },
       {
         tag: "Case study 02",
@@ -85,6 +91,12 @@ const en = {
         title: "Event-driven sales intelligence for property services",
         desc: "Sales reps were losing hours to manual pre-meeting research across CRM records, transaction history, property data, and neighborhood demographics. We built an event-driven AI assistant that triggers the moment an appointment is scheduled, synthesizing disconnected data into a structured intelligence profile. Azure OpenAI generates contextual recommendations, RAG injects live CRM and market data, and a vector index surfaces relevant neighborhood reports — giving reps a personalized brief in under five minutes instead of an hour.",
         stack: ["Azure OpenAI", "RAG", "Python API", "Vector search", "Event-driven architecture"],
+        outcomes: [
+          "85% reduction in preparation time — 60 minutes to under 5",
+          "20% projected increase in conversion rates",
+          "100% data utilization across CRM history and neighborhood data",
+          "2–3 additional high-value appointments per rep, per week",
+        ],
       },
       {
         tag: "Case study 03",
@@ -94,6 +106,11 @@ const en = {
         title: "Unified analytics for multi-country operations",
         desc: "A global relocation enterprise had no central visibility into multi-country operations. Regional data silos forced teams to compile reports manually, slowing decision-making and hiding costs, client feedback, and performance gaps. We built a unified analytics platform on SQL Azure, Azure Data Lake, and Microsoft SQL Server, with Azure Data Factory and Logic Apps integrating data from regional systems. Power BI and Birst Connect deliver real-time global dashboards, supported by C# .NET and WPF custom applications and Azure DevOps CI/CD. The result: 100% real-time visibility into moving processes and customer touchpoints, standardized reporting for account profitability, and the ability to isolate growth opportunities and weak performance areas instantly.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
+        outcomes: [
+          "100% real-time visibility into global operations and customer touchpoints",
+          "Standardized reporting for account profitability",
+          "Instant isolation of growth opportunities and weak performance areas",
+        ],
       },
       {
         tag: "Case study 04",
@@ -103,8 +120,21 @@ const en = {
         title: "Cloud data migration and residency for global compliance",
         desc: "A global consumer-electronics leader operated 195 legacy systems on an on-premise Apache Hadoop cluster, locked into rigid hardware contracts, over-provisioned compute, and lacking the architecture to meet CCPA data-residency requirements. We led a comprehensive cloud data migration that decoupled US consumer data from global lakes and re-architected the estate on Google Cloud Platform. Hive, Presto, and Spark power distributed analytics over separated object storage; IAM, Kerberos, and client-side KMS encryption enforce strict access and privacy controls; multi-master clustering and auto-healing node scripts deliver resilience. The result: 3–5× faster queries, fully elastic ingestion, a 25% engineering productivity gain, 20.66% faster feature rollouts, and an outage-resilient platform that satisfies regional data sovereignty.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Auto-healing clusters"],
+        outcomes: [
+          "3–5× faster complex query performance",
+          "25% gain in engineering productivity",
+          "20.66% faster feature time-to-market",
+          "Zero-downtime resilience with automated node replacement",
+        ],
       },
     ],
+  },
+  caseStudiesPage: {
+    eyebrow: "Case studies",
+    heading: "Work in production",
+    sub: "Real engagements, real outcomes — AI, data, and analytics systems running for global enterprises today.",
+    outcomesLabel: "Outcomes",
+    stackLabel: "Technology",
   },
   careers: {
     eyebrow: "Join us",
@@ -146,6 +176,7 @@ const en = {
   },
   nav: {
     services: "Services",
+    caseStudies: "Case Studies",
     contact: "Contact",
   },
   a11y: {
@@ -230,6 +261,12 @@ const fr: Copy = {
         title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
         desc: "Les utilisateurs du produit peinaient à trouver des réponses rapides et précises dans des bases de connaissances dispersées, ce qui générait des tickets de support répétitifs, des résolutions lentes et le risque de désinformation par une IA non ancrée. Nous avons conçu une aide conversationnelle assistée par IA, omnicanale, intégrée aux interfaces web, mobile et in-product. Une API d'orchestration Python gère l'authentification, l'historique des conversations, l'ingénierie dynamique des invites et les garde-fous de validation, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation vérifiée de l'entreprise. Résultat : pratiquement aucune hallucination, des réponses en moins d'une seconde et une déflexion projetée de 70 % des demandes de support de niveau 1 routinières.",
         stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM", "Interface omnicanale"],
+        outcomes: [
+          "Déflexion projetée de 70 % des tickets de support de niveau 1",
+          "Pratiquement aucune hallucination — chaque réponse ancrée dans la documentation approuvée",
+          "Réponses en moins d'une seconde, sans navigation manuelle dans les documents",
+          "Adoption accrue des fonctionnalités grâce au guidage intégré au produit",
+        ],
       },
       {
         tag: "Étude de cas 02",
@@ -239,6 +276,12 @@ const fr: Copy = {
         title: "Intelligence commerciale pilotée par événements pour les services immobiliers",
         desc: "Les représentants passaient des heures à rechercher manuellement des informations avant chaque rendez-vous, en naviguant entre le CRM, l'historique des transactions, les données de propriétés et les démographies de quartier. Nous avons conçu un assistant IA piloté par événements qui s'active dès qu'un rendez-vous est planifié, synthétisant des données dispersées en un profil d'intelligence structuré. Azure OpenAI génère des recommandations contextuelles, la génération augmentée par récupération injecte des données de marché et du CRM en temps réel, et un index vectoriel fait remonter les rapports de quartier pertinents — fournissant aux représentants un briefing personnalisé en moins de cinq minutes au lieu d'une heure.",
         stack: ["Azure OpenAI", "RAG", "API Python", "Recherche vectorielle", "Architecture événementielle"],
+        outcomes: [
+          "Réduction de 85 % du temps de préparation — de 60 minutes à moins de 5",
+          "Augmentation projetée de 20 % des taux de conversion",
+          "Utilisation à 100 % des données CRM et de quartier",
+          "2 à 3 rendez-vous à haute valeur de plus par représentant, par semaine",
+        ],
       },
       {
         tag: "Étude de cas 03",
@@ -248,6 +291,11 @@ const fr: Copy = {
         title: "Analytique unifiée pour des opérations multinationales",
         desc: "Une entreprise mondiale de déménagement n'avait aucune visibilité centralisée sur ses opérations multinationales. Les silos de données régionaux obligeaient les équipes à compiler manuellement les rapports, ce qui ralentissait la prise de décision et masquait les coûts, les retours clients et les écarts de performance. Nous avons conçu une plateforme d'analytique unifiée sur SQL Azure, Azure Data Lake et Microsoft SQL Server, avec Azure Data Factory et Logic Apps pour intégrer les données des systèmes régionaux. Power BI et Birst Connect fournissent des tableaux de bord mondiaux en temps réel, appuyés par des applications personnalisées en C# .NET et WPF et par un CI/CD Azure DevOps. Résultat : une visibilité en temps réel à 100 % sur les processus de déménagement et les points de contact client, des rapports standardisés pour la rentabilité des comptes, et la capacité d'isoler immédiatement les opportunités de croissance et les zones de performance faible.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
+        outcomes: [
+          "Visibilité en temps réel à 100 % sur les opérations mondiales et les points de contact client",
+          "Rapports standardisés sur la rentabilité des comptes",
+          "Identification immédiate des opportunités de croissance et des zones de faible performance",
+        ],
       },
       {
         tag: "Étude de cas 04",
@@ -257,8 +305,21 @@ const fr: Copy = {
         title: "Migration infonuagique et résidence des données pour la conformité mondiale",
         desc: "Une multinationale de l’électronique grand public exploitait 195 systèmes hérités sur un cluster Apache Hadoop local, enfermée dans des contrats de matériel rigides, avec du calcul surprovisionné et sans l'architecture nécessaire pour répondre aux exigences de résidence des données de la CCPA. Nous avons dirigé une migration complète vers le cloud qui a dissocié les données des consommateurs américains des lacs de données mondiaux et réarchitecturé l'écosystème sur Google Cloud Platform. Hive, Presto et Spark alimentent l'analytique distribuée sur un stockage objet séparé ; IAM, Kerberos et le chiffrement côté client via KMS appliquent des contrôles d'accès et de confidentialité stricts ; des clusters multi-maîtres et des scripts de nœuds auto-cicatrisants assurent la résilience. Résultat : requêtes 3 à 5 fois plus rapides, ingestion entièrement élastique, gain de productivité de 25 %, déploiement des fonctionnalités 20,66 % plus rapide, et une plateforme résiliente aux pannes qui respecte la souveraineté des données régionales.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Clusters auto-cicatrisants"],
+        outcomes: [
+          "Requêtes complexes 3 à 5 fois plus rapides",
+          "Gain de productivité d'ingénierie de 25 %",
+          "Mise sur le marché des fonctionnalités 20,66 % plus rapide",
+          "Résilience sans interruption grâce au remplacement automatisé des nœuds",
+        ],
       },
     ],
+  },
+  caseStudiesPage: {
+    eyebrow: "Études de cas",
+    heading: "Des réalisations en production",
+    sub: "Des engagements réels, des résultats concrets — des systèmes d'IA, de données et d'analytique en production chez des entreprises mondiales.",
+    outcomesLabel: "Résultats",
+    stackLabel: "Technologies",
   },
   careers: {
     eyebrow: "Rejoignez-nous",
@@ -300,6 +361,7 @@ const fr: Copy = {
   },
   nav: {
     services: "Expertises",
+    caseStudies: "Études de cas",
     contact: "Contact",
   },
   a11y: {
