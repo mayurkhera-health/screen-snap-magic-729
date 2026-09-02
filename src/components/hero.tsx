@@ -14,14 +14,6 @@ export function Hero() {
         <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           {t.hero.subhead}
         </p>
-        <div className="mt-12 flex flex-wrap items-center gap-4">
-          <a
-            href="#contact"
-            className="rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/85"
-          >
-            {t.hero.consultCta}
-          </a>
-        </div>
       </div>
     </section>
   );
