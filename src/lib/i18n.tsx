@@ -4,7 +4,6 @@ export type Lang = "en" | "fr";
 
 const en = {
   hero: {
-    eyebrow: "Zedventures — Technology Partner",
     headline: "Engineering intelligence into every enterprise",
     subhead:
       "We design, build, and run AI, analytics, and geospatial systems that hold up in production.",
@@ -88,7 +87,6 @@ export type Copy = typeof en;
 
 const fr: Copy = {
   hero: {
-    eyebrow: "Zedventures — Partenaire technologique",
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
       "Nous concevons, développons et exploitons des systèmes d'IA, d'analytique et de géomatique prêts pour la production.",
