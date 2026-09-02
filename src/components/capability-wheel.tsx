@@ -116,10 +116,10 @@ export function CapabilityWheel() {
             <div className="flex h-[46%] w-[46%] flex-col items-center justify-center rounded-full bg-background px-8 text-center text-foreground shadow-[0_0_80px_-20px_hsl(var(--primary)/0.35)]">
               <span className="mb-3 block h-1.5 w-10 rounded-full bg-primary" aria-hidden="true" />
               <p className="font-display text-base leading-tight tracking-tight sm:text-lg">
-                {w.items[active].title}
+                {activeItem.title}
               </p>
               <p className="mt-2 max-w-[16rem] text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                {w.items[active].desc}
+                {activeItem.desc}
               </p>
               <p className="mt-3 text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
                 {w.centerTitle}
