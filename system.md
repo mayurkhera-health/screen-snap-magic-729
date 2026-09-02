@@ -73,15 +73,7 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 ### Section Rhythm
 
 - Sections are separated by `border-t` or `border-b` hairlines.
-- Section spacing comes from `.section-y`, whose padding is HALF the intended
-  gap because sections sit edge to edge and each seam gets two of them.
-  Current scale: 32 / 40 / 48 per side, giving seams of 64 / 80 / 96.
-- Section headers on the homepage stay centred (the `SectionHeader` default).
-  This is a deliberate choice with a known cost: the hero is left-aligned, so
-  at each seam the eye travels ~560px sideways to reach the next heading. The
-  96px seam is the agreed compromise. If a future pass wants the seams to feel
-  tighter still, left-aligning the headers removes the travel without removing
-  any space.
+- Default vertical padding: `py-10 sm:py-14`.
 - Dark sections use `.section-dark` and sit between white sections for contrast.
 
 ### Section Header Component
@@ -109,9 +101,8 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 ### Services Index (`src/components/services.tsx`)
 
 - Centered `SectionHeader`.
-- Each row is a three-column grid on desktop: number / service title / short description.
-- The description column starts at a fixed x on every row and is left-aligned. Do not push it with `ml-auto` or right-align it — the gap then grows with viewport width and every line starts at a different x.
-- The title column cannot be narrowed further without wrapping the longest title ("GIS & Geospatial").
+- Numbered list (`01`, `02`, …) with red `.eyebrow` numbers.
+- Each row: number → service title → short description aligned right on desktop.
 - Hairline separators between items.
 - Service title turns red on hover.
 
@@ -180,15 +171,7 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 - Capability deck downloads or "Book a Consultation" CTAs.
 - Named customer references; use industry descriptors (e.g., "Global consumer-electronics company").
 - Recoloring the logo or placing it on dark backgrounds.
-- Heavy imagery, photography, or decorative illustration.
-- The one sanctioned graphic is the hero mark (`src/components/hero-mark.tsx`):
-  four stacked planes drawn from the site's own tokens, standing in for the
-  photograph a two-column hero would otherwise need. It is geometric, carries
-  no gradient, inherits the brand red, and is hidden below 1024px rather than
-  stacked — on a phone it would push the CTA below the fold. Adding a second
-  decorative graphic anywhere else needs a deliberate decision, not this
-  precedent.
-- Background gradients, glows, particle fields or animated backdrops. The one sanctioned motion on the site is the hero headline "ink" treatment (`.ink-type`): a narrow band of brand red travelling through the letterforms on a paper-white, otherwise static page. Motion belongs in the type, not behind it.
+- Heavy imagery, gradients, or decorative illustrations.
 
 ### Tone
 
@@ -241,74 +224,40 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 6. Prefer white sections with hairline separators; use `.section-dark` only for contrast bands.
 7. Keep CTAs minimal: contact link, email, or form. No downloads or consultation booking.
 
----
+## Careers
 
----
+One entry per role in `src/lib/careers.ts`. The index (`/careers`), the detail
+pages (`/careers/$slug`), the SEO metadata and the Google Jobs JSON-LD are all
+generated from that array — adding a role means adding an object, nothing else.
 
-## 9b. No numbered markers
+**Verbatim postings.** A posting with `sourceOfText: "filing"` carries wording
+taken from an immigration filing (ETA-9089, LCA). That text is expected to match
+the filing, so it is never rewritten for tone, tightened, or reflowed. The
+detail page renders it with `whitespace-pre-line` and shows a note saying the
+wording is as filed. This is the one place on the site where awkward phrasing is
+correct and must be left alone.
 
-The `01 / 02 / 03` markers have been removed everywhere they appeared:
-homepage capability rows, the services and case-study pages, service-page
-problems and How we work, About's What makes us different, and the office
-cards on About and Contact.
+**Fields the compiler insists on.** `pay` is required rather than optional
+because California SB 1162 requires the pay scale in any posting for a role
+fillable in California. `locations` is a list of free strings, not a structured
+address, so filing wording like "various unanticipated client locations
+throughout California" survives intact.
 
-Numbering is only worth reintroducing where the order carries information the
-reader needs. The one place that was arguably true is **How we work**
-(Strategy, Architecture, Build, Modernize, Operate) — it is a real sequence and
-is still marked up as an `<ol>`, so the order survives for assistive tech even
-without visible numbers. Everywhere else the numbers were decoration on an
-unordered set.
+**Draft mode.** `DRAFT_CAREERS = true` puts a banner on both page types, emits
+`robots: noindex`, and suppresses the JobPosting structured data. Each posting
+also carries an `unverified` array; `jobPostingJsonLd` returns null while it is
+non-empty, so a wrong salary can never reach Google Jobs. Flip the flag only
+once every `unverified` array is empty.
 
-Each marker occupied its own grid column, so removing them meant collapsing
-those grids rather than deleting a span: the capability rows and How we work
-went from three columns to two, and the office cards lost their number/icon
-header row.
+**Bilingual split.** Page chrome and the company statements (EEO,
+accommodation, work authorization, screening, applicant privacy, recruitment
+fraud, agency resumes) are in `i18n.tsx` in both locales and render from
+`components/careers-legal.tsx` on the index and on every posting. The postings
+themselves are single-language on purpose: translating text tied to a US
+government filing is a decision for counsel, not for a copywriter.
 
-## 10. Service Pages, About and Placeholder Content
-
-Seven service pages are served by one data-driven template at
-`src/routes/services_.$slug.tsx`, with content in `src/lib/service-pages.ts`:
-
-`/services/ai-data`, `/services/analytics`, `/services/gis-geospatial`,
-`/services/guidewire`, `/services/sap`, `/services/product-engineering`,
-`/services/offshore-nearshore`
-
-Each follows the same seven-part structure: hero, problems we solve,
-capabilities, how we work, technologies, related services, CTA.
-
-The homepage capability rows link into these pages. A capability with no
-matching slug renders as a plain row rather than a link to nowhere, so adding
-an eighth service to `i18n` without a page degrades instead of breaking.
-
-### Placeholder discipline
-
-`DRAFT_SERVICE_PAGES` in `src/lib/service-pages.ts` is currently `true`. While
-it is:
-
-- every service page and `/about` shows a loud amber draft banner,
-- every one of those pages emits `robots: noindex, nofollow`.
-
-The sample copy contains **no metrics, client names, dates or outcome numbers**,
-because those cannot be invented. `/about` goes further and marks each field
-`[PLACEHOLDER]`.
-
-`/about` is five sections: hero, Who we are, What makes us different, Global
-delivery, CTA. Leadership, Industries and the CTA closing line were removed at
-the client's request; FAQ, testimonials and a homepage trust strip were
-considered and dropped. The system.md ban on "Trusted By" and testimonial
-sections therefore stands unchanged.
-
-Set the flag to `false` only once the copy is real. Do not remove the banner
-while keeping placeholder text.
-
-### Colour rule that constrains layout
-
-Brand red at eyebrow size clears 4.5:1 on `--background` (4.71) and `--surface`
-(4.55) but **not** on `--secondary` (4.39). Red small text — eyebrows, row
-numbers, small links — is therefore only ever placed on `--background` or
-`--surface`. This is why the capability row hover uses `--surface` rather than
-the darker wash a design spec might suggest.
-
-On dark sections, red text uses `--accent` (`#F4485B`), which clears 4.5:1 on
-every dark surface including the deepest card. `--primary` stays the exact brand
-red because white sits on top of it.
+**Outstanding placeholders.** The `legal` block in `i18n.tsx` contains bracketed
+values — `[HR email]`, `[phone]`, `[retention period]`, `[privacy email]`.
+Search for `[` before launch. The postal address in `careers.ts` says Suite 108
+(from the live site) while the contact data says Suite 209; the filing decides
+which is right.

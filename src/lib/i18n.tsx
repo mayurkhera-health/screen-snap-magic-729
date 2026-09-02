@@ -139,6 +139,67 @@ const en = {
     line: "We're hiring across every team on this page.",
     cta: "View open roles",
   },
+  /**
+   * Careers page chrome and company-wide statements.
+   *
+   * The postings themselves are NOT here — they live in src/lib/careers.ts and
+   * are deliberately single-language, because their wording is tied to a US
+   * government filing and translating it is a decision for counsel, not for a
+   * copywriter. Only the surrounding page is bilingual.
+   *
+   * Bracketed values below are placeholders awaiting real details.
+   */
+  careersPage: {
+    eyebrow: "Careers",
+    heading: "Open roles",
+    sub: "Current openings at ZEDventures. Each posting lists what the role requires and how to apply.",
+    draftNotice:
+      "Draft — these postings have not been checked against the filings and the pay ranges are not final. Not for publication.",
+    openCount: "open roles",
+    noRoles: "No open roles right now. Send us your resume anyway and we will keep it on file.",
+    viewRole: "View role",
+    backToRoles: "All open roles",
+    jobCodeLabel: "Job code",
+    locationLabel: "Location",
+    typeLabel: "Type",
+    hoursLabel: "Hours",
+    payLabel: "Pay range",
+    payTbd: "To be confirmed",
+    postedLabel: "Posted",
+    sponsorshipLabel: "Visa sponsorship",
+    sponsorshipYes: "Available for this role",
+    sponsorshipNo: "Not available for this role",
+    dutiesHeading: "What the role involves",
+    requirementsHeading: "What the role requires",
+    applyHeading: "How to apply",
+    applyIntro: "Send your resume quoting the job title and job code.",
+    applyEmailLabel: "By email",
+    applyPostalLabel: "By post",
+    verbatimNote:
+      "This posting is reproduced as filed. Its wording is set by the filing and is not edited for style.",
+    legalHeading: "Before you apply",
+    legal: {
+      eeoHeading: "Equal employment opportunity",
+      eeo: "ZEDventures Inc. is an equal opportunity employer. We consider all qualified applicants for employment without regard to race, color, religion, sex, pregnancy, sexual orientation, gender identity or expression, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, marital status, military or veteran status, or any other characteristic protected by federal, state or local law.",
+      accommodationHeading: "Reasonable accommodation",
+      accommodation:
+        "If you need a reasonable accommodation to apply for a role or take part in our hiring process, write to [HR email] or call [phone]. Tell us what you need and we will work out an arrangement with you.",
+      authHeading: "Work authorization",
+      auth: "All roles require authorization to work in the United States. ZEDventures sponsors employment-based visas for some positions; each posting states whether sponsorship is available.",
+      screeningHeading: "Pre-employment checks",
+      screening:
+        "Offers are conditional on background and reference checks. Depending on the role and the client this may include employment and education verification, criminal record, credit, motor vehicle record and drug testing. We tell you before any check is run and get your written consent first.",
+      privacyHeading: "How we handle your application",
+      privacy:
+        "When you apply we collect the information in your resume and application — name, contact details, work history, education and anything else you choose to send. We use it to assess your application, to contact you about this and similar roles, and to meet our legal and immigration filing obligations. We keep applications for [retention period]. California residents can ask what we hold and request deletion at [privacy email].",
+      fraudHeading: "Recruitment fraud",
+      fraud:
+        "We never ask candidates to pay a fee at any stage, and we do not ask for bank details, Social Security numbers or payment during the interview process. Every genuine message from us comes from a zedventures.com address. If something looks wrong, write to [HR email] before you reply to it.",
+      agencyHeading: "Agencies and recruiters",
+      agency:
+        "We do not accept unsolicited resumes from agencies. Resumes sent without a signed agreement and a written request from our HR team become our property, and no fee is owed for a candidate hired from them.",
+    },
+  },
   contact: {
     eyebrow: "Get in touch",
     line: "Let's talk about your next project.",
@@ -179,6 +240,7 @@ const en = {
     caseStudies: "Case Studies",
     contact: "Contact",
     about: "About",
+    careers: "Careers",
     talk: "Let's talk",
   },
   about: {
@@ -351,6 +413,58 @@ const fr: Copy = {
     line: "Nous recrutons dans toutes les équipes présentées sur cette page.",
     cta: "Voir les postes ouverts",
   },
+  careersPage: {
+    eyebrow: "Carrières",
+    heading: "Postes ouverts",
+    sub: "Les postes actuellement ouverts chez ZEDventures. Chaque annonce indique les exigences du poste et la façon de postuler.",
+    draftNotice:
+      "Brouillon — ces annonces n'ont pas été vérifiées par rapport aux dépôts officiels et les fourchettes de salaire ne sont pas définitives. Ne pas publier.",
+    openCount: "postes ouverts",
+    noRoles:
+      "Aucun poste ouvert pour le moment. Envoyez-nous tout de même votre CV, nous le conserverons.",
+    viewRole: "Voir le poste",
+    backToRoles: "Tous les postes ouverts",
+    jobCodeLabel: "Code du poste",
+    locationLabel: "Lieu",
+    typeLabel: "Type",
+    hoursLabel: "Heures",
+    payLabel: "Fourchette de salaire",
+    payTbd: "À confirmer",
+    postedLabel: "Publié le",
+    sponsorshipLabel: "Parrainage de visa",
+    sponsorshipYes: "Disponible pour ce poste",
+    sponsorshipNo: "Non disponible pour ce poste",
+    dutiesHeading: "En quoi consiste le poste",
+    requirementsHeading: "Ce que le poste exige",
+    applyHeading: "Comment postuler",
+    applyIntro: "Envoyez votre CV en indiquant l'intitulé et le code du poste.",
+    applyEmailLabel: "Par courriel",
+    applyPostalLabel: "Par courrier",
+    verbatimNote:
+      "Cette annonce est reproduite telle qu'elle a été déposée. Sa formulation est fixée par le dépôt officiel et n'est pas retouchée.",
+    legalHeading: "Avant de postuler",
+    legal: {
+      eeoHeading: "Égalité des chances en matière d'emploi",
+      eeo: "ZEDventures Inc. souscrit au principe de l'égalité des chances en matière d'emploi. Nous étudions toutes les candidatures qualifiées sans distinction de race, couleur, religion, sexe, grossesse, orientation sexuelle, identité ou expression de genre, origine nationale, ascendance, âge, handicap physique ou mental, état de santé, information génétique, situation de famille, statut militaire ou d'ancien combattant, ni aucune autre caractéristique protégée par la loi fédérale, d'État ou locale.",
+      accommodationHeading: "Aménagements raisonnables",
+      accommodation:
+        "Si vous avez besoin d'un aménagement raisonnable pour postuler ou participer à notre processus de recrutement, écrivez à [courriel RH] ou appelez le [téléphone]. Dites-nous ce dont vous avez besoin et nous trouverons une solution avec vous.",
+      authHeading: "Autorisation de travail",
+      auth: "Tous les postes exigent une autorisation de travail aux États-Unis. ZEDventures parraine des visas de travail pour certains postes ; chaque annonce précise si le parrainage est disponible.",
+      screeningHeading: "Vérifications préalables à l'embauche",
+      screening:
+        "Toute offre est conditionnée à des vérifications d'antécédents et de références. Selon le poste et le client, cela peut inclure la vérification des emplois et diplômes, du casier judiciaire, du crédit, du dossier de conduite et un test de dépistage. Nous vous prévenons avant toute vérification et recueillons d'abord votre consentement écrit.",
+      privacyHeading: "Ce que nous faisons de votre candidature",
+      privacy:
+        "Lorsque vous postulez, nous recueillons les informations de votre CV et de votre candidature — nom, coordonnées, parcours professionnel, formation et tout autre élément que vous choisissez de nous transmettre. Nous les utilisons pour évaluer votre candidature, vous contacter au sujet de ce poste et de postes similaires, et respecter nos obligations légales et de dépôt en matière d'immigration. Nous conservons les candidatures pendant [durée de conservation]. Les résidents de Californie peuvent demander quelles données nous détenons et en demander la suppression à [courriel confidentialité].",
+      fraudHeading: "Fraude au recrutement",
+      fraud:
+        "Nous ne demandons jamais de frais aux candidats, à aucune étape, et nous ne demandons ni coordonnées bancaires, ni numéro de sécurité sociale, ni paiement pendant le processus d'entretien. Tout message authentique de notre part provient d'une adresse zedventures.com. Si quelque chose vous semble anormal, écrivez à [courriel RH] avant de répondre.",
+      agencyHeading: "Agences et recruteurs",
+      agency:
+        "Nous n'acceptons pas les CV non sollicités provenant d'agences. Les CV envoyés sans accord signé et sans demande écrite de notre équipe RH deviennent notre propriété, et aucun honoraire n'est dû pour un candidat recruté à partir de ceux-ci.",
+    },
+  },
   contact: {
     eyebrow: "Contactez-nous",
     line: "Parlons de votre prochain projet.",
@@ -391,6 +505,7 @@ const fr: Copy = {
     caseStudies: "Études de cas",
     contact: "Contact",
     about: "À propos",
+    careers: "Carrières",
     talk: "Parlons-en",
   },
   about: {
