@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "AI & Data, Analytics, Product Engineering, and Managed Services & Staffing for enterprise teams.",
+          "AI & Data, Analytics, Product Engineering, and Offshore Delivery for enterprise teams.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
