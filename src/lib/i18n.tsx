@@ -62,6 +62,14 @@ const en = {
         desc: "Sales reps were losing hours to manual pre-meeting research across CRM records, transaction history, property data, and neighborhood demographics. We built an event-driven AI assistant that triggers the moment an appointment is scheduled, synthesizing disconnected data into a structured intelligence profile. Azure OpenAI generates contextual recommendations, RAG injects live CRM and market data, and a vector index surfaces relevant neighborhood reports — giving reps a personalized brief in under five minutes instead of an hour.",
         stack: ["Azure OpenAI", "RAG", "Python API", "Vector search", "Event-driven architecture"],
       },
+      {
+        tag: "Case study 03",
+        date: "2026",
+        client: "Global relocation enterprise",
+        title: "Unified analytics for multi-country operations",
+        desc: "A global relocation enterprise had no central visibility into multi-country operations. Regional data silos forced teams to compile reports manually, slowing decision-making and hiding costs, client feedback, and performance gaps. We built a unified analytics platform on SQL Azure, Azure Data Lake, and Microsoft SQL Server, with Azure Data Factory and Logic Apps integrating data from regional systems. Power BI and Birst Connect deliver real-time global dashboards, supported by C# .NET and WPF custom applications and Azure DevOps CI/CD. The result: 100% real-time visibility into moving processes and customer touchpoints, standardized reporting for account profitability, and the ability to isolate growth opportunities and weak performance areas instantly.",
+        stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
+      },
     ],
   },
   careers: {
