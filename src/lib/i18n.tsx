@@ -7,7 +7,7 @@ const en = {
     eyebrow: "Zedventures — Technology Partner",
     headline: "Engineering intelligence into every enterprise",
     subhead:
-      "We design, build, and run AI, analytics, geospatial, and core insurance platforms that hold up in production.",
+      "We design, build, and run AI, analytics, and geospatial systems that hold up in production.",
   },
   services: {
     eyebrow: "What we do",
@@ -86,7 +86,7 @@ const fr: Copy = {
     eyebrow: "Zedventures — Partenaire technologique",
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
-      "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique, de géomatique et d'assurance prêtes pour la production.",
+      "Nous concevons, développons et exploitons des systèmes d'IA, d'analytique et de géomatique prêts pour la production.",
   },
   services: {
     eyebrow: "Ce que nous faisons",

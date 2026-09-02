@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Zedventures designs, builds, and runs AI, analytics, geospatial, and insurance platforms that hold up in production.",
+          "Zedventures designs, builds, and runs AI, analytics, and geospatial systems that hold up in production.",
       },
       { property: "og:title", content: "Zedventures — Technology Partner" },
       {
