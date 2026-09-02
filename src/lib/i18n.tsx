@@ -141,11 +141,11 @@ const fr: Copy = {
     items: [
       {
         tag: "Étude de cas 01",
-        date: "",
-        client: "",
+        date: "2026",
+        client: "Entreprise de logiciels",
         title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
-        desc: "Une expérience d'aide conversationnelle permettant aux utilisateurs de poser des questions sur le produit depuis le web, le mobile ou l'interface du produit. Une API d'orchestration Python gère l'authentification, l'état des conversations, la construction des invites et les garde-fous, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation approuvée du client — et non dans les connaissances générales du modèle.",
-        stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM"],
+        desc: "Les utilisateurs du produit peinaient à trouver des réponses rapides et précises dans des bases de connaissances dispersées, ce qui générait des tickets de support répétitifs, des résolutions lentes et le risque de désinformation par une IA non ancrée. Nous avons conçu une aide conversationnelle assistée par IA, omnicanale, intégrée aux interfaces web, mobile et in-product. Une API d'orchestration Python gère l'authentification, l'historique des conversations, l'ingénierie dynamique des invites et les garde-fous de validation, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation vérifiée de l'entreprise. Résultat : pratiquement aucune hallucination, des réponses en moins d'une seconde et une déflexion projetée de 70 % des demandes de support de niveau 1 routinières.",
+        stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM", "Interface omnicanale"],
       },
       {
         tag: "Étude de cas 02",
