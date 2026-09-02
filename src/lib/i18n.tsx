@@ -186,7 +186,7 @@ const en = {
       eeo: "ZEDventures Inc. is an equal opportunity employer. We consider all qualified applicants for employment without regard to race, color, religion, sex, pregnancy, sexual orientation, gender identity or expression, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, marital status, military or veteran status, or any other characteristic protected by federal, state or local law.",
       accommodationHeading: "Reasonable accommodation",
       accommodation:
-        "If you need a reasonable accommodation to apply for a role or to take part in our hiring process — including a way to send us your application other than by post — write to [HR email] or call [phone]. Tell us what you need and we will work out an arrangement with you.",
+        "If you need a reasonable accommodation to apply for a role or to take part in our hiring process — including a way to send us your application other than by post — write to hr@zedventures.com. Tell us what you need and we will work out an arrangement with you.",
       authHeading: "Work authorization",
       auth: "All roles require authorization to work in the United States. ZEDventures sponsors employment-based visas for some positions; each posting states whether sponsorship is available.",
       screeningHeading: "Pre-employment checks",
@@ -448,7 +448,7 @@ const fr: Copy = {
       eeo: "ZEDventures Inc. souscrit au principe de l'égalité des chances en matière d'emploi. Nous étudions toutes les candidatures qualifiées sans distinction de race, couleur, religion, sexe, grossesse, orientation sexuelle, identité ou expression de genre, origine nationale, ascendance, âge, handicap physique ou mental, état de santé, information génétique, situation de famille, statut militaire ou d'ancien combattant, ni aucune autre caractéristique protégée par la loi fédérale, d'État ou locale.",
       accommodationHeading: "Aménagements raisonnables",
       accommodation:
-        "Si vous avez besoin d'un aménagement raisonnable pour postuler ou participer à notre processus de recrutement — y compris un autre moyen que le courrier postal pour nous envoyer votre candidature — écrivez à [courriel RH] ou appelez le [téléphone]. Dites-nous ce dont vous avez besoin et nous trouverons une solution avec vous.",
+        "Si vous avez besoin d'un aménagement raisonnable pour postuler ou participer à notre processus de recrutement — y compris un autre moyen que le courrier postal pour nous envoyer votre candidature — écrivez à hr@zedventures.com. Dites-nous ce dont vous avez besoin et nous trouverons une solution avec vous.",
       authHeading: "Autorisation de travail",
       auth: "Tous les postes exigent une autorisation de travail aux États-Unis. ZEDventures parraine des visas de travail pour certains postes ; chaque annonce précise si le parrainage est disponible.",
       screeningHeading: "Vérifications préalables à l'embauche",
