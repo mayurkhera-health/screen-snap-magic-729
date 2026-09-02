@@ -141,9 +141,19 @@ const fr: Copy = {
     items: [
       {
         tag: "Étude de cas 01",
+        date: "",
+        client: "",
         title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
         desc: "Une expérience d'aide conversationnelle permettant aux utilisateurs de poser des questions sur le produit depuis le web, le mobile ou l'interface du produit. Une API d'orchestration Python gère l'authentification, l'état des conversations, la construction des invites et les garde-fous, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation approuvée du client — et non dans les connaissances générales du modèle.",
         stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM"],
+      },
+      {
+        tag: "Étude de cas 02",
+        date: "2026",
+        client: "Entreprise mondiale de services immobiliers",
+        title: "Intelligence commerciale pilotée par événements pour les services immobiliers",
+        desc: "Les représentants passaient des heures à rechercher manuellement des informations avant chaque rendez-vous, en naviguant entre le CRM, l'historique des transactions, les données de propriétés et les démographies de quartier. Nous avons conçu un assistant IA piloté par événements qui s'active dès qu'un rendez-vous est planifié, synthétisant des données dispersées en un profil d'intelligence structuré. Azure OpenAI génère des recommandations contextuelles, la génération augmentée par récupération injecte des données de marché et du CRM en temps réel, et un index vectoriel fait remonter les rapports de quartier pertinents — fournissant aux représentants un briefing personnalisé en moins de cinq minutes au lieu d'une heure.",
+        stack: ["Azure OpenAI", "RAG", "API Python", "Recherche vectorielle", "Architecture événementielle"],
       },
     ],
   },
