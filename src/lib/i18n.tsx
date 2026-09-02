@@ -51,7 +51,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, and engineering teams.",
+    line: "We're growing our AI, analytics, GIS, Guidewire, and engineering teams.",
     cta: "View open roles",
   },
   contact: {
