@@ -38,8 +38,8 @@ const en = {
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
       {
-        title: "Managed Services",
-        desc: "24/7 monitoring, support, and optimization so your platforms stay fast, secure, and available.",
+        title: "Managed Services & Staffing",
+        desc: "Long-run support, monitoring, and optimization — plus flexible technical staffing to scale delivery teams when you need it.",
       },
     ],
   },
@@ -57,7 +57,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, and engineering teams.",
+    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and staffing teams.",
     cta: "View open roles",
   },
   contact: {
@@ -122,8 +122,8 @@ const fr: Copy = {
         desc: "Livraison logicielle complète — architecture, développement infonuagique natif et assurance qualité — pour des produits livrés à temps.",
       },
       {
-        title: "Services gérés",
-        desc: "Surveillance, soutien et optimisation 24 h/24, 7 j/7 pour que vos plateformes restent rapides, sécurisées et disponibles.",
+        title: "Services gérés et placement",
+        desc: "Soutien, surveillance et optimisation à long terme — plus un staffing technique flexible pour renforcer vos équipes de livraison au bon moment.",
       },
     ],
   },
@@ -141,7 +141,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire et d'ingénierie.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de placement.",
     cta: "Voir les postes ouverts",
   },
   contact: {

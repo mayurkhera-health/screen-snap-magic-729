@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Engineering intelligence into every enterprise. AI & Data, Analytics, GIS, Guidewire, Product Engineering, Managed Services.",
+          "Engineering intelligence into every enterprise. AI & Data, Analytics, GIS, Guidewire, Product Engineering, Managed Services & Staffing.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
