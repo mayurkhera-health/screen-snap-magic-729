@@ -15,7 +15,7 @@ export function Hero() {
             aria-hidden="true"
             className="absolute -inset-6 -z-10 rounded-3xl bg-[var(--color-secondary)]/40 sm:-inset-8"
           />
-          <h1 className="font-display max-w-5xl text-5xl leading-[1.02] sm:text-7xl lg:text-8xl">
+          <h1 className="ink-type font-display max-w-5xl text-5xl leading-[1.02] sm:text-7xl lg:text-8xl">
             {t.hero.headline}
           </h1>
         </div>

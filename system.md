@@ -173,7 +173,8 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 - Capability deck downloads or "Book a Consultation" CTAs.
 - Named customer references; use industry descriptors (e.g., "Global consumer-electronics company").
 - Recoloring the logo or placing it on dark backgrounds.
-- Heavy imagery, gradients, or decorative illustrations.
+- Heavy imagery or decorative illustrations.
+- Background gradients, glows, particle fields or animated backdrops. The one sanctioned motion on the site is the hero headline "ink" treatment (`.ink-type`): a narrow band of brand red travelling through the letterforms on a paper-white, otherwise static page. Motion belongs in the type, not behind it.
 
 ### Tone
 

@@ -118,4 +118,55 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
+
+  /* Hero headline treatment ("ink"). The page stays completely still; the only
+     motion on the screen is a narrow diagonal band of colour travelling through
+     the letterforms. Colours come from the tokens, so the brand red stays exact.
+     The band is deliberately narrow and the cycle deliberately long — for most
+     of the loop the headline is plain ink, which is the point: a periodic event,
+     not a running animation.
+     Everything sits inside @supports because without background-clip:text the
+     gradient would paint a filled box behind the words instead of inside them. */
+  .ink-type {
+    color: var(--color-foreground);
+  }
+
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .ink-type {
+      background-image: linear-gradient(
+        100deg,
+        var(--color-foreground) 0%,
+        var(--color-foreground) 43%,
+        var(--color-primary) 47.5%,
+        oklch(0.5 0.2 22.3) 50%,
+        var(--color-primary) 52.5%,
+        var(--color-foreground) 57%,
+        var(--color-foreground) 100%
+      );
+      background-size: 280% 100%;
+      background-position: 100% 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: ink-slide 13s ease-in-out infinite;
+    }
+  }
+
+  @keyframes ink-slide {
+    0%   { background-position: 100% 0; }
+    50%  { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+  }
+
+  /* Purely decorative, so it is dropped rather than slowed — the headline falls
+     back to solid ink and loses nothing. */
+  @media (prefers-reduced-motion: reduce) {
+    .ink-type {
+      animation: none;
+      background-image: none;
+      color: var(--color-foreground);
+      -webkit-text-fill-color: var(--color-foreground);
+    }
+  }
 }
