@@ -125,10 +125,17 @@ const fr: Copy = {
       },
     ],
   },
-  deck: {
-    eyebrow: "Présentation",
-    line: "Découvrez toutes nos capacités — services, modèle de livraison et options d'engagement.",
-    cta: "Télécharger la présentation",
+  caseStudies: {
+    eyebrow: "L'IA en production",
+    heading: "Ce que nous développons en ce moment",
+    items: [
+      {
+        tag: "Étude de cas 01",
+        title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
+        desc: "Une expérience d'aide conversationnelle permettant aux utilisateurs de poser des questions sur le produit depuis le web, le mobile ou l'interface du produit. Une API d'orchestration Python gère l'authentification, l'état des conversations, la construction des invites et les garde-fous, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation approuvée du client — et non dans les connaissances générales du modèle.",
+        stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM"],
+      },
+    ],
   },
   careers: {
     eyebrow: "Rejoignez-nous",

@@ -3,7 +3,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
-import { DeckStrip } from "@/components/deck-strip";
+import { CaseStudies } from "@/components/case-studies";
 import { Careers } from "@/components/careers";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
@@ -16,13 +16,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Zedventures designs, builds, and runs AI, analytics, and digital platforms that hold up in production. Download our capability deck.",
+          "Zedventures designs, builds, and runs AI, analytics, geospatial, and insurance platforms that hold up in production.",
       },
       { property: "og:title", content: "Zedventures — Technology Partner" },
       {
         property: "og:description",
         content:
-          "Engineering intelligence into every enterprise. AI & Data, Analytics, Product Engineering, Managed Services.",
+          "Engineering intelligence into every enterprise. AI & Data, Analytics, GIS, Guidewire, Product Engineering, Managed Services.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ function Index() {
       <main>
         <Hero />
         <Services />
-        <DeckStrip />
+        <CaseStudies />
         <Careers />
         <Contact />
       </main>
