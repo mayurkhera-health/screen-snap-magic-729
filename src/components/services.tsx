@@ -5,12 +5,14 @@ export function Services() {
 
   return (
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <p className="eyebrow text-accent">{t.services.eyebrow}</p>
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+        <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+          {t.services.eyebrow}
+        </p>
         <h2 id="services-heading" className="sr-only">
           {t.services.eyebrow}
         </h2>
-        <ul className="mt-12">
+        <ul className="mt-10">
           {t.services.items.map((item, i) => (
             <li key={item.title} className="group border-t border-border py-8 last:border-b sm:py-10">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10">

@@ -73,13 +73,15 @@ export function Contact() {
 
   return (
     <section id="contact" className="border-t border-border">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="eyebrow text-accent">{t.contact.eyebrow}</p>
-          <h2 className="font-display mt-6 text-4xl leading-tight sm:text-5xl">
+          <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+            {t.contact.eyebrow}
+          </p>
+          <h2 className="font-display mt-3 text-4xl leading-tight sm:text-5xl">
             {t.contact.line}
           </h2>
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
             {t.contact.sub}
           </p>
         </div>

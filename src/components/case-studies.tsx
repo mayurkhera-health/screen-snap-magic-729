@@ -5,12 +5,14 @@ export function CaseStudies() {
 
   return (
     <section aria-label={t.caseStudies.eyebrow} className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <p className="eyebrow text-accent">{t.caseStudies.eyebrow}</p>
-        <h2 className="font-display mt-6 max-w-3xl text-3xl leading-tight sm:text-5xl">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+          {t.caseStudies.eyebrow}
+        </p>
+        <h2 className="font-display mt-3 max-w-3xl text-3xl leading-tight sm:text-5xl">
           {t.caseStudies.heading}
         </h2>
-        <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
+        <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2">
           {t.caseStudies.items.map((cs) => (
             <article key={cs.title} className="bg-background p-8 sm:p-10">
               <p className="eyebrow text-muted-foreground">{cs.tag}</p>
