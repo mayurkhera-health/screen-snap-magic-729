@@ -91,7 +91,7 @@ function ContactPageBody() {
                 </div>
                 <p className="font-display mt-4 text-2xl">{office.city}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{office.region}</p>
-                <p className="mt-4 text-xs text-muted-foreground/70">{p.addressSoon}</p>
+                <p className="mt-4 text-xs text-muted-foreground/70">{office.address}</p>
               </div>
             ))}
           </div>
