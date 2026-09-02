@@ -65,6 +65,8 @@ function ServicesPageBody() {
         </div>
       </section>
 
+      <CapabilityWheel />
+
       {s.items.map((item, i) => {
         const isDark = i % 2 === 0;
         return (
