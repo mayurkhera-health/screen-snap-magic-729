@@ -161,16 +161,23 @@
 
   /* ---- layout rhythm (spec S10/S11/S12) ----
      One class for section padding and one for the page container, so the scale
-     stops being re-typed per section and drifting. */
+     stops being re-typed per section and drifting.
+
+     The padding is HALF the intended gap, because sections sit edge to edge:
+     each seam gets a bottom padding and a top padding, and the two add up.
+     Setting the full 96-128px per side produced 256-309px seams — a screenful
+     of nothing between the hero and Capabilities. Half per side lands the seam
+     on the intended 64 / 96 / 128, and leaves half that above the first section
+     and below the last, which is what you want next to the header and footer. */
   .section-y {
-    padding-top: 4rem;    /* 64 */
-    padding-bottom: 4rem;
+    padding-top: 2rem;    /* 32 -> 64 seam */
+    padding-bottom: 2rem;
   }
   @media (min-width: 768px) {
-    .section-y { padding-top: 6rem; padding-bottom: 6rem; }   /* 96 */
+    .section-y { padding-top: 3rem; padding-bottom: 3rem; }   /* 48 -> 96 seam */
   }
   @media (min-width: 1280px) {
-    .section-y { padding-top: 8rem; padding-bottom: 8rem; }   /* 128 */
+    .section-y { padding-top: 4rem; padding-bottom: 4rem; }   /* 64 -> 128 seam */
   }
 
   .container-page {
