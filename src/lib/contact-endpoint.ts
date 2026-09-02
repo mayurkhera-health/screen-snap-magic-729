@@ -1,32 +1,19 @@
 /**
- * Where the contact form posts.
+ * Contact form transport.
  *
- * ---------------------------------------------------------------------------
- * TO TURN THE FORM ON: put a URL here. That is the whole change.
+ * The send happens on our own server — see src/lib/contact-server.ts, which
+ * holds the credential and does the work. A browser cannot send email without
+ * exposing a key, and this site is a real Node server rather than a static
+ * bundle, so there is no need for a third-party form service.
  *
- *   export const CONTACT_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
+ * Order of attempts:
+ *   1. CONTACT_ENDPOINT below, if one is set — an optional override for anyone
+ *      who would rather point the form at Formspree, Web3Forms or Basin.
+ *   2. our own server function.
+ *   3. the visitor's own mail client, as a last resort so the button is never
+ *      dead. A stopgap, not the destination.
  *
- * Anything that accepts a JSON POST works — Formspree, Web3Forms, Basin, a
- * Netlify or Vercel function, or your own handler on Fly. The form sends:
- *
- *   { name, email, company, message, _subject, locale }
- *
- * and treats any 2xx as delivered.
- *
- * ---------------------------------------------------------------------------
- * WHILE THIS IS NULL the form falls back to opening the visitor's own mail
- * client with the message pre-filled. That is where the site is today, and it
- * is a weak place to be for the only conversion path on a B2B site:
- *
- *   - nothing is recorded on your side; if the visitor never presses send in
- *     their mail app, the enquiry simply never existed and you cannot know
- *   - it does nothing at all for anyone reading mail in a browser tab without
- *     a registered mailto handler, which is most people on a work laptop
- *   - the visitor watches an unrelated application open on top of your site,
- *     which reads as a bug
- *
- * The fallback is kept rather than removed so the form is never a dead button,
- * but it is a stopgap, not the destination.
+ * Leave CONTACT_ENDPOINT null to use our server.
  */
 export const CONTACT_ENDPOINT: string | null = null;
 
@@ -44,30 +31,47 @@ export type ContactPayload = {
   locale: string;
 };
 
-export type SendResult = { ok: true } | { ok: false; reason: "network" | "rejected" };
+export type SendResult =
+  | { ok: true }
+  /** No delivery path configured yet — the form falls back to mailto. */
+  | { ok: false; reason: "not-configured" }
+  /** A path is configured but the send failed — show the failure panel. */
+  | { ok: false; reason: "failed" };
 
 /**
- * Posts the enquiry. Never throws — the form needs a result it can render, not
- * an exception. A 12-second timeout stops the button sitting in "Sending…"
- * forever when the endpoint is unreachable.
+ * Sends the enquiry. Never throws — the form needs a result it can render, not
+ * an exception.
  */
 export async function sendEnquiry(payload: ContactPayload): Promise<SendResult> {
-  if (!CONTACT_ENDPOINT) return { ok: false, reason: "network" };
+  // 1. Explicit third-party endpoint, if the site has been pointed at one.
+  if (CONTACT_ENDPOINT) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12_000);
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+      return res.ok ? { ok: true } : { ok: false, reason: "failed" };
+    } catch {
+      return { ok: false, reason: "failed" };
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 12_000);
+  // 2. Our own server. Imported lazily so the RPC stub is only pulled in when a
+  //    visitor actually submits, not on every page that renders the form.
   try {
-    const res = await fetch(CONTACT_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
-    });
-    return res.ok ? { ok: true } : { ok: false, reason: "rejected" };
+    const { submitEnquiry } = await import("@/lib/contact-server");
+    const result = await submitEnquiry({ data: payload });
+    if (result.status === "sent") return { ok: true };
+    if (result.status === "not-configured") return { ok: false, reason: "not-configured" };
+    return { ok: false, reason: "failed" };
   } catch {
-    return { ok: false, reason: "network" };
-  } finally {
-    clearTimeout(timeout);
+    return { ok: false, reason: "failed" };
   }
 }
 

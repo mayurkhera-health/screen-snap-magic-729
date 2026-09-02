@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n";
 import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
-import {
-  CONTACT_ENDPOINT,
-  mailtoFor,
-  sendEnquiry,
-  type ContactPayload,
-} from "@/lib/contact-endpoint";
+import { mailtoFor, sendEnquiry, type ContactPayload } from "@/lib/contact-endpoint";
 
 type FieldId = "name" | "email" | "company" | "message";
 /** Error *codes*, not translated strings — so switching language re-translates
@@ -68,17 +63,25 @@ export function ContactForm() {
 
     const body = payload();
 
-    // No endpoint configured yet: hand the message to the visitor's own mail
-    // client, which is where this site is today. See src/lib/contact-endpoint.ts.
-    if (!CONTACT_ENDPOINT) {
+    setStatus("sending");
+    const result = await sendEnquiry(body);
+
+    if (result.ok) {
+      setStatus("sent");
+      return;
+    }
+
+    // Nothing is wired up yet — no third-party endpoint and no mail credential
+    // on the server. Rather than showing a failure for a site that was never
+    // configured, hand the message to the visitor's own mail client. See the
+    // note in src/lib/contact-server.ts for how to switch this off for good.
+    if (result.reason === "not-configured") {
       window.location.href = mailtoFor(body);
       setStatus("handedOff");
       return;
     }
 
-    setStatus("sending");
-    const result = await sendEnquiry(body);
-    setStatus(result.ok ? "sent" : "failed");
+    setStatus("failed");
   };
 
   const field = (id: FieldId, label: string, type: "text" | "email" | "textarea") => {
