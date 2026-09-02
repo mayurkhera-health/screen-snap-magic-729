@@ -1,4 +1,5 @@
 import { useLanguage } from "@/lib/i18n";
+import { SectionHeader } from "@/components/section-header";
 import { ArrowUpRight } from "lucide-react";
 
 export function Careers() {

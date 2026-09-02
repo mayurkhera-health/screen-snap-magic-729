@@ -1,4 +1,5 @@
 import { useLanguage } from "@/lib/i18n";
+import { SectionHeader } from "@/components/section-header";
 
 export function CaseStudies() {
   const { t } = useLanguage();

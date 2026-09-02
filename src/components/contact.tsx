@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n";
+import { SectionHeader } from "@/components/section-header";
 import { CheckCircle2 } from "lucide-react";
 
 type Errors = Partial<Record<"name" | "email" | "company" | "message", string>>;
