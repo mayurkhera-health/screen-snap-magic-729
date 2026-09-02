@@ -129,7 +129,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique et d'ingénierie.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de Guidewire et d'ingénierie.",
     cta: "Voir les postes ouverts",
   },
   contact: {
