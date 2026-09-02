@@ -165,7 +165,7 @@ const en = {
       officesEyebrow: "Our offices",
       offices: [
         { city: "San Jose", region: "California, USA", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
-        { city: "Dallas", region: "Irving, Texas, USA", address: "8629 N MacArthur Blvd, Apt 2034, Irving, TX 75063" },
+        { city: "Dallas", region: "Irving, Texas, USA", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
         { city: "Hyderabad", region: "India", address: "Full address available on request" },
       ],
     },
@@ -382,7 +382,7 @@ const fr: Copy = {
       officesEyebrow: "Nos bureaux",
       offices: [
         { city: "San Jose", region: "Californie, États-Unis", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
-        { city: "Dallas", region: "Irving, Texas, États-Unis", address: "8629 N MacArthur Blvd, Apt 2034, Irving, TX 75063" },
+        { city: "Dallas", region: "Irving, Texas, États-Unis", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
         { city: "Hyderabad", region: "Inde", address: "Adresse complète disponible sur demande" },
       ],
     },
