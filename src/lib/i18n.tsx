@@ -27,6 +27,14 @@ const en = {
         desc: "BI dashboards, data warehousing, and predictive analytics that turn scattered data into decisions leadership trusts.",
       },
       {
+        title: "GIS & Geospatial",
+        desc: "Spatial data, mapping, and location analytics — exposure mapping, imagery-based risk assessment, and geospatial pipelines.",
+      },
+      {
+        title: "Guidewire",
+        desc: "End-to-end work across PolicyCenter, BillingCenter, and ClaimCenter — implementation, configuration, upgrades, and cloud migration.",
+      },
+      {
         title: "Product Engineering",
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
