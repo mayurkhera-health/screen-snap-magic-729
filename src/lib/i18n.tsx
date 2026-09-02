@@ -124,6 +124,10 @@ const en = {
     tagline: "Technology, engineered for outcomes.",
     rights: "© 2026 Zedventures. All rights reserved.",
   },
+  nav: {
+    services: "Services",
+    contact: "Contact",
+  },
   a11y: {
     switchTo: "Passer au français",
     logoAlt: "ZEDVentures logo",
