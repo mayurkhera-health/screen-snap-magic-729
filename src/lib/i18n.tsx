@@ -145,7 +145,7 @@ const fr: Copy = {
   services: {
     eyebrow: "Ce que nous faisons",
     heading: "Expertises",
-    sub: "Des systèmes d'ingénierie, de données et de géomatique conçus pour fonctionner."
+    sub: "Des systèmes d'ingénierie, de données et de géomatique conçus pour fonctionner.",
     items: [
       {
         title: "IA et données",
