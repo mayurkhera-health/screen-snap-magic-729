@@ -32,7 +32,7 @@ function ContactPage() {
   return (
     <LanguageProvider>
       <Header />
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         <ContactPageBody />
       </main>
       <Footer />
@@ -47,7 +47,7 @@ function ContactPageBody() {
   return (
     <>
       <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <div className="container-page section-y">
           <SectionHeader align="left" eyebrow={p.eyebrow} heading={p.heading} sub={p.sub} />
 
           <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
@@ -80,7 +80,7 @@ function ContactPageBody() {
       </section>
 
       <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <div className="container-page section-y">
           <p className="text-xs font-bold uppercase tracking-widest text-accent">{p.officesEyebrow}</p>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {p.offices.map((office, i) => (
@@ -99,7 +99,7 @@ function ContactPageBody() {
       </section>
 
       <section className="section-dark">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-2 lg:gap-12">
+        <div className="container-page section-y grid gap-10 lg:grid-cols-2 lg:gap-16">
           <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.contact.line} sub={t.contact.sub} />
           <ContactForm />
         </div>

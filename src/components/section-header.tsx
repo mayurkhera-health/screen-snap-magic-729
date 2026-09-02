@@ -20,12 +20,12 @@ export function SectionHeader({
       {heading && (
         <h2
           id={headingId}
-          className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl"
+          className="font-display text-[2rem] leading-[1.08] tracking-[-0.02em] sm:text-[2.375rem] lg:text-[3.125rem] lg:leading-[1.05]"
         >
           {heading}
         </h2>
       )}
-      {sub && <p className="text-base leading-relaxed text-muted-foreground">{sub}</p>}
+      {sub && <p className="text-[1.0625rem] leading-[1.6] text-muted-foreground">{sub}</p>}
     </div>
   );
 }

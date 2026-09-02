@@ -7,7 +7,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="section-dark border-t border-border">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-2 lg:gap-12">
+      <div className="container-page section-y grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.contact.line} sub={t.contact.sub} />
         </div>

@@ -6,7 +6,11 @@ const en = {
   hero: {
     headline: "Engineering intelligence into every enterprise",
     subhead:
-      "We design, build, and run AI, analytics, and geospatial systems that hold up in production.",
+      "We design, modernize, and operate production-grade AI, data, analytics, geospatial, SAP, Guidewire, and digital platforms for enterprises that can't afford technology failure.",
+    ctaPrimary: "Talk to an expert",
+    ctaSecondary: "Explore our work",
+    trustLine:
+      "Enterprise engineering · AI & Data · Cloud · SAP · Guidewire · Global delivery",
   },
   services: {
     eyebrow: "What we do",
@@ -160,6 +164,7 @@ const en = {
     services: "Services",
     caseStudies: "Case Studies",
     contact: "Contact",
+    talk: "Let's talk",
   },
   a11y: {
     switchTo: "Passer au français",
@@ -175,7 +180,11 @@ const fr: Copy = {
   hero: {
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
-      "Nous concevons, développons et exploitons des systèmes d'IA, d'analytique et de géomatique prêts pour la production.",
+      "Nous concevons, modernisons et exploitons des plateformes d'IA, de données, d'analytique, de géomatique, SAP, Guidewire et numériques de qualité production, pour des entreprises qui ne peuvent se permettre aucune défaillance technologique.",
+    ctaPrimary: "Parler à un expert",
+    ctaSecondary: "Découvrir nos réalisations",
+    trustLine:
+      "Ingénierie d'entreprise · IA et données · Infonuagique · SAP · Guidewire · Livraison mondiale",
   },
   services: {
     eyebrow: "Ce que nous faisons",
@@ -329,6 +338,7 @@ const fr: Copy = {
     services: "Expertises",
     caseStudies: "Études de cas",
     contact: "Contact",
+    talk: "Parlons-en",
   },
   a11y: {
     switchTo: "Switch to English",

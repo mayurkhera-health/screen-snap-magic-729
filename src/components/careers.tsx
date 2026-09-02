@@ -7,7 +7,7 @@ export function Careers() {
 
   return (
     <section id="careers" className="section-dark border-b border-border">
-      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
+      <div className="container-page section-y">
         <div className="flex justify-center">
           <SectionHeader eyebrow={t.careers.eyebrow} heading={t.careers.line} />
         </div>

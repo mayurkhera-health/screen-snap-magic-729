@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="section-dark border-t border-border pb-24 sm:pb-0">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="container-page flex flex-col gap-8 py-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
           {/* The logo is never recoloured and only sits on a light ground,
               so it keeps its own white chip inside the dark footer. */}
