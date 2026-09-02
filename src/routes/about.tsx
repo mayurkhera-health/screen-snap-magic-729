@@ -40,7 +40,7 @@ function AboutPage() {
       <Header />
       <main className="pt-16 sm:pt-20">
         {DRAFT_SERVICE_PAGES && (
-          <DraftBanner note="Every line on this page is a marked placeholder. The leadership section in particular must not be published until the named people have approved their own entries. This page is set to noindex." />
+          <DraftBanner note="The positioning line, Who we are, and the five What makes us different entries are still sample text. This page is set to noindex until they are replaced." />
         )}
         <AboutBody />
       </main>
@@ -95,14 +95,6 @@ function AboutBody() {
         </div>
       </section>
 
-      <section className="border-b border-border">
-        <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={a.leadershipEyebrow} heading={a.leadershipHeading} />
-          <p className="mt-8 max-w-[46rem] text-[1.0625rem] leading-[1.65] text-muted-foreground">
-            {a.leadershipBody}
-          </p>
-        </div>
-      </section>
 
 
       <section className="border-b border-border">
@@ -134,7 +126,7 @@ function AboutBody() {
 
       <section className="section-dark">
         <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={a.ctaHeading} sub={a.ctaSub} />
+          <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={a.ctaHeading} />
           <div className="mt-8">
             <Link to="/contact" className="btn btn-primary">
               {t.nav.talk}

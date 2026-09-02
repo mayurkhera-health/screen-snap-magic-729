@@ -255,8 +255,13 @@ it is:
 
 The sample copy contains **no metrics, client names, dates or outcome numbers**,
 because those cannot be invented. `/about` goes further and marks each field
-`[PLACEHOLDER]` — its leadership and industries sections must not be published
-until the named people and claims are confirmed.
+`[PLACEHOLDER]`.
+
+`/about` is five sections: hero, Who we are, What makes us different, Global
+delivery, CTA. Leadership, Industries and the CTA closing line were removed at
+the client's request; FAQ, testimonials and a homepage trust strip were
+considered and dropped. The system.md ban on "Trusted By" and testimonial
+sections therefore stands unchanged.
 
 Set the flag to `false` only once the copy is real. Do not remove the banner
 while keeping placeholder text.

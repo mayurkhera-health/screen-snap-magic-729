@@ -198,16 +198,11 @@ const en = {
       { title: "Flexible delivery", desc: "[PLACEHOLDER] Describe the engagement models you genuinely offer." },
       { title: "Global teams", desc: "[PLACEHOLDER] Describe the delivery footprint you can substantiate." },
     ],
-    leadershipEyebrow: "Leadership",
-    leadershipHeading: "Leadership",
-    leadershipBody:
-      "[PLACEHOLDER] Add real names, roles and short bios. Do not publish this section until the people listed have approved their own entries.",
     deliveryEyebrow: "Global delivery",
     deliveryHeading: "Where our teams are",
     deliveryBody:
       "Engineering teams in San Jose and Dallas in the United States, and in Hyderabad, India — offshore capacity with US time-zone overlap where the work needs it.",
     ctaHeading: "Talk to Zed Ventures.",
-    ctaSub: "[PLACEHOLDER] Replace with a short closing line.",
   },
   a11y: {
     switchTo: "Passer au français",
@@ -415,16 +410,11 @@ const fr: Copy = {
       { title: "Livraison flexible", desc: "[ESPACE RÉSERVÉ] Décrire les modèles d'engagement réellement offerts." },
       { title: "Équipes mondiales", desc: "[ESPACE RÉSERVÉ] Décrire la présence que vous pouvez démontrer." },
     ],
-    leadershipEyebrow: "Direction",
-    leadershipHeading: "Direction",
-    leadershipBody:
-      "[ESPACE RÉSERVÉ] Ajouter les noms, rôles et biographies réels. Ne pas publier avant l'approbation des personnes concernées.",
     deliveryEyebrow: "Livraison mondiale",
     deliveryHeading: "Où sont nos équipes",
     deliveryBody:
       "Des équipes d'ingénierie à San Jose et à Dallas aux États-Unis, ainsi qu'à Hyderabad, en Inde — une capacité délocalisée avec chevauchement horaire américain là où le travail l'exige.",
     ctaHeading: "Parlons-en.",
-    ctaSub: "[ESPACE RÉSERVÉ] À remplacer par une courte phrase de conclusion.",
   },
   a11y: {
     switchTo: "Switch to English",
