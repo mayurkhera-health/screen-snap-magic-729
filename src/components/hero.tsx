@@ -30,15 +30,22 @@ export function Hero() {
           {t.hero.subhead}
         </p>
 
-        {/* S18: primary + secondary CTA. Full width on the narrowest screens so
-            the tap targets are honest on a phone (S63), inline from 480px up. */}
-        <div className="mt-8 flex flex-col gap-3 min-[480px]:flex-row min-[480px]:gap-4">
+        {/* One visual weight class per action: a single filled button, and the
+            secondary action as a text link. Two equal-weight buttons make the
+            visitor choose between them instead of following the primary path.
+            The link keeps a 48px tap target on phones. */}
+        <div className="mt-8 flex flex-col items-start gap-4 min-[480px]:flex-row min-[480px]:items-center min-[480px]:gap-7">
           <Link to="/contact" className="btn btn-primary w-full min-[480px]:w-auto">
             {t.hero.ctaPrimary}
             <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
           </Link>
-          <Link to="/case-studies" className="btn btn-secondary w-full min-[480px]:w-auto">
+          <Link
+            to="/case-studies"
+            className="inline-flex h-12 items-center gap-1.5 text-[0.9375rem] font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline"
+            style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+          >
             {t.hero.ctaSecondary}
+            <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
 

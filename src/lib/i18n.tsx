@@ -7,7 +7,7 @@ const en = {
     headline: "Engineering intelligence into every enterprise",
     subhead:
       "We design, modernize, and operate production-grade AI, data, analytics, geospatial, SAP, Guidewire, and digital platforms for enterprises that can't afford technology failure.",
-    ctaPrimary: "Talk to an expert",
+    ctaPrimary: "Talk to a specialist",
     ctaSecondary: "Explore our work",
     trustLine:
       "Enterprise engineering · AI & Data · Cloud · SAP · Guidewire · Global delivery",
@@ -224,7 +224,7 @@ const fr: Copy = {
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
       "Nous concevons, modernisons et exploitons des plateformes d'IA, de données, d'analytique, de géomatique, SAP, Guidewire et numériques de qualité production, pour des entreprises qui ne peuvent se permettre aucune défaillance technologique.",
-    ctaPrimary: "Parler à un expert",
+    ctaPrimary: "Parler à un spécialiste",
     ctaSecondary: "Découvrir nos réalisations",
     trustLine:
       "Ingénierie d'entreprise · IA et données · Infonuagique · SAP · Guidewire · Livraison mondiale",
