@@ -23,6 +23,7 @@ export function CapabilityWheel() {
   const n = w.items.length;
   const step = 360 / n;
   const [active, setActive] = useState(0);
+  const activeItem = w.items[active] ?? w.items[0]!;
 
   return (
     <section className="section-dark border-b border-border px-5 py-12 sm:px-8 sm:py-16">
