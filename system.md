@@ -102,7 +102,9 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 
 - Centered `SectionHeader`.
 - Numbered list (`01`, `02`, …) with red `.eyebrow` numbers.
-- Each row: number → service title → short description aligned right on desktop.
+- Each row is a three-column grid on desktop: number / service title / short description.
+- The description column starts at a fixed x on every row and is left-aligned. Do not push it with `ml-auto` or right-align it — the gap then grows with viewport width and every line starts at a different x.
+- The title column cannot be narrowed further without wrapping the longest title ("GIS & Geospatial").
 - Hairline separators between items.
 - Service title turns red on hover.
 
