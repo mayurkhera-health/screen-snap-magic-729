@@ -5,7 +5,7 @@ export function Hero() {
 
   return (
     <section id="top" className="pt-20">
-      <div className="mx-auto max-w-6xl px-5 pt-24 pb-20 sm:px-8 sm:pt-36 sm:pb-28">
+      <div className="mx-auto max-w-6xl px-5 pt-12 pb-20 sm:px-8 sm:pt-20 sm:pb-28">
         <p className="eyebrow text-accent">{t.hero.eyebrow}</p>
         <hr className="mt-6 border-border" />
         <h1 className="font-display mt-12 max-w-5xl text-5xl leading-[1.02] sm:text-7xl lg:text-8xl">
