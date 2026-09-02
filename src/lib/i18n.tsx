@@ -124,6 +124,10 @@ const en = {
     tagline: "Technology, engineered for outcomes.",
     rights: "© 2026 Zedventures. All rights reserved.",
   },
+  nav: {
+    services: "Services",
+    contact: "Contact",
+  },
   a11y: {
     switchTo: "Passer au français",
     logoAlt: "ZEDVentures logo",
@@ -253,6 +257,10 @@ const fr: Copy = {
   footer: {
     tagline: "La technologie, au service des résultats.",
     rights: "© 2026 Zedventures. Tous droits réservés.",
+  },
+  nav: {
+    services: "Expertises",
+    contact: "Contact",
   },
   a11y: {
     switchTo: "Switch to English",
