@@ -40,7 +40,7 @@ function AboutPage() {
       <Header />
       <main className="pt-16 sm:pt-20">
         {DRAFT_SERVICE_PAGES && (
-          <DraftBanner note="Every line on this page is a marked placeholder. The leadership and industries sections in particular must not be published until the named people and claims are confirmed. This page is set to noindex." />
+          <DraftBanner note="Every line on this page is a marked placeholder. The leadership section in particular must not be published until the named people have approved their own entries. This page is set to noindex." />
         )}
         <AboutBody />
       </main>
@@ -104,19 +104,6 @@ function AboutBody() {
         </div>
       </section>
 
-      <section className="border-b border-border">
-        <div className="container-page section-y">
-          <SectionHeader align="left" eyebrow={a.industriesEyebrow} heading={a.industriesHeading} />
-          <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {a.industries.map((ind, i) => (
-              <li key={ind} className="bg-card p-7">
-                <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
-                <p className="font-display mt-4 text-xl leading-[1.15] tracking-[-0.02em]">{ind}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       <section className="border-b border-border">
         <div className="container-page section-y">

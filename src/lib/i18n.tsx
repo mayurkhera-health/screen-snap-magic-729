@@ -202,14 +202,6 @@ const en = {
     leadershipHeading: "Leadership",
     leadershipBody:
       "[PLACEHOLDER] Add real names, roles and short bios. Do not publish this section until the people listed have approved their own entries.",
-    industriesEyebrow: "Industries",
-    industriesHeading: "Where we work",
-    industries: [
-      "[PLACEHOLDER] Industry one",
-      "[PLACEHOLDER] Industry two",
-      "[PLACEHOLDER] Industry three",
-      "[PLACEHOLDER] Industry four",
-    ],
     deliveryEyebrow: "Global delivery",
     deliveryHeading: "Where our teams are",
     deliveryBody:
@@ -427,14 +419,6 @@ const fr: Copy = {
     leadershipHeading: "Direction",
     leadershipBody:
       "[ESPACE RÉSERVÉ] Ajouter les noms, rôles et biographies réels. Ne pas publier avant l'approbation des personnes concernées.",
-    industriesEyebrow: "Secteurs",
-    industriesHeading: "Nos secteurs",
-    industries: [
-      "[ESPACE RÉSERVÉ] Secteur un",
-      "[ESPACE RÉSERVÉ] Secteur deux",
-      "[ESPACE RÉSERVÉ] Secteur trois",
-      "[ESPACE RÉSERVÉ] Secteur quatre",
-    ],
     deliveryEyebrow: "Livraison mondiale",
     deliveryHeading: "Où sont nos équipes",
     deliveryBody:
