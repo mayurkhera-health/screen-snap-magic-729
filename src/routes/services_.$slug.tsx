@@ -149,9 +149,9 @@ function ServiceDetailBody() {
 
       {/* 5 — Technologies */}
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y split">
           <SectionHeader align="left" eyebrow={t.services.techEyebrow} heading={t.services.techHeading} />
-          <ul className="mt-8 flex flex-wrap gap-2.5">
+          <ul className="flex flex-wrap gap-2.5 lg:pt-2">
             {s.technologies.map((tech) => (
               <li
                 key={tech}
@@ -192,9 +192,9 @@ function ServiceDetailBody() {
 
       {/* 7 — CTA */}
       <section className="section-dark">
-        <div className="container-page section-y">
+        <div className="container-page section-y split">
           <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={t.services.ctaHeading} sub={t.services.ctaSub} />
-          <div className="mt-8">
+          <div className="lg:justify-self-end lg:pt-2">
             <Link to="/contact" className="btn btn-primary">
               {t.services.pageCta}
               <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />

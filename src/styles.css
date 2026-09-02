@@ -190,6 +190,24 @@
   @media (min-width: 1024px) { .container-page { padding-inline: 2.5rem; } } /* 40 */
   @media (min-width: 1280px) { .container-page { padding-inline: 4rem; } }   /* 64 */
 
+  /* ---- editorial split ----
+     A left-aligned heading with one column of prose under it leaves 30-50% of
+     a 1344px container empty. Putting the heading in its own column and the
+     body beside it uses the width and gives the eye a fixed place to find the
+     heading. Collapses to stacked below 1024px, where there is no width to
+     split. */
+  .split {
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .split {
+      grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
   /* ---- buttons (spec S19/S20) ---- */
   .btn {
     display: inline-flex;

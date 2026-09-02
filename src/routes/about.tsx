@@ -70,9 +70,9 @@ function AboutBody() {
       </section>
 
       <section className="border-b border-border">
-        <div className="container-page section-y">
+        <div className="container-page section-y split">
           <SectionHeader align="left" eyebrow={a.whoEyebrow} heading={a.whoHeading} />
-          <p className="mt-8 max-w-[46rem] text-[1.0625rem] leading-[1.65] text-muted-foreground">
+          <p className="max-w-[46rem] text-[1.0625rem] leading-[1.65] text-muted-foreground">
             {a.whoBody}
           </p>
         </div>
@@ -125,9 +125,9 @@ function AboutBody() {
       </section>
 
       <section className="section-dark">
-        <div className="container-page section-y">
+        <div className="container-page section-y split">
           <SectionHeader align="left" eyebrow={t.contact.eyebrow} heading={a.ctaHeading} />
-          <div className="mt-8">
+          <div className="lg:justify-self-end lg:pt-2">
             <Link to="/contact" className="btn btn-primary">
               {t.nav.talk}
               <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />

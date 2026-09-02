@@ -24,13 +24,13 @@ export function Hero() {
               the hero and given up the oversized editorial type system.md
               names as the distinguishing feature.
               Weight stays 800 (.font-display) for the same reason. */}
-          <h1 className="ink-type font-display max-w-[18ch] text-[2.625rem] leading-[1.02] tracking-[-0.025em] sm:text-5xl md:text-[3.25rem] lg:text-[3.75rem] lg:leading-[1.0] lg:tracking-[-0.03em]">
+          <h1 className="ink-type font-display max-w-[13ch] text-[2.625rem] leading-[1.02] tracking-[-0.025em] sm:max-w-[20ch] sm:text-5xl md:text-[3.25rem] lg:max-w-[22ch] lg:text-[3.75rem] lg:leading-[1.0] lg:tracking-[-0.03em]">
             {t.hero.headline}
           </h1>
         </div>
 
         {/* Body sized up to 17-18px per S8; measure held near 60ch per S12. */}
-        <p className="mt-6 max-w-[46rem] text-[1.0625rem] leading-[1.6] text-muted-foreground sm:mt-8 sm:text-[1.125rem]">
+        <p className="mt-6 max-w-[52rem] text-[1.0625rem] leading-[1.6] text-muted-foreground sm:mt-8 sm:text-[1.125rem]">
           {t.hero.subhead}
         </p>
 
@@ -55,7 +55,7 @@ export function Hero() {
 
         {/* S21 trust line. Every item names a capability the site actually
             documents — nothing here is a claim that cannot be substantiated. */}
-        <p className="mt-6 max-w-[46rem] text-sm leading-relaxed text-subtle-foreground">
+        <p className="mt-6 max-w-[52rem] text-sm leading-relaxed text-subtle-foreground">
           {t.hero.trustLine}
         </p>
       </div>
