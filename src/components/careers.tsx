@@ -6,9 +6,11 @@ export function Careers() {
 
   return (
     <section id="careers" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <p className="eyebrow text-accent">{t.careers.eyebrow}</p>
-        <p className="font-display mt-6 max-w-2xl text-3xl leading-tight sm:text-4xl">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+        <p className="font-display text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+          {t.careers.eyebrow}
+        </p>
+        <p className="font-display mt-3 max-w-2xl text-3xl leading-tight sm:text-4xl">
           {t.careers.line}
         </p>
         <a
