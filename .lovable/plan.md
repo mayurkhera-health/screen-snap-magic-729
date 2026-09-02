@@ -35,7 +35,7 @@ Semantic landmarks, labelled form fields with error messaging, visible focus rin
 - Tokens added to `src/styles.css`; font loaded via `<link>` in `src/routes/__root.tsx`.
 - Contact form is frontend-only (React state + success view), per your choice — easy to wire to Lovable Cloud later.
 - Capability deck CTA points to a placeholder PDF path until the real deck exists; careers CTA is a placeholder link.
-- Logo: styled text wordmark placeholder in header/footer, swapped for your logo file as soon as you upload it.
+- Logo: your uploaded ZEDVentures wordmark, used as-is (no recoloring) in the header on a light surface, and in the footer on a light band.
 
 ## Open items (left as placeholders)
 
