@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
 
 # ---- build ----------------------------------------------------------------
-# npm, NOT bun. bun.lock pins culori to Lovable's private registry
-# (europe-west4-npm.pkg.dev/lovable-core-prod/...), which returns 403 outside
-# their sandbox, so `bun install --frozen-lockfile` cannot work in a build like
-# this one. package-lock.json resolves everything from registry.npmjs.org.
+# npm, NOT bun (both install and build). bun.lock pins culori to Lovable's
+# private registry (europe-west4-npm.pkg.dev/lovable-core-prod/...), which 403s
+# outside their sandbox, so bun install --frozen-lockfile cannot work in an
+# external build. npm resolves everything from registry.npmjs.org.
 FROM node:22-slim AS build
 WORKDIR /app
 
@@ -20,7 +20,7 @@ COPY . .
 # plain container, so build the Node server preset instead — that is what
 # produces .output/server/index.mjs.
 ENV NITRO_PRESET=node-server
-RUN bun run build
+RUN npm run build
 
 # ---- run ------------------------------------------------------------------
 FROM node:22-slim AS runtime
