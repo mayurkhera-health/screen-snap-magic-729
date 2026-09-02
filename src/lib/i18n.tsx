@@ -76,7 +76,8 @@ const en = {
       {
         tag: "Case study 04",
         date: "2026",
-        client: "Samsung",
+        client: "Global consumer-electronics company",
+        short: ["Cloud", "Shift"],
         title: "Cloud data migration and residency for global compliance",
         desc: "Samsung operated 195 legacy systems on an on-premise Apache Hadoop cluster, locked into rigid hardware contracts, over-provisioned compute, and lacking the architecture to meet CCPA data-residency requirements. We led a comprehensive cloud data migration that decoupled US consumer data from global lakes and re-architected the estate on Google Cloud Platform. Hive, Presto, and Spark power distributed analytics over separated object storage; IAM, Kerberos, and client-side KMS encryption enforce strict access and privacy controls; multi-master clustering and auto-healing node scripts deliver resilience. The result: 3–5× faster queries, fully elastic ingestion, a 25% engineering productivity gain, 20.66% faster feature rollouts, and an outage-resilient platform that satisfies regional data sovereignty.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Auto-healing clusters"],
