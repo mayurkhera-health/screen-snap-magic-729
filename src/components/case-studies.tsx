@@ -5,7 +5,7 @@ export function CaseStudies() {
   const { t } = useLanguage();
 
   return (
-    <section aria-label={t.caseStudies.eyebrow} className="border-t border-border">
+    <section aria-label={t.caseStudies.eyebrow} className="section-dark border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         <div className="flex justify-center">
           <SectionHeader eyebrow={t.caseStudies.eyebrow} heading={t.caseStudies.heading} />
