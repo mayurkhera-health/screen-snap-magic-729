@@ -1,42 +1,41 @@
-# Zedventures — Single-Page B2B Site (EN/FR)
+# Zedventures — Editorial One-Pager (EN/FR)
 
-A modern one-page marketing site for Zedventures, built from the brief: sticky header with in-page anchors, EN/FR language toggle, and a capability-deck download as the primary conversion.
+A stripped-down, type-forward single page. No "Why Us", no sales sections, no cards grid — just a strong statement, a services index, careers, and a way to talk to us. Everything in both English and French.
 
 ## Page structure (all at `/`)
 
-1. **Sticky header** — logo, nav (Services · Why Us · Careers · Contact), EN/FR pill toggle, "Download Capability Deck" button. Mobile: hamburger sheet menu.
-2. **Hero** — eyebrow, H1 "Engineering intelligence into every enterprise", subhead, two CTAs (deck download primary, book consultation secondary).
-3. **Services** — 4-card grid: AI & Data, Analytics, Product Engineering, Managed Services.
-4. **Why Zedventures** — 3 numbered points on a dark forest-green section.
-5. **Capability deck banner** — full-width CTA band.
-6. **Careers** — blurb + "View Open Roles" CTA.
-7. **Contact** — form (full name, work email, company, message) with inline validation and an in-place success confirmation state; no data is stored.
-8. **Footer** — tagline, nav repeat, copyright.
-9. **Sticky bottom CTA bar on mobile** — deck download.
+1. **Minimal fixed header** — ZEDVentures wordmark (your uploaded logo, as-is), EN/FR pill toggle, one CTA ("Download deck"). No long nav; anchors appear only if needed.
+2. **Hero — type as the hero.** Oversized statement headline ("Engineering intelligence into every enterprise") with the subhead kept to one line. Primary CTA: deck download. Secondary: "Book a consultation". A hairline rule and small eyebrow ("ZEDVENTURES — TECHNOLOGY PARTNER") instead of imagery.
+3. **Services — index list, not cards.** Four rows (01–04): AI & Data · Analytics · Product Engineering · Managed Services. Each row = number + discipline name in large type + one sentence. Hover/focus reveals the description on desktop. Hairline dividers between rows.
+4. **Deck strip** — one quiet band: "See our full capabilities" + Download button. Replaces a big CTA banner.
+5. **Careers** — two lines max + "View open roles" link.
+6. **Contact — conversational, minimal.** One line ("Let's talk about your next project"), then a compact form (name, work email, company, message) with inline validation and an in-place success state. No data stored.
+7. **Footer** — tagline, EN/FR toggle repeat, copyright. Nothing else.
+
+Removed per your direction: Why Us / Why ZEDVentures section, Why Us eyebrow copy, the big CTA banner, dense services grid.
 
 ## Language toggle
 
-All copy for both languages lives in one translations file keyed by section. The toggle swaps copy in place (no route change), sets `<html lang="en|fr">`, and remembers the choice in localStorage.
+Single translations file keyed by section; EN/FR pill in the header swaps copy in place, sets `<html lang>`, persists in localStorage.
 
 ## Visual system
 
-- Palette applied as design tokens: forest green `#1B4332` (dark sections, primary buttons), near-white `#F7FAF5` / white cards, amber `#B45309` accent for highlights, slate `#2A2F2C` body text, `#707973` muted, `#C0C9C1` hairlines.
-- Hanken Grotesk from Google Fonts; display 44–56px/800, H2 30–34px/800, H3 17–18px/700, body 15–16px, 11px uppercase eyebrows with wide tracking.
-- 12px card radius, 100px pill buttons, 1px hairline borders, near-flat shadows. No glassmorphism or heavy gradients.
-- Buttons: green fill / green outline ghost / white outline ghost on dark.
+- Same brand palette, applied sparser: near-white `#F7FAF5` canvas, slate `#2A2F2C` text, forest green `#1B4332` used only for the deck strip, buttons, and the number accents; amber `#B45309` for the single deck CTA. Hairlines `#C0C9C1`.
+- Hanken Grotesk; hero headline 64–96px/800 (oversized editorial scale), index rows 28–40px, body 15–16px, 11px uppercase eyebrows with wide tracking.
+- 100px pill buttons, 1px hairlines, flat (no shadows, no glass, no gradients).
+- Generous whitespace; lots of air between sections. Mobile: sticky bottom deck CTA.
 
 ## Accessibility & SEO
 
-Semantic landmarks, labelled form fields with error messaging, visible focus rings, AA contrast, alt text. Route `head()` with a Zedventures-specific title, description, og/twitter tags.
+Semantic landmarks, labelled fields, visible focus, AA contrast, alt text. Route `head()` with Zedventures title, description, og/twitter tags.
 
 ## Technical notes
 
-- Single route: rewrite `src/routes/index.tsx`; section components under `src/components/`.
-- Tokens added to `src/styles.css`; font loaded via `<link>` in `src/routes/__root.tsx`.
-- Contact form is frontend-only (React state + success view), per your choice — easy to wire to Lovable Cloud later.
-- Capability deck CTA points to a placeholder PDF path until the real deck exists; careers CTA is a placeholder link.
-- Logo: your uploaded ZEDVentures wordmark, used as-is (no recoloring) in the header on a light surface, and in the footer on a light band.
+- Single route: rewrite `src/routes/index.tsx`; small components under `src/components/`.
+- Tokens added to `src/styles.css`; Hanken Grotesk loaded via `<link>` in `src/routes/__root.tsx`.
+- Logo uploaded to the asset library and used as-is in header and footer (light surfaces).
+- Contact form is frontend-only (per your earlier choice). Deck CTA points to a placeholder PDF; careers link is a placeholder.
 
-## Open items (left as placeholders)
+## Open items (placeholders)
 
-Differentiator statement, client logos/case studies, real deck PDF, careers/ATS link.
+Real capability-deck PDF, careers/ATS link.
