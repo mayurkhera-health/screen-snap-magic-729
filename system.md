@@ -109,7 +109,6 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 ### Services Index (`src/components/services.tsx`)
 
 - Centered `SectionHeader`.
-- Numbered list (`01`, `02`, …) with red `.eyebrow` numbers.
 - Each row is a three-column grid on desktop: number / service title / short description.
 - The description column starts at a fixed x on every row and is left-aligned. Do not push it with `ml-auto` or right-align it — the gap then grows with viewport width and every line starts at a different x.
 - The title column cannot be narrowed further without wrapping the longest title ("GIS & Geospatial").
@@ -236,6 +235,27 @@ All content sits inside `max-w-6xl` (1152px), centered with `mx-auto`, padded `p
 7. Keep CTAs minimal: contact link, email, or form. No downloads or consultation booking.
 
 ---
+
+---
+
+## 9b. No numbered markers
+
+The `01 / 02 / 03` markers have been removed everywhere they appeared:
+homepage capability rows, the services and case-study pages, service-page
+problems and How we work, About's What makes us different, and the office
+cards on About and Contact.
+
+Numbering is only worth reintroducing where the order carries information the
+reader needs. The one place that was arguably true is **How we work**
+(Strategy, Architecture, Build, Modernize, Operate) — it is a real sequence and
+is still marked up as an `<ol>`, so the order survives for assistive tech even
+without visible numbers. Everywhere else the numbers were decoration on an
+unordered set.
+
+Each marker occupied its own grid column, so removing them meant collapsing
+those grids rather than deleting a span: the capability rows and How we work
+went from three columns to two, and the office cards lost their number/icon
+header row.
 
 ## 10. Service Pages, About and Placeholder Content
 

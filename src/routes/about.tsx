@@ -84,8 +84,7 @@ function AboutBody() {
           <ul className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
             {a.diffItems.map((d, i) => (
               <li key={d.title} className="border-t border-border pt-6">
-                <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="font-display mt-3 text-[1.375rem] leading-[1.15] tracking-[-0.02em]">
+                <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em]">
                   {d.title}
                 </h3>
                 <p className="mt-3 text-base leading-[1.55] text-muted-foreground">{d.desc}</p>
@@ -109,10 +108,7 @@ function AboutBody() {
           <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {t.contact.page.offices.map((office, i) => (
               <li key={office.city} className="flex flex-col bg-card p-7">
-                <div className="flex items-center justify-between">
-                  <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <MapPin className="h-4 w-4 text-subtle-foreground" aria-hidden="true" />
-                </div>
+                <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
                 <p className="font-display mt-4 text-2xl leading-[1.1] tracking-[-0.02em]">
                   {office.city}
                 </p>

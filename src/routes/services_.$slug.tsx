@@ -100,8 +100,7 @@ function ServiceDetailBody() {
           <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
             {s.problems.map((p, i) => (
               <li key={p} className="bg-card p-7">
-                <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
-                <p className="mt-4 text-base leading-[1.55] text-foreground">{p}</p>
+                <p className="text-base leading-[1.55] text-foreground">{p}</p>
               </li>
             ))}
           </ul>
@@ -132,12 +131,11 @@ function ServiceDetailBody() {
           <ol className="mt-10">
             {steps.map((st, i) => (
               <li key={st.step} className="border-t border-border py-6 last:border-b">
-                <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-2 sm:grid-cols-[3rem_minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8">
-                  <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <div className="grid grid-cols-1 items-baseline gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8">
                   <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
                     {st.step}
                   </h3>
-                  <p className="col-start-2 max-w-[34rem] text-base leading-[1.55] text-muted-foreground sm:col-start-3">
+                  <p className="max-w-[34rem] text-base leading-[1.55] text-muted-foreground">
                     {st.desc}
                   </p>
                 </div>

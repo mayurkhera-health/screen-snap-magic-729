@@ -23,8 +23,7 @@ export function Services() {
             const slug = SERVICE_SLUG_BY_INDEX[i];
 
             const inner = (
-              <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-2 sm:grid-cols-[3rem_minmax(0,1.4fr)_minmax(0,1fr)] sm:gap-x-8">
-                <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <div className="grid grid-cols-1 items-baseline gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] sm:gap-x-8">
                 {/* S26 sets 27-32px here — a deliberate step down from the
                     previous 30/36/48, so seven rows read as a scannable index
                     rather than seven headlines. */}
@@ -37,7 +36,7 @@ export function Services() {
                     />
                   )}
                 </h3>
-                <p className="col-start-2 max-w-[27.5rem] text-[0.9375rem] leading-[1.5] text-muted-foreground sm:col-start-3 sm:text-base">
+                <p className="max-w-[27.5rem] text-[0.9375rem] leading-[1.5] text-muted-foreground sm:text-base">
                   {item.desc}
                 </p>
               </div>

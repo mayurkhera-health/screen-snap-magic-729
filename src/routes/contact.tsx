@@ -85,10 +85,7 @@ function ContactPageBody() {
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {p.offices.map((office, i) => (
               <div key={office.city} className="bg-card p-6">
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                </div>
+                <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
                 <p className="font-display mt-4 text-2xl">{office.city}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{office.region}</p>
                 <p className="mt-4 text-xs text-muted-foreground/70">{office.address}</p>

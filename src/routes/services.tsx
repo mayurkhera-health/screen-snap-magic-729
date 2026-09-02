@@ -75,13 +75,7 @@ function ServicesPageBody() {
             }`}
           >
             <div className="mx-auto max-w-6xl">
-              <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-[120px_1fr]">
-                <span
-                  className="font-display text-5xl leading-none text-accent sm:text-6xl"
-                  aria-hidden="true"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <div>
                 <div>
                   <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
                     {item.title}
