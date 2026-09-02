@@ -10,6 +10,8 @@ const en = {
   },
   services: {
     eyebrow: "What we do",
+    heading: "Capabilities",
+    sub: "Seven disciplines, one standard: systems that hold up in production.",
     items: [
       {
         title: "AI & Data",
@@ -123,6 +125,8 @@ const fr: Copy = {
   },
   services: {
     eyebrow: "Ce que nous faisons",
+    heading: "Expertises",
+    sub: "Sept disciplines, une même exigence : des systèmes prêts pour la production.",
     items: [
       {
         title: "IA et données",

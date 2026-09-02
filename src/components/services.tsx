@@ -1,4 +1,5 @@
 import { useLanguage } from "@/lib/i18n";
+import { SectionHeader } from "@/components/section-header";
 
 export function Services() {
   const { t } = useLanguage();
@@ -6,13 +7,13 @@ export function Services() {
   return (
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
-        <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
-          {t.services.eyebrow}
-        </p>
+        <div className="flex justify-center">
+          <SectionHeader eyebrow={t.services.eyebrow} heading={t.services.heading} sub={t.services.sub} />
+        </div>
         <h2 id="services-heading" className="sr-only">
-          {t.services.eyebrow}
+          {t.services.heading}
         </h2>
-        <ul className="mt-8">
+        <ul className="mt-12">
           {t.services.items.map((item, i) => (
             <li key={item.title} className="group border-t border-border py-6 last:border-b sm:py-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10">
