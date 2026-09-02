@@ -57,7 +57,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, Guidewire, and engineering teams.",
+    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, and engineering teams.",
     cta: "View open roles",
   },
   contact: {
@@ -141,7 +141,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de Guidewire et d'ingénierie.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire et d'ingénierie.",
     cta: "Voir les postes ouverts",
   },
   contact: {
