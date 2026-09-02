@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { CapabilityWheel } from "@/components/capability-wheel";
+import { CapabilityAccordion } from "@/components/capability-accordion";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -65,7 +65,7 @@ function ServicesPageBody() {
         </div>
       </section>
 
-      <CapabilityWheel />
+      <CapabilityAccordion />
 
       {s.items.map((item, i) => {
         const isDark = i % 2 === 0;
