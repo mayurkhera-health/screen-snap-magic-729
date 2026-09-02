@@ -7,7 +7,7 @@ import { CaseStudies } from "@/components/case-studies";
 import { Careers } from "@/components/careers";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
-import { MobileCtaBar } from "@/components/mobile-cta-bar";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,7 +43,6 @@ function Index() {
         <Contact />
       </main>
       <Footer />
-      <MobileCtaBar />
     </LanguageProvider>
   );
 }

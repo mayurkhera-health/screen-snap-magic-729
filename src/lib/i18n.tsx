@@ -3,15 +3,11 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 export type Lang = "en" | "fr";
 
 const en = {
-  nav: {
-    talk: "Book a consultation",
-  },
   hero: {
     eyebrow: "Zedventures — Technology Partner",
     headline: "Engineering intelligence into every enterprise",
     subhead:
       "We design, build, and run AI, analytics, geospatial, and core insurance platforms that hold up in production.",
-    consultCta: "Book a consultation",
   },
   services: {
     eyebrow: "What we do",
@@ -86,15 +82,11 @@ const en = {
 export type Copy = typeof en;
 
 const fr: Copy = {
-  nav: {
-    talk: "Réserver une consultation",
-  },
   hero: {
     eyebrow: "Zedventures — Partenaire technologique",
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
       "Nous concevons, développons et exploitons des plateformes d'IA, d'analytique, de géomatique et d'assurance prêtes pour la production.",
-    consultCta: "Réserver une consultation",
   },
   services: {
     eyebrow: "Ce que nous faisons",
