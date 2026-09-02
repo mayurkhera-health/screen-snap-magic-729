@@ -18,14 +18,46 @@ happened once on another project. You must name the target every time.
 
 ## Making a change — the loop
 
+**Every block in this file is safe to paste.** No inline `#` comments — zsh
+does not treat `#` as a comment when typed interactively, so a commented
+command line gets passed to the program as arguments and fails.
+
+1. Pull, in case main moved:
+
 ```
-git pull                              # 1. someone else may have moved main
-npm run dev                           # 2. change it, watch it at localhost:8080
-npx tsc --noEmit                      # 3. types still pass
-git add -A && git commit -m "..."     # 4.
-git push origin main                  # 5. it now exists somewhere other than this laptop
-fly deploy -c fly.staging.toml        # 6. see it deployed, on staging
-fly deploy -c fly.production.toml     # 7. only once staging looks right
+git pull
+```
+
+2. Make the change and watch it at http://localhost:8080:
+
+```
+npm run dev
+```
+
+3. In a second terminal, check the types:
+
+```
+npx tsc --noEmit
+```
+
+4. Commit and push, so it exists somewhere other than this laptop:
+
+```
+git add -A
+git commit -m "what changed and why"
+git push origin main
+```
+
+5. Deploy to staging and look at it:
+
+```
+fly deploy -c fly.staging.toml
+```
+
+6. Only once staging looks right:
+
+```
+fly deploy -c fly.production.toml
 ```
 
 Steps 2 and 6 are the ones that were missing before. Every change used to go
