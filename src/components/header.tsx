@@ -16,16 +16,23 @@ export function Header() {
             className="h-10 w-auto sm:h-12"
           />
         </Link>
-        <div className="flex items-center gap-5">
+        <nav className="flex items-center gap-5" aria-label="Main navigation">
+          <Link
+            to="/services"
+            className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
+            activeProps={{ className: "text-sm font-semibold text-primary" }}
+          >
+            {t.nav.services}
+          </Link>
           <Link
             to="/contact"
             className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
             activeProps={{ className: "text-sm font-semibold text-primary" }}
           >
-            {t.contact.page.eyebrow}
+            {t.nav.contact}
           </Link>
           <LanguageToggle />
-        </div>
+        </nav>
       </div>
     </header>
   );
