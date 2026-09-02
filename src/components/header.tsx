@@ -25,6 +25,13 @@ export function Header() {
             {t.nav.services}
           </Link>
           <Link
+            to="/case-studies"
+            className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
+            activeProps={{ className: "text-sm font-semibold text-primary" }}
+          >
+            {t.nav.caseStudies}
+          </Link>
+          <Link
             to="/contact"
             className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
             activeProps={{ className: "text-sm font-semibold text-primary" }}
