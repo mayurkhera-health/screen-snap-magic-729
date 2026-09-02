@@ -16,6 +16,34 @@ happened once on another project. You must name the target every time.
 
 ---
 
+## Making a change — the loop
+
+```
+git pull                              # 1. someone else may have moved main
+npm run dev                           # 2. change it, watch it at localhost:8080
+npx tsc --noEmit                      # 3. types still pass
+git add -A && git commit -m "..."     # 4.
+git push origin main                  # 5. it now exists somewhere other than this laptop
+fly deploy -c fly.staging.toml        # 6. see it deployed, on staging
+fly deploy -c fly.production.toml     # 7. only once staging looks right
+```
+
+Steps 2 and 6 are the ones that were missing before. Every change used to go
+straight from an editor to a deployed site, which is why a broken logo and a
+fake phone number sat live for weeks and a contact form failure had to be
+debugged by reading server logs.
+
+Two habits worth keeping:
+
+**Look at the badge before you touch anything.** Bottom-left corner. `local`,
+`staging`, or nothing at all — and nothing at all means you are on production.
+
+**Never type `fly deploy` without `-c`.** There is no fly.toml, so it will
+refuse rather than guess, but the habit is what protects you on the projects
+that still have one.
+
+---
+
 ## Local
 
 ```
