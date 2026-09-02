@@ -177,6 +177,19 @@ const en = {
     applyPostalLabel: "By post",
     verbatimNote:
       "This posting is reproduced as filed. Its wording is set by the filing and is not edited for style.",
+    // "Why join us" strip. Every line is a PLACEHOLDER: these have to be claims
+    // that hold across every location and every role, and they cannot be
+    // invented. Replace before launch or delete the section.
+    whyEyebrow: "Why join us",
+    whyHeading: "What working here is actually like",
+    why: [
+      { title: "[PLACEHOLDER — reason one]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
+      { title: "[PLACEHOLDER — reason two]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
+      { title: "[PLACEHOLDER — reason three]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
+    ],
+    legalHelper: "The terms that apply to every role here. Open any item to read it.",
+    expand: "Show",
+    collapse: "Hide",
     legalHeading: "Before you apply",
     legal: {
       benefitsHeading: "Benefits",
@@ -439,6 +452,16 @@ const fr: Copy = {
     applyPostalLabel: "Par courrier",
     verbatimNote:
       "Cette annonce est reproduite telle qu'elle a été déposée. Sa formulation est fixée par le dépôt officiel et n'est pas retouchée.",
+    whyEyebrow: "Pourquoi nous rejoindre",
+    whyHeading: "Ce que c'est de travailler ici",
+    why: [
+      { title: "[ESPACE RÉSERVÉ — raison une]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
+      { title: "[ESPACE RÉSERVÉ — raison deux]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
+      { title: "[ESPACE RÉSERVÉ — raison trois]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
+    ],
+    legalHelper: "Les conditions qui s'appliquent à tous les postes. Ouvrez un élément pour le lire.",
+    expand: "Afficher",
+    collapse: "Masquer",
     legalHeading: "Avant de postuler",
     legal: {
       benefitsHeading: "Avantages sociaux",

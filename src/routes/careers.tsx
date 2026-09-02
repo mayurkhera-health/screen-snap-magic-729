@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionHeader } from "@/components/section-header";
 import { DraftBanner } from "@/components/draft-banner";
 import { LegalBlocks } from "@/components/careers-legal";
+import { CareersWhy } from "@/components/careers-why";
 import { DRAFT_CAREERS, OPEN_POSTINGS, formatPay } from "@/lib/careers";
 
 const SITE = "https://screen-snap-magic-729.lovable.app";
@@ -68,28 +69,41 @@ function CareersBody() {
                 const pay = formatPay(p);
                 return (
                   <li key={p.slug} className="border-t border-border first:border-t-0 last:border-b">
+                    {/* The whole row is the link, not just the "View role" text —
+                        this is a scan list, and a 900px-wide row with a 90px
+                        target at the end of it is a worse hit area than the row
+                        itself. min-h keeps the tap target above 44px on phones
+                        even when a role has no job code. */}
                     <Link
                       to="/careers/$slug"
                       params={{ slug: p.slug }}
-                      className="group grid gap-x-8 gap-y-2 py-7 transition-colors hover:bg-secondary sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_auto] sm:items-baseline"
+                      className="group grid min-h-[3.5rem] gap-x-8 gap-y-3 py-6 transition-colors hover:bg-secondary sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_auto] sm:items-baseline sm:py-[26px]"
+                      style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
                     >
                       <div>
-                        <h2 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
-                          {p.title}
-                        </h2>
-                        {p.jobCode && (
-                          <p className="mt-1.5 text-[0.8125rem] text-subtle-foreground">
-                            {c.jobCodeLabel} {p.jobCode}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+                          <h2 className="text-[1.1875rem] font-bold leading-[1.25] tracking-[-0.019em]">
+                            {p.title}
+                          </h2>
+                          {p.jobCode && (
+                            <span className="rounded-[4px] bg-muted px-1.5 py-0.5 text-[0.6875rem] font-semibold tracking-[0.02em] text-subtle-foreground">
+                              {c.jobCodeLabel} {p.jobCode}
+                            </span>
+                          )}
+                        </div>
                       </div>
+
                       <div className="text-sm leading-[1.5] text-muted-foreground">
-                        <p>{p.locations[0]}</p>
-                        <p className="mt-1">
+                        <span className="flex items-center gap-1.5">
+                          <MapPin className="h-3 w-3 shrink-0" aria-hidden="true" />
+                          {p.locations[0]}
+                        </span>
+                        <span className="mt-1 block">
                           {p.employmentType} · {pay ?? c.payTbd}
-                        </p>
+                        </span>
                       </div>
-                      <span className="flex items-center gap-1.5 text-sm font-bold text-accent">
+
+                      <span className="flex items-center gap-1.5 text-sm font-bold text-accent group-hover:underline underline-offset-4">
                         {c.viewRole}
                         <ArrowUpRight className="arrow-shift h-4 w-4" aria-hidden="true" />
                       </span>
@@ -101,6 +115,8 @@ function CareersBody() {
           )}
         </div>
       </section>
+
+      <CareersWhy />
 
       <LegalBlocks />
     </>

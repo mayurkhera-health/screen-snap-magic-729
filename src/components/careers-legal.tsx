@@ -1,3 +1,5 @@
+import { useId, useState } from "react";
+import { Minus, Plus } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 
@@ -10,17 +12,28 @@ import { SectionHeader } from "@/components/section-header";
  * who arrives on a role link from a recruiter sees them without having to find
  * the index first.
  *
- * Deliberately plain: these are statements of fact and obligation, not selling
- * points, so they get no cards, no icons and no accent colour. Several still
- * contain bracketed placeholders — search for "[" in i18n.tsx before launch.
+ * ---------------------------------------------------------------------------
+ * WHY THE PANELS USE `hidden` RATHER THAN CONDITIONAL RENDERING
  *
+ * These are collapsed by default at the client's request. That is a real
+ * trade-off: two of them are notices whose purpose is to be seen without being
+ * sought — the accommodation notice tells an applicant who cannot use the
+ * postal route that another one exists, and the CPRA expects a privacy notice
+ * at or before the point an application is collected.
+ *
+ * So every panel's text is always present in the DOM and merely hidden. It ships
+ * in the served HTML, it is found by the browser's in-page search, it prints,
+ * and a crawler sees it. Rendering `{open && <p>}` instead would mean the words
+ * genuinely are not on the page until someone clicks, which is a materially
+ * weaker position to be in.
+ *
+ * Panels toggle independently — opening one does not close the others.
+ *
+ * ---------------------------------------------------------------------------
  * Removed at the client's request, not by oversight: recruitment fraud, and
  * unsolicited agency resumes.
  *
- * The accommodation block is not optional dressing: the postings direct
- * applicants to mail a paper resume, which is the only listed route in. Under
- * the ADA and California's FEHA an applicant must have a way to ask for an
- * alternative, so the copy names that alternative explicitly.
+ * Placeholders remain in the privacy copy — search for "[" in i18n.tsx.
  */
 export function LegalBlocks() {
   const { t } = useLanguage();
@@ -28,12 +41,12 @@ export function LegalBlocks() {
   const L = c.legal;
 
   const blocks = [
-    { heading: L.benefitsHeading, body: L.benefits },
-    { heading: L.eeoHeading, body: L.eeo },
-    { heading: L.accommodationHeading, body: L.accommodation },
-    { heading: L.authHeading, body: L.auth },
-    { heading: L.screeningHeading, body: L.screening },
-    { heading: L.privacyHeading, body: L.privacy },
+    { key: "benefits", heading: L.benefitsHeading, body: L.benefits },
+    { key: "eeo", heading: L.eeoHeading, body: L.eeo },
+    { key: "accommodation", heading: L.accommodationHeading, body: L.accommodation },
+    { key: "auth", heading: L.authHeading, body: L.auth },
+    { key: "screening", heading: L.screeningHeading, body: L.screening },
+    { key: "privacy", heading: L.privacyHeading, body: L.privacy },
   ];
 
   return (
@@ -43,19 +56,49 @@ export function LegalBlocks() {
           align="left"
           eyebrow={c.eyebrow}
           heading={c.legalHeading}
+          sub={c.legalHelper}
           headingId="careers-legal"
         />
-        <dl className="mt-10 grid gap-x-12 gap-y-9 sm:grid-cols-2">
+        <div className="mt-9 border-t border-border">
           {blocks.map((b) => (
-            <div key={b.heading} className="border-t border-border pt-5">
-              <dt className="text-base font-bold leading-[1.3] text-foreground">{b.heading}</dt>
-              <dd className="mt-2.5 max-w-[36rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
-                {b.body}
-              </dd>
-            </div>
+            <Disclosure key={b.key} heading={b.heading} body={b.body} />
           ))}
-        </dl>
+        </div>
       </div>
     </section>
+  );
+}
+
+function Disclosure({ heading, body }: { heading: string; body: string }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const Icon = open ? Minus : Plus;
+
+  return (
+    <div className="border-b border-border">
+      {/* Native button so keyboard and screen-reader behaviour comes for free.
+          min-h-[3.5rem] keeps the 44px tap target the spec asks for on phones. */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex w-full min-h-[3.5rem] items-center justify-between gap-6 py-4 text-left transition-colors hover:text-accent"
+        style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+      >
+        <span className="text-base font-bold leading-[1.3]">{heading}</span>
+        <Icon
+          className="h-4 w-4 shrink-0 text-accent transition-transform motion-reduce:transition-none"
+          style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+          aria-hidden="true"
+        />
+      </button>
+      {/* Always rendered; `hidden` toggles visibility. See the note above. */}
+      <div id={panelId} hidden={!open}>
+        <p className="max-w-[46rem] pb-6 text-[0.9375rem] leading-[1.65] text-muted-foreground">
+          {body}
+        </p>
+      </div>
+    </div>
   );
 }
