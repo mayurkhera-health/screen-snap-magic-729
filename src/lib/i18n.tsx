@@ -258,6 +258,10 @@ const fr: Copy = {
     tagline: "La technologie, au service des résultats.",
     rights: "© 2026 Zedventures. Tous droits réservés.",
   },
+  nav: {
+    services: "Expertises",
+    contact: "Contact",
+  },
   a11y: {
     switchTo: "Switch to English",
     logoAlt: "Logo ZEDVentures",
