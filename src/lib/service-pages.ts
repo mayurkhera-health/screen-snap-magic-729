@@ -66,7 +66,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "AI & Data",
       outcome: "Get AI out of the proof-of-concept stage and into systems your business can depend on.",
       intro:
-        "Most enterprise AI work stalls between a promising demo and something operations will actually trust. We build the retrieval, orchestration and evaluation layers that close that gap, and the data platforms underneath them.",
+        "Plenty of enterprise AI gets as far as a good demo and stops there, because nobody will sign off on putting it in front of customers. Closing that gap is retrieval, orchestration and evaluation work — plus the data platform underneath it.",
       problems: [
         "A working prototype that nobody will approve for production use.",
         "Model answers that cannot be traced back to an approved source.",
@@ -87,7 +87,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Analytics",
       outcome: "Turn reporting that nobody trusts into numbers leadership will actually decide on.",
       intro:
-        "Analytics fails on credibility far more often than on tooling. We work on the definitions, the pipelines and the governance first, so the dashboard is the last problem rather than the first.",
+        "The dashboard is almost never the hard part. Getting two teams to agree what a number means, and building a pipeline that produces it the same way every month — that is the work. We start there.",
       problems: [
         "Two teams reporting different numbers for the same measure.",
         "Reports assembled by hand every month because the pipeline never landed.",
@@ -106,7 +106,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "gis-geospatial": {
       name: "GIS & Geospatial",
-      outcome: "Make location a dimension your business can analyse, not a map you look at.",
+      outcome: "Make location a dimension your business can analyze, not a map you look at.",
       intro:
         "Spatial data is usually treated as a separate discipline bolted onto the side of the estate. We build it into the same pipelines and the same analysis as everything else.",
       problems: [
@@ -129,7 +129,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Guidewire",
       outcome: "Move PolicyCenter, BillingCenter and ClaimCenter forward without stopping the business on them.",
       intro:
-        "Guidewire programmes fail on sequencing more often than on configuration. We plan the route through implementation, upgrade and cloud migration around the fact that claims still have to be paid while it happens.",
+        "Claims still have to be paid while you upgrade. Everything about how we sequence an implementation, a version move or a cloud migration follows from that one constraint.",
       problems: [
         "An upgrade deferred so long that the version gap is now the project.",
         "Configuration drift nobody has a full picture of.",
@@ -216,7 +216,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "IA et données",
       outcome: "Faire passer l'IA du prototype à des systèmes sur lesquels l'entreprise peut compter.",
       intro:
-        "La plupart des projets d'IA en entreprise s'arrêtent entre une démonstration prometteuse et un système que les opérations accepteront. Nous construisons les couches de recherche, d'orchestration et d'évaluation qui comblent cet écart, ainsi que les plateformes de données sous-jacentes.",
+        "Beaucoup de projets d'IA en entreprise atteignent le stade d'une bonne démonstration et s'arrêtent là, faute de quelqu'un prêt à la mettre devant des clients. Combler cet écart, c'est un travail de recherche, d'orchestration et d'évaluation — et la plateforme de données en dessous.",
       problems: [
         "Un prototype fonctionnel que personne n'autorise en production.",
         "Des réponses de modèle impossibles à rattacher à une source approuvée.",
@@ -237,7 +237,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Analytique",
       outcome: "Transformer des rapports auxquels personne ne se fie en chiffres sur lesquels la direction décide.",
       intro:
-        "L'analytique échoue bien plus souvent sur la crédibilité que sur l'outillage. Nous traitons d'abord les définitions, les pipelines et la gouvernance, pour que le tableau de bord soit le dernier problème plutôt que le premier.",
+        "Le tableau de bord n'est presque jamais le plus difficile. Faire convenir deux équipes du sens d'un chiffre, puis construire un pipeline qui le produit de la même façon chaque mois — voilà le travail. C'est par là que nous commençons.",
       problems: [
         "Deux équipes qui publient des chiffres différents pour la même mesure.",
         "Des rapports assemblés à la main chaque mois faute de pipeline.",
@@ -279,7 +279,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       name: "Guidewire",
       outcome: "Faire évoluer PolicyCenter, BillingCenter et ClaimCenter sans arrêter l'activité qui en dépend.",
       intro:
-        "Les programmes Guidewire échouent plus souvent sur le séquencement que sur la configuration. Nous planifions l'implémentation, la montée de version et la migration infonuagique en tenant compte du fait que les sinistres doivent continuer d'être réglés.",
+        "Les sinistres doivent continuer d'être réglés pendant la montée de version. Toute notre façon de séquencer une implémentation, un changement de version ou une migration infonuagique découle de cette seule contrainte.",
       problems: [
         "Une montée de version reportée si longtemps que l'écart est devenu le projet.",
         "Une dérive de configuration dont personne n'a la vue complète.",

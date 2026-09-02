@@ -6,7 +6,7 @@ const en = {
   hero: {
     headline: "Engineering intelligence into every enterprise",
     subhead:
-      "We design, modernize, and operate production-grade AI, data, analytics, geospatial, SAP, Guidewire, and digital platforms for enterprises that can't afford technology failure.",
+      "We build and run the systems enterprises can't afford to have fail: AI, data, analytics, geospatial, SAP and Guidewire. Not proofs of concept — the ones that have to work on Monday morning.",
     ctaPrimary: "Talk to a specialist",
     ctaSecondary: "Explore our work",
     trustLine:
@@ -15,7 +15,7 @@ const en = {
   services: {
     eyebrow: "What we do",
     heading: "Capabilities",
-    sub: "Engineering, data, and geospatial systems built to run.",
+    sub: "Seven things we do. Every one of them ends up in production.",
     viewService: "View service",
     pageCta: "Talk to a specialist",
     problemsEyebrow: "The problem",
@@ -63,7 +63,7 @@ const en = {
     ],
   },
   caseStudies: {
-    eyebrow: "AI in production",
+    eyebrow: "Work in production",
     heading: "What we're building right now",
     items: [
       {
@@ -72,7 +72,7 @@ const en = {
         client: "Enterprise software company",
         short: ["AI Help", "Chat"],
         title: "AI-assisted help, grounded in approved product knowledge",
-        desc: "Product users were struggling to find quick, accurate answers across sprawling knowledge bases, driving repetitive support tickets, slow resolution, and the risk of misinformation from ungrounded AI. We built an omnichannel AI-assisted Help Chat integrated into web, mobile, and in-product interfaces. A Python orchestration API handles authentication, conversation history, dynamic prompt engineering, and validation guardrails — while retrieval-augmented generation over Azure AI Search grounds every response in verified documentation. The result: near-zero hallucinations, sub-second answers, and a projected 70% deflection of routine Tier-1 support.",
+        desc: "Their users couldn't find answers. The documentation existed, spread across systems nobody wanted to search, so people opened a support ticket instead. We built a help chat into the web app, the mobile app and the product itself. Every answer comes from documentation the company has already approved — if it isn't in there, the assistant doesn't say it. Answers come back in under a second. They expect it to absorb about 70% of routine Tier-1 tickets.",
         stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration", "Omnichannel UI"],
         outcomes: [
           "70% projected deflection of Tier-1 support tickets",
@@ -87,7 +87,7 @@ const en = {
         client: "Global property-services company",
         short: ["Sales", "Intel"],
         title: "Event-driven sales intelligence for property services",
-        desc: "Sales reps were losing hours to manual pre-meeting research across CRM records, transaction history, property data, and neighborhood demographics. We built an event-driven AI assistant that triggers the moment an appointment is scheduled, synthesizing disconnected data into a structured intelligence profile. Azure OpenAI generates contextual recommendations, RAG injects live CRM and market data, and a vector index surfaces relevant neighborhood reports — giving reps a personalized brief in under five minutes instead of an hour.",
+        desc: "Reps were spending an hour before every appointment, digging through the CRM, past transactions, property records and neighborhood data. Now the research runs itself the moment an appointment lands in the calendar. The rep opens a brief instead of building one. Prep went from an hour to under five minutes.",
         stack: ["Azure OpenAI", "RAG", "Python API", "Vector search", "Event-driven architecture"],
         outcomes: [
           "85% reduction in preparation time — 60 minutes to under 5",
@@ -102,7 +102,7 @@ const en = {
         client: "Global relocation enterprise",
         short: ["Unified", "Data"],
         title: "Unified analytics for multi-country operations",
-        desc: "A global relocation enterprise had no central visibility into multi-country operations. Regional data silos forced teams to compile reports manually, slowing decision-making and hiding costs, client feedback, and performance gaps. We built a unified analytics platform on SQL Azure, Azure Data Lake, and Microsoft SQL Server, with Azure Data Factory and Logic Apps integrating data from regional systems. Power BI and Birst Connect deliver real-time global dashboards, supported by C# .NET and WPF custom applications and Azure DevOps CI/CD. The result: 100% real-time visibility into moving processes and customer touchpoints, standardized reporting for account profitability, and the ability to isolate growth opportunities and weak performance areas instantly.",
+        desc: "Every region ran its own reporting. Head office had no single view, so anything cross-country got assembled by hand, late. We pulled the regional systems into one platform and put real dashboards on top. They can now see cost, client feedback and performance across every country as it happens, instead of a month later.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
         outcomes: [
           "100% real-time visibility into global operations and customer touchpoints",
@@ -116,7 +116,7 @@ const en = {
         client: "Global consumer-electronics company",
         short: ["Cloud", "Shift"],
         title: "Cloud data migration and residency for global compliance",
-        desc: "A global consumer-electronics leader operated 195 legacy systems on an on-premise Apache Hadoop cluster, locked into rigid hardware contracts, over-provisioned compute, and lacking the architecture to meet CCPA data-residency requirements. We led a comprehensive cloud data migration that decoupled US consumer data from global lakes and re-architected the estate on Google Cloud Platform. Hive, Presto, and Spark power distributed analytics over separated object storage; IAM, Kerberos, and client-side KMS encryption enforce strict access and privacy controls; multi-master clustering and auto-healing node scripts deliver resilience. The result: 3–5× faster queries, fully elastic ingestion, a 25% engineering productivity gain, 20.66% faster feature rollouts, and an outage-resilient platform that satisfies regional data sovereignty.",
+        desc: "195 systems, one aging on-premise Hadoop cluster, and hardware contracts they couldn't get out of. Then CCPA arrived and US consumer data had to live somewhere the rest of the world couldn't reach. We separated the US data and rebuilt the estate on Google Cloud. Queries run three to five times faster. Feature releases go out about 20% sooner. Nodes that fail replace themselves.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Auto-healing clusters"],
         outcomes: [
           "3–5× faster complex query performance",
@@ -136,13 +136,13 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and offshore & nearshore delivery teams.",
+    line: "We're hiring across every team on this page.",
     cta: "View open roles",
   },
   contact: {
     eyebrow: "Get in touch",
     line: "Let's talk about your next project.",
-    sub: "Tell us a bit about what you're building — we'll follow up within one business day.",
+    sub: "Tell us what you're trying to solve.",
     name: "Full name",
     email: "Work email",
     company: "Company",
@@ -150,14 +150,14 @@ const en = {
     submit: "Send message",
     successTitle: "Your message is ready to send",
     successBody:
-      "We've opened your email app with everything filled in — press send there and we'll follow up within one business day.",
+      "We've opened your email app with everything filled in. Press send there and it reaches us.",
     successFallback: "Nothing opened? Write to us directly at",
     required: "This field is required",
     invalidEmail: "Please enter a valid work email",
     page: {
       eyebrow: "Contact",
       heading: "Let's start a conversation.",
-      sub: "Reach us directly, or send a note — we respond within one business day.",
+      sub: "Email or call us directly, or send a note below.",
       emailLabel: "Email",
       email: "info@zedventures.com",
       phoneLabel: "Phone",
@@ -166,12 +166,12 @@ const en = {
       offices: [
         { city: "San Jose", region: "California, USA", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
         { city: "Dallas", region: "Irving, Texas, USA", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
-        { city: "Hyderabad", region: "India", address: "Full address available on request" },
+        { city: "Hyderabad", region: "Telangana, India", address: "1st Floor, Mahaveer Radiance, Opp. Metro Pillar 1708, Madhapur, Telangana 500081" },
       ],
     },
   },
   footer: {
-    tagline: "Technology, engineered for outcomes.",
+    tagline: "Enterprise systems, built to stay up.",
     rights: "© 2026 Zedventures. All rights reserved.",
   },
   nav: {
@@ -218,7 +218,7 @@ const fr: Copy = {
   hero: {
     headline: "Intégrer l'intelligence au cœur de votre entreprise",
     subhead:
-      "Nous concevons, modernisons et exploitons des plateformes d'IA, de données, d'analytique, de géomatique, SAP, Guidewire et numériques de qualité production, pour des entreprises qui ne peuvent se permettre aucune défaillance technologique.",
+      "Nous construisons et exploitons les systèmes dont une entreprise ne peut pas se permettre la panne : IA, données, analytique, géomatique, SAP et Guidewire. Pas des maquettes — ceux qui doivent tourner lundi matin.",
     ctaPrimary: "Parler à un spécialiste",
     ctaSecondary: "Découvrir nos réalisations",
     trustLine:
@@ -227,7 +227,7 @@ const fr: Copy = {
   services: {
     eyebrow: "Ce que nous faisons",
     heading: "Expertises",
-    sub: "Des systèmes d'ingénierie, de données et de géomatique conçus pour fonctionner.",
+    sub: "Sept métiers. Tous finissent en production.",
     viewService: "Voir le service",
     pageCta: "Parler à un spécialiste",
     problemsEyebrow: "Le problème",
@@ -275,7 +275,7 @@ const fr: Copy = {
     ],
   },
   caseStudies: {
-    eyebrow: "L'IA en production",
+    eyebrow: "Du travail en production",
     heading: "Ce que nous développons en ce moment",
     items: [
       {
@@ -284,7 +284,7 @@ const fr: Copy = {
         client: "Entreprise de logiciels",
         short: ["Aide", "IA"],
         title: "Une aide assistée par IA, ancrée dans le savoir produit approuvé",
-        desc: "Les utilisateurs du produit peinaient à trouver des réponses rapides et précises dans des bases de connaissances dispersées, ce qui générait des tickets de support répétitifs, des résolutions lentes et le risque de désinformation par une IA non ancrée. Nous avons conçu une aide conversationnelle assistée par IA, omnicanale, intégrée aux interfaces web, mobile et in-product. Une API d'orchestration Python gère l'authentification, l'historique des conversations, l'ingénierie dynamique des invites et les garde-fous de validation, tandis que la génération augmentée par récupération via Azure AI Search ancre chaque réponse dans la documentation vérifiée de l'entreprise. Résultat : pratiquement aucune hallucination, des réponses en moins d'une seconde et une déflexion projetée de 70 % des demandes de support de niveau 1 routinières.",
+        desc: "Leurs utilisateurs ne trouvaient pas les réponses. La documentation existait, éparpillée dans des systèmes que personne n'avait envie de fouiller ; les gens ouvraient un ticket à la place. Nous avons intégré une aide conversationnelle au site, à l'application mobile et au produit lui-même. Chaque réponse provient d'une documentation déjà approuvée par l'entreprise — si ce n'est pas écrit, l'assistant ne le dit pas. Les réponses arrivent en moins d'une seconde. Ils prévoient d'absorber ainsi environ 70 % des demandes de niveau 1 courantes.",
         stack: ["RAG", "Azure AI Search", "API Python", "Orchestration LLM", "Interface omnicanale"],
         outcomes: [
           "Déflexion projetée de 70 % des tickets de support de niveau 1",
@@ -299,7 +299,7 @@ const fr: Copy = {
         client: "Entreprise mondiale de services immobiliers",
         short: ["Intel", "Ventes"],
         title: "Intelligence commerciale pilotée par événements pour les services immobiliers",
-        desc: "Les représentants passaient des heures à rechercher manuellement des informations avant chaque rendez-vous, en naviguant entre le CRM, l'historique des transactions, les données de propriétés et les démographies de quartier. Nous avons conçu un assistant IA piloté par événements qui s'active dès qu'un rendez-vous est planifié, synthétisant des données dispersées en un profil d'intelligence structuré. Azure OpenAI génère des recommandations contextuelles, la génération augmentée par récupération injecte des données de marché et du CRM en temps réel, et un index vectoriel fait remonter les rapports de quartier pertinents — fournissant aux représentants un briefing personnalisé en moins de cinq minutes au lieu d'une heure.",
+        desc: "Les représentants passaient une heure avant chaque rendez-vous à fouiller le CRM, l'historique des transactions, les données de propriétés et celles du quartier. Cette recherche se fait maintenant toute seule, dès qu'un rendez-vous entre au calendrier. Le représentant ouvre un dossier au lieu de le construire. La préparation est passée d'une heure à moins de cinq minutes.",
         stack: ["Azure OpenAI", "RAG", "API Python", "Recherche vectorielle", "Architecture événementielle"],
         outcomes: [
           "Réduction de 85 % du temps de préparation — de 60 minutes à moins de 5",
@@ -314,7 +314,7 @@ const fr: Copy = {
         client: "Entreprise mondiale de déménagement",
         short: ["Données", "Unifiées"],
         title: "Analytique unifiée pour des opérations multinationales",
-        desc: "Une entreprise mondiale de déménagement n'avait aucune visibilité centralisée sur ses opérations multinationales. Les silos de données régionaux obligeaient les équipes à compiler manuellement les rapports, ce qui ralentissait la prise de décision et masquait les coûts, les retours clients et les écarts de performance. Nous avons conçu une plateforme d'analytique unifiée sur SQL Azure, Azure Data Lake et Microsoft SQL Server, avec Azure Data Factory et Logic Apps pour intégrer les données des systèmes régionaux. Power BI et Birst Connect fournissent des tableaux de bord mondiaux en temps réel, appuyés par des applications personnalisées en C# .NET et WPF et par un CI/CD Azure DevOps. Résultat : une visibilité en temps réel à 100 % sur les processus de déménagement et les points de contact client, des rapports standardisés pour la rentabilité des comptes, et la capacité d'isoler immédiatement les opportunités de croissance et les zones de performance faible.",
+        desc: "Chaque région faisait ses propres rapports. Le siège n'avait aucune vue d'ensemble : tout ce qui traversait les pays était assemblé à la main, en retard. Nous avons réuni les systèmes régionaux sur une seule plateforme et posé de vrais tableaux de bord par-dessus. Ils voient maintenant les coûts, les retours clients et la performance de chaque pays au fil de l'eau, au lieu d'un mois plus tard.",
         stack: ["SQL Azure", "Azure Data Lake", "Azure Data Factory", "Power BI", "C# .NET"],
         outcomes: [
           "Visibilité en temps réel à 100 % sur les opérations mondiales et les points de contact client",
@@ -328,7 +328,7 @@ const fr: Copy = {
         client: "Multinationale de l'électronique grand public",
         short: ["Virage", "Cloud"],
         title: "Migration infonuagique et résidence des données pour la conformité mondiale",
-        desc: "Une multinationale de l’électronique grand public exploitait 195 systèmes hérités sur un cluster Apache Hadoop local, enfermée dans des contrats de matériel rigides, avec du calcul surprovisionné et sans l'architecture nécessaire pour répondre aux exigences de résidence des données de la CCPA. Nous avons dirigé une migration complète vers le cloud qui a dissocié les données des consommateurs américains des lacs de données mondiaux et réarchitecturé l'écosystème sur Google Cloud Platform. Hive, Presto et Spark alimentent l'analytique distribuée sur un stockage objet séparé ; IAM, Kerberos et le chiffrement côté client via KMS appliquent des contrôles d'accès et de confidentialité stricts ; des clusters multi-maîtres et des scripts de nœuds auto-cicatrisants assurent la résilience. Résultat : requêtes 3 à 5 fois plus rapides, ingestion entièrement élastique, gain de productivité de 25 %, déploiement des fonctionnalités 20,66 % plus rapide, et une plateforme résiliente aux pannes qui respecte la souveraineté des données régionales.",
+        desc: "195 systèmes, un cluster Hadoop local vieillissant, et des contrats de matériel dont ils ne pouvaient pas sortir. Puis la CCPA est arrivée : les données des consommateurs américains devaient résider là où le reste du monde ne pouvait pas les atteindre. Nous avons séparé ces données et reconstruit l'ensemble sur Google Cloud. Les requêtes tournent trois à cinq fois plus vite. Les fonctionnalités sortent environ 20 % plus tôt. Les nœuds défaillants se remplacent tout seuls.",
         stack: ["GCP", "Apache Spark", "Hive", "Presto", "IAM & KMS", "Clusters auto-cicatrisants"],
         outcomes: [
           "Requêtes complexes 3 à 5 fois plus rapides",
@@ -348,13 +348,13 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de livraison offshore et nearshore.",
+    line: "Nous recrutons dans toutes les équipes présentées sur cette page.",
     cta: "Voir les postes ouverts",
   },
   contact: {
     eyebrow: "Contactez-nous",
     line: "Parlons de votre prochain projet.",
-    sub: "Dites-nous ce que vous souhaitez réaliser — nous vous répondrons en un jour ouvrable.",
+    sub: "Dites-nous ce que vous cherchez à résoudre.",
     name: "Nom complet",
     email: "Courriel professionnel",
     company: "Entreprise",
@@ -362,14 +362,14 @@ const fr: Copy = {
     submit: "Envoyer le message",
     successTitle: "Votre message est prêt à être envoyé",
     successBody:
-      "Nous avons ouvert votre application de courriel avec le message déjà rempli — envoyez-le et nous vous répondrons en un jour ouvrable.",
+      "Nous avons ouvert votre application de courriel avec le message déjà rempli. Envoyez-le et il nous parviendra.",
     successFallback: "Rien ne s'est ouvert? Écrivez-nous directement à",
     required: "Ce champ est requis",
     invalidEmail: "Veuillez saisir un courriel professionnel valide",
     page: {
       eyebrow: "Contact",
       heading: "Démarrons la conversation.",
-      sub: "Contactez-nous directement ou envoyez-nous un message — nous répondons en un jour ouvrable.",
+      sub: "Écrivez-nous ou appelez-nous directement, ou laissez un message ci-dessous.",
       emailLabel: "Courriel",
       email: "info@zedventures.com",
       phoneLabel: "Téléphone",
@@ -378,12 +378,12 @@ const fr: Copy = {
       offices: [
         { city: "San Jose", region: "Californie, États-Unis", address: "1762 Technology Drive, Suite 209, San Jose, CA 95110" },
         { city: "Dallas", region: "Irving, Texas, États-Unis", address: "8629 N MacArthur Blvd, Irving, TX 75063" },
-        { city: "Hyderabad", region: "Inde", address: "Adresse complète disponible sur demande" },
+        { city: "Hyderabad", region: "Telangana, Inde", address: "1st Floor, Mahaveer Radiance, Opp. Metro Pillar 1708, Madhapur, Telangana 500081" },
       ],
     },
   },
   footer: {
-    tagline: "La technologie, au service des résultats.",
+    tagline: "Des systèmes d'entreprise conçus pour tenir.",
     rights: "© 2026 Zedventures. Tous droits réservés.",
   },
   nav: {
