@@ -38,8 +38,8 @@ const en = {
         desc: "Full-cycle software delivery — architecture, cloud-native development, and QA — for products that ship on time.",
       },
       {
-        title: "Managed Services & Staffing",
-        desc: "Long-run support, monitoring, and optimization — plus flexible technical staffing to scale delivery teams when you need it.",
+        title: "Offshore Delivery",
+        desc: "Dedicated offshore engineering teams embedded in your roadmap — design, development, QA, and support — so you scale delivery without adding overhead.",
       },
     ],
   },
@@ -57,7 +57,7 @@ const en = {
   },
   careers: {
     eyebrow: "Join us",
-    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and staffing teams.",
+    line: "We're growing our AI, analytics, GIS, SAP, Guidewire, engineering, and offshore delivery teams.",
     cta: "View open roles",
   },
   contact: {
@@ -122,8 +122,8 @@ const fr: Copy = {
         desc: "Livraison logicielle complète — architecture, développement infonuagique natif et assurance qualité — pour des produits livrés à temps.",
       },
       {
-        title: "Services gérés et placement",
-        desc: "Soutien, surveillance et optimisation à long terme — plus un staffing technique flexible pour renforcer vos équipes de livraison au bon moment.",
+        title: "Livraison offshore",
+        desc: "Des équipes d'ingénierie offshore dédiées et intégrées à votre feuille de route — conception, développement, assurance qualité et soutien — pour passer à l'échelle sans surcoût.",
       },
     ],
   },
@@ -141,7 +141,7 @@ const fr: Copy = {
   },
   careers: {
     eyebrow: "Rejoignez-nous",
-    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de placement.",
+    line: "Nous développons nos équipes d'IA, d'analytique, de SIG, de SAP, de Guidewire, d'ingénierie et de livraison offshore.",
     cta: "Voir les postes ouverts",
   },
   contact: {
