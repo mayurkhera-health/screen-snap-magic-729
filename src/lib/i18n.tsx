@@ -48,9 +48,19 @@ const en = {
     items: [
       {
         tag: "Case study 01",
+        date: "",
+        client: "",
         title: "AI-assisted help, grounded in approved product knowledge",
         desc: "A conversational help experience that lets users ask product questions from web, mobile, or in-product interfaces. A Python orchestration API manages authentication, conversation state, prompt construction, and guardrails — while retrieval-augmented generation over Azure AI Search grounds every answer in the customer's approved documentation, not the model's general knowledge.",
         stack: ["RAG", "Azure AI Search", "Python API", "LLM orchestration"],
+      },
+      {
+        tag: "Case study 02",
+        date: "2026",
+        client: "Global property-services company",
+        title: "Event-driven sales intelligence for property services",
+        desc: "Sales reps were losing hours to manual pre-meeting research across CRM records, transaction history, property data, and neighborhood demographics. We built an event-driven AI assistant that triggers the moment an appointment is scheduled, synthesizing disconnected data into a structured intelligence profile. Azure OpenAI generates contextual recommendations, RAG injects live CRM and market data, and a vector index surfaces relevant neighborhood reports — giving reps a personalized brief in under five minutes instead of an hour.",
+        stack: ["Azure OpenAI", "RAG", "Python API", "Vector search", "Event-driven architecture"],
       },
     ],
   },
