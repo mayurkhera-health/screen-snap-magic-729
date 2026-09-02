@@ -5,7 +5,7 @@ export function Services() {
 
   return (
     <section id="services" aria-labelledby="services-heading" className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         <p className="font-display text-2xl leading-tight tracking-tight text-accent sm:text-3xl">
           {t.services.eyebrow}
         </p>
@@ -14,7 +14,7 @@ export function Services() {
         </h2>
         <ul className="mt-10">
           {t.services.items.map((item, i) => (
-            <li key={item.title} className="group border-t border-border py-8 last:border-b sm:py-10">
+            <li key={item.title} className="group border-t border-border py-6 last:border-b sm:py-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-10">
                 <span className="eyebrow text-primary">
                   {String(i + 1).padStart(2, "0")}

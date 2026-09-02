@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-card pb-24 sm:pb-0">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <div>
           <img src={logoAsset.url} alt={t.a11y.logoAlt} className="h-5 w-auto" />
           <p className="mt-3 text-sm text-muted-foreground">{t.footer.tagline}</p>
