@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SectionHeader } from "@/components/section-header";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -51,14 +50,17 @@ function ServicesPageBody() {
 
   return (
     <>
-      <section className="border-b border-border bg-background px-5 py-16 sm:px-8 sm:py-20">
+      <section className="border-b border-border bg-background px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl">
-          <SectionHeader
-            align="center"
-            eyebrow={s.eyebrow}
-            heading={s.heading}
-            sub={s.sub}
-          />
+          <div className="border-l-4 border-primary pl-6 sm:pl-8 md:pl-12">
+            <p className="eyebrow text-primary">{s.eyebrow}</p>
+            <h1 className="font-display mt-4 text-5xl leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+              {s.heading}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              {s.sub}
+            </p>
+          </div>
         </div>
       </section>
 

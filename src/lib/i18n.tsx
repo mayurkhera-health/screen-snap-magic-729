@@ -11,7 +11,7 @@ const en = {
   services: {
     eyebrow: "What we do",
     heading: "Capabilities",
-    sub: "Seven disciplines, one standard: systems that hold up in production.",
+    sub: "Engineering, data, and geospatial systems built to run.",
     items: [
       {
         title: "AI & Data",
@@ -145,7 +145,7 @@ const fr: Copy = {
   services: {
     eyebrow: "Ce que nous faisons",
     heading: "Expertises",
-    sub: "Sept disciplines, une même exigence : des systèmes prêts pour la production.",
+    sub: "Des systèmes d'ingénierie, de données et de géomatique conçus pour fonctionner.",
     items: [
       {
         title: "IA et données",
