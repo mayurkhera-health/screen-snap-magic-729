@@ -28,6 +28,21 @@ const VARIANT: "accent" | "shadow" | "plain" = "accent";
 /** Set false to keep the rule static and drop the reading-position fill. */
 const SHOW_PROGRESS = true;
 
+/**
+ * How dark the hairline sits. The site's --color-border tokens are tuned for
+ * dividers *inside* content, where a barely-there line is right. This rule
+ * separates the fixed header from everything below it and has to carry more
+ * weight than that, so it takes its own value rather than a border token.
+ *
+ * Measured against the page ground (#ffffff / #fbfbfa):
+ *   subtle  #d8d8d5  1.31:1  — the border token; nearly invisible
+ *   medium  #c2c2be  1.55:1
+ *   strong  #a8a8a3  1.95:1  — reads clearly without becoming a black bar
+ *   heavy   #8e8e89  2.44:1
+ */
+const RULE_CENTER = "#a8a8a3";
+const RULE_EDGE = "#cfcfcb";
+
 export function HeaderRule({ scrolled }: { scrolled: boolean }) {
   const [progress, setProgress] = useState(0);
 
@@ -53,8 +68,7 @@ export function HeaderRule({ scrolled }: { scrolled: boolean }) {
       <div
         className="absolute inset-x-0 bottom-0 h-px"
         style={{
-          background:
-            "linear-gradient(to right, transparent, var(--color-border) 8%, var(--color-border-strong) 50%, var(--color-border) 92%, transparent)",
+          background: `linear-gradient(to right, transparent, ${RULE_EDGE} 8%, ${RULE_CENTER} 50%, ${RULE_EDGE} 92%, transparent)`,
         }}
       />
 
