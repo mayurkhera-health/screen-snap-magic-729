@@ -14,6 +14,17 @@ export const DRAFT_SERVICE_PAGES = true;
 
 export type ServiceCapability = { title: string; desc: string };
 
+/**
+ * A linked case study. Index matches the order on /case-studies, which is where
+ * the anchor ids come from.
+ */
+export type ServiceProof = {
+  /** 1-based position in caseStudies.items — becomes #case-N. */
+  index: number;
+  /** The single figure worth putting on the service page. */
+  headline: string;
+};
+
 export type ServiceContent = {
   name: string;
   /** One-line business outcome, not a feature list. */
@@ -24,6 +35,30 @@ export type ServiceContent = {
   technologies: string[];
   seoTitle: string;
   seoDescription: string;
+
+  // ---------------------------------------------------------------------------
+  // FIVE-QUESTION FRAMEWORK (optional, being trialled on Analytics)
+  //
+  // A service page answers five questions in the order a buyer asks them:
+  //   1 am I in the right place        -> name + outcome        (already above)
+  //   2 do they understand my situation-> situation             (new)
+  //   3 can they actually do it        -> capabilities + tech   (already above)
+  //   4 have they done it before       -> proof                 (new, optional)
+  //   5 what happens if I get in touch -> shared, in i18n       (new)
+  //
+  // A service carrying `situation` renders the five-block layout. Anything
+  // without it keeps the older seven-section template, so both can be compared
+  // side by side on the live site before the other six are converted.
+  // ---------------------------------------------------------------------------
+
+  /**
+   * The state a client is in before they call — their problem in our words,
+   * not what we sell. 2-3 sentences. Replaces the `problems` bullet list, which
+   * says the same thing twice alongside `intro`.
+   */
+  situation?: string;
+  /** Omit entirely when this service has no case study. The block then does not render. */
+  proof?: ServiceProof;
 };
 
 export const SERVICE_SLUGS = [
@@ -100,6 +135,11 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Reporting automation", desc: "Removing the manual assembly step that quietly consumes a week of every month." },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
+      // [CONFIRM] Drafted from the existing intro and problem list. This is the
+      // block that does the most work on the page — worth getting exactly right.
+      situation:
+        "Every team reports its own numbers, and two of them rarely agree. Someone rebuilds the monthly pack by hand because the pipeline never landed, and by the time leadership sees a figure nobody is confident enough to decide on it. The dashboard is not the problem.",
+      proof: { index: 3, headline: "Real-time visibility across every country" },
       seoTitle: "Enterprise Analytics Services | Zed Ventures",
       seoDescription:
         "Zed Ventures designs and builds enterprise analytics — BI dashboards, data warehousing and predictive analytics built on definitions the business agrees on.",
@@ -250,6 +290,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Automatisation du reporting", desc: "Supprimer l'assemblage manuel qui consomme discrètement une semaine par mois." },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
+      situation:
+        "Chaque équipe publie ses propres chiffres, et deux d'entre elles s'accordent rarement. Quelqu'un reconstitue le rapport mensuel à la main faute de pipeline, et quand la direction voit enfin un chiffre, personne n'est assez sûr pour décider. Le tableau de bord n'est pas le problème.",
+      proof: { index: 3, headline: "Visibilité en temps réel sur tous les pays" },
       seoTitle: "Services d'analytique d'entreprise | Zed Ventures",
       seoDescription:
         "Zed Ventures conçoit l'analytique d'entreprise — tableaux de bord, entreposage de données et analytique prédictive fondés sur des définitions convenues.",

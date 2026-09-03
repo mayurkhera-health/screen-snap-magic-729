@@ -63,6 +63,152 @@ function ServiceDetailBody() {
   const { slug } = Route.useLoaderData();
   const { t, lang } = useLanguage();
   const s = SERVICE_PAGES[lang][slug];
+
+  // A service that carries `situation` uses the five-question layout. The rest
+  // stay on the older seven-section template until they are converted, so both
+  // can be compared on the live site.
+  if (s.situation) return <FiveQuestionBody />;
+
+  return <LegacyBody />;
+}
+
+/**
+ * Five blocks, each answering one question a buyer asks, in the order they ask
+ * it. See the note at the top of src/lib/service-pages.ts.
+ */
+function FiveQuestionBody() {
+  const { slug } = Route.useLoaderData();
+  const { t, lang } = useLanguage();
+  const s = SERVICE_PAGES[lang][slug];
+  const study = s.proof ? t.caseStudies.items[s.proof.index - 1] : undefined;
+
+  return (
+    <>
+      {/* 1 — "Am I in the right place?" Two elements, nothing else. */}
+      <section className="border-b border-border">
+        <div className="container-page section-y">
+          <p className="eyebrow text-accent">{t.services.eyebrow}</p>
+          <h1 className="font-display mt-3 max-w-[16ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+            {s.name}
+          </h1>
+          <p className="font-display mt-6 max-w-[26ch] text-[1.375rem] leading-[1.25] tracking-[-0.02em] text-accent sm:text-[1.75rem]">
+            {s.outcome}
+          </p>
+        </div>
+      </section>
+
+      {/* 2 — "Do they understand my situation?" Their problem, in our words.
+             bg-surface, not bg-secondary: brand red at eyebrow size measures
+             4.55:1 on #fbfbfa and 4.39:1 on #f7f7f5. The eyebrow is red, so the
+             lighter ground is the only one that clears AA. */}
+      <section className="border-b border-border bg-surface">
+        <div className="container-page section-y split">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.situationEyebrow}
+            heading={t.services.situationHeading}
+          />
+          <p className="max-w-[38rem] text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]">
+            {s.situation}
+          </p>
+        </div>
+      </section>
+
+      {/* 3 — "Can they actually do it?" Capabilities, with the platforms that
+             qualify them sitting alongside rather than in a section of their own. */}
+      <section className="border-b border-border">
+        <div className="container-page section-y">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.buildEyebrow}
+            heading={t.services.buildHeading}
+          />
+          <ul className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2">
+            {s.capabilities.map((c) => (
+              <li key={c.title} className="border-t border-border pt-6">
+                <h3 className="font-display text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                  {c.title}
+                </h3>
+                <p className="mt-3 max-w-[34rem] text-base leading-[1.55] text-muted-foreground">
+                  {c.desc}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-10 flex flex-wrap gap-2.5 border-t border-border pt-8">
+            {s.technologies.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-full border border-border-strong px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 4 — "Have they done it before?" Renders only when there is a real case
+             study. No case study, no block — never filler. */}
+      {study && s.proof && (
+        <section className="border-b border-border">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={t.services.proofEyebrow}
+              heading={t.services.proofHeading}
+            />
+            <Link
+              to="/case-studies"
+              hash={`case-${s.proof.index}`}
+              className="group mt-8 flex max-w-[52rem] flex-col gap-4 rounded-xl border border-border border-l-[3px] border-l-primary bg-card p-7 transition-colors hover:bg-secondary"
+              style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+            >
+              <p className="font-display text-[1.375rem] leading-[1.2] tracking-[-0.02em] sm:text-2xl">
+                {study.title}
+              </p>
+              <p className="font-display text-lg leading-[1.25] tracking-[-0.015em] text-accent">
+                {s.proof.headline}
+              </p>
+              <p className="text-sm leading-[1.55] text-muted-foreground">
+                {study.client} · {study.stack.join(" · ")}
+              </p>
+              <span className="flex items-center gap-1.5 text-sm font-bold text-accent">
+                {t.services.proofCta}
+                <ArrowUpRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* 5 — "What happens if I get in touch?" The one line that turns a button
+             people hover over into one they press. */}
+      <section className="section-dark">
+        <div className="container-page section-y split">
+          <SectionHeader
+            align="left"
+            eyebrow={t.contact.eyebrow}
+            heading={t.services.ctaHeading}
+            sub={t.services.startNext}
+          />
+          <div className="lg:justify-self-end lg:pt-2">
+            <Link to="/contact" className="btn btn-primary">
+              {t.services.pageCta}
+              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/** The original seven-section template. Still used by the six unconverted services. */
+function LegacyBody() {
+  const { slug } = Route.useLoaderData();
+  const { t, lang } = useLanguage();
+  const s = SERVICE_PAGES[lang][slug];
   const steps = HOW_WE_WORK[lang];
   const others = SERVICE_SLUGS.filter((x) => x !== slug).slice(0, 3);
 

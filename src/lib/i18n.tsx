@@ -30,6 +30,18 @@ const en = {
     relatedHeading: "Other capabilities.",
     ctaHeading: "Let's talk about your next project.",
     ctaSub: "Tell us what you're trying to solve. A senior member of our team will read it.",
+    // Five-question framework — see the note in src/lib/service-pages.ts.
+    situationEyebrow: "The situation",
+    situationHeading: "What we usually walk into.",
+    buildEyebrow: "What we do about it",
+    buildHeading: "What we do about it.",
+    proofEyebrow: "Proof",
+    proofHeading: "We have done this.",
+    proofCta: "Read the case study",
+    // [CONFIRM] Answers "what happens if I get in touch" — the friction that
+    // stops people writing. Same line on every service page.
+    startNext:
+      "A senior engineer reads it, not a form queue. You will hear back within one business day.",
     items: [
       {
         title: "AI & Data",
@@ -370,6 +382,15 @@ const fr: Copy = {
     relatedHeading: "Autres expertises.",
     ctaHeading: "Parlons de votre prochain projet.",
     ctaSub: "Dites-nous ce que vous cherchez à résoudre. Un membre senior de notre équipe le lira.",
+    situationEyebrow: "La situation",
+    situationHeading: "Ce que nous trouvons en arrivant.",
+    buildEyebrow: "Ce que nous faisons",
+    buildHeading: "Ce que nous faisons face à cela.",
+    proofEyebrow: "Preuve",
+    proofHeading: "Nous l'avons déjà fait.",
+    proofCta: "Lire l'étude de cas",
+    startNext:
+      "Un ingénieur senior le lit, pas une file d'attente. Vous aurez une réponse sous un jour ouvré.",
     items: [
       {
         title: "IA et données",

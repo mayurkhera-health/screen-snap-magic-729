@@ -70,7 +70,11 @@ function CaseStudiesPageBody() {
         return (
           <section
             key={item.tag}
-            className={`border-b border-border px-5 py-8 sm:px-8 sm:py-10 ${
+            // Stable anchor so a service page can link straight to its proof.
+            // Index-based rather than derived from the tag, because the tag is
+            // translated and the anchor must be the same in both locales.
+            id={`case-${i + 1}`}
+            className={`scroll-mt-24 border-b border-border px-5 py-8 sm:px-8 sm:py-10 ${
               isDark ? "section-dark" : "bg-background"
             }`}
           >
