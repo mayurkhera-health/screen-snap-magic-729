@@ -5,9 +5,21 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionHeader } from "@/components/section-header";
 import { DraftBanner } from "@/components/draft-banner";
-import { DRAFT_SERVICE_PAGES } from "@/lib/service-pages";
 
 const SITE = "https://screen-snap-magic-729.lovable.app";
+
+/**
+ * The positioning line and two of the three "what makes us different" entries
+ * are drafts marked [CONFIRM] — written from what this site already claims, not
+ * from anything the company has stated. Until they are confirmed the page shows
+ * a banner and is kept out of search results.
+ *
+ * Both the banner and the noindex used to be gated on DRAFT_SERVICE_PAGES, a
+ * different page group entirely. Publishing the seven service pages would have
+ * silently published this one too, placeholders and all. Separate concerns,
+ * separate flags.
+ */
+export const DRAFT_ABOUT = true;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -19,7 +31,7 @@ export const Route = createFileRoute("/about")({
           "Zed Ventures is an enterprise engineering firm working across AI, data, analytics, geospatial, SAP and Guidewire platforms.",
       },
       // Placeholder copy must not be indexed.
-      ...(DRAFT_SERVICE_PAGES ? [{ name: "robots", content: "noindex, nofollow" }] : []),
+      ...(DRAFT_ABOUT ? [{ name: "robots", content: "noindex, nofollow" }] : []),
       { property: "og:title", content: "About Zed Ventures" },
       {
         property: "og:description",
@@ -39,8 +51,8 @@ function AboutPage() {
     <LanguageProvider>
       <Header />
       <main className="pt-16 sm:pt-20">
-        {DRAFT_SERVICE_PAGES && (
-          <DraftBanner note="The positioning line, Who we are, and the five What makes us different entries are still sample text. This page is set to noindex until they are replaced." />
+        {DRAFT_ABOUT && (
+          <DraftBanner note="The positioning line and two of the three What makes us different entries are marked [CONFIRM] — drafts written from what the site already claims, not from anything you have told us. Confirm or correct them, then set DRAFT_ABOUT to false." />
         )}
         <AboutBody />
       </main>
@@ -66,15 +78,6 @@ function AboutBody() {
               {a.sub}
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border">
-        <div className="container-page section-y split">
-          <SectionHeader align="left" eyebrow={a.whoEyebrow} heading={a.whoHeading} />
-          <p className="max-w-[46rem] text-[1.0625rem] leading-[1.65] text-muted-foreground">
-            {a.whoBody}
-          </p>
         </div>
       </section>
 
