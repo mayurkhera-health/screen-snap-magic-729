@@ -164,7 +164,14 @@ const en = {
   careersPage: {
     eyebrow: "Careers",
     heading: "Open roles",
-    sub: "Current openings at ZEDventures. Each posting lists what the role requires and how to apply.",
+    // The opening paragraph does the job a "Join us" welcome does on bigger
+    // consultancies' sites: orient the reader, say what the work is, and invite
+    // a speculative application. It deliberately describes the WORK rather than
+    // the culture. Culture claims — "a unique and diverse experience", "be
+    // yourself and make a real impact" — are unverifiable, read as borrowed from
+    // a firm ten times this size, and are the hiring equivalent of the oversold
+    // benefits we already decided to keep off this page.
+    sub: "Every open role at ZEDventures, what it requires, and how to apply. We are a consulting firm, so the work is client projects on enterprise systems \u2014 SAP, analytics, GIS, insurance platforms \u2014 delivered onsite, offshore and nearshore. If nothing here fits and you think you would be useful to us, send your resume anyway; we keep them on file.",
     draftNotice:
       "Draft — these postings have not been checked against the filings and the pay ranges are not final. Not for publication.",
     openCount: "open roles",
@@ -503,7 +510,7 @@ const fr: Copy = {
   careersPage: {
     eyebrow: "Carrières",
     heading: "Postes ouverts",
-    sub: "Les postes actuellement ouverts chez ZEDventures. Chaque annonce indique les exigences du poste et la façon de postuler.",
+    sub: "Tous les postes ouverts chez ZEDventures, leurs exigences et la façon de postuler. Nous sommes un cabinet de conseil : le travail consiste en projets clients sur des systèmes d’entreprise — SAP, analytique, SIG, plateformes d’assurance — livrés sur site, en offshore et en nearshore. Si rien ici ne vous correspond mais que vous pensez pouvoir nous être utile, envoyez tout de même votre CV ; nous les conservons.",
     draftNotice:
       "Brouillon — ces annonces n'ont pas été vérifiées par rapport aux dépôts officiels et les fourchettes de salaire ne sont pas définitives. Ne pas publier.",
     openCount: "postes ouverts",
