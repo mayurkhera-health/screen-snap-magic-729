@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/section-header";
 import { DraftBanner } from "@/components/draft-banner";
 import { LegalBlocks } from "@/components/careers-legal";
 import { CareersWhy } from "@/components/careers-why";
+import { CareersProcess } from "@/components/careers-process";
 import { DRAFT_CAREERS, OPEN_POSTINGS, formatPay } from "@/lib/careers";
 
 const SITE = "https://screen-snap-magic-729.lovable.app";
@@ -117,6 +118,8 @@ function CareersBody() {
       </section>
 
       <CareersWhy />
+
+      <CareersProcess />
 
       <LegalBlocks />
     </>

@@ -196,15 +196,68 @@ const en = {
     applyPostalLabel: "By post",
     verbatimNote:
       "This posting is reproduced as filed. Its wording is set by the filing and is not edited for style.",
-    // "Why join us" strip. Every line is a PLACEHOLDER: these have to be claims
-    // that hold across every location and every role, and they cannot be
-    // invented. Replace before launch or delete the section.
+    // "Why join us" strip.
+    //
+    // The test each line had to pass: could a candidate call us out on it in
+    // month two? Anything a candidate could not verify, or that every
+    // consultancy says, was cut. Two candidates were dropped for stated
+    // reasons rather than because they were untrue:
+    //   - visa sponsorship — already covered, per-role, in the "Work
+    //     authorization" block below, and repeating it here as a blanket
+    //     benefit would overstate it
+    //   - "production systems, not pilots" — duplicates the site tagline and
+    //     is a claim about client work, not about working here
+    //
+    // These hold across every role and every location, which matters because
+    // the postings cover San Jose plus "various unanticipated client
+    // locations" — anything tied to one office is wrong for most readers.
     whyEyebrow: "Why join us",
     whyHeading: "What working here is actually like",
     why: [
-      { title: "[PLACEHOLDER — reason one]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
-      { title: "[PLACEHOLDER — reason two]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
-      { title: "[PLACEHOLDER — reason three]", body: "[PLACEHOLDER — one line, roughly 90 characters, true of every role and every location.]" },
+      {
+        title: "Small teams",
+        body: "You are one of a handful of people on a project, not one of forty. Your work is visible.",
+      },
+      {
+        title: "The client is in the room",
+        body: "You work directly with the people who own the system, not through a layer of account managers.",
+      },
+      {
+        title: "Onsite, offshore and nearshore",
+        body: "We deliver across all three, so where you work is a conversation rather than a policy.",
+      },
+    ],
+
+    // "How hiring works" — the question candidates actually want answered and
+    // that most consultancy careers pages promise and never deliver.
+    //
+    // [CONFIRM] Every step below is a promise a candidate will hold us to. The
+    // sequence and the "you meet the person you would report to" claim need
+    // checking against how hiring is actually run before DRAFT_CAREERS comes
+    // off. If HR screens first, say so — a candidate who is told they will
+    // meet their manager and gets a recruiter instead has already learned
+    // something about us.
+    processEyebrow: "How hiring works",
+    processHeading: "What happens after you apply",
+    processSub:
+      "Four steps, and we tell you where you stand at each one. If a role is not moving forward we say so rather than going quiet.",
+    process: [
+      {
+        title: "You send a resume",
+        body: "Quote the job title and job code so it reaches the right person. No account, no form to fill in.",
+      },
+      {
+        title: "A call with the person you would report to",
+        body: "Not a screening call. Half an hour on the work itself and what you would be walking into.",
+      },
+      {
+        title: "A working conversation",
+        body: "We talk through systems you have actually built \u2014 decisions, trade-offs, what broke. No puzzle questions.",
+      },
+      {
+        title: "A written offer",
+        body: "Pay, benefits and start date in writing, and we go through what applies to your role before you accept.",
+      },
     ],
     legalHelper: "The terms that apply to every role here. Open any item to read it.",
     expand: "Show",
@@ -539,9 +592,41 @@ const fr: Copy = {
     whyEyebrow: "Pourquoi nous rejoindre",
     whyHeading: "Ce que c'est de travailler ici",
     why: [
-      { title: "[ESPACE RÉSERVÉ — raison une]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
-      { title: "[ESPACE RÉSERVÉ — raison deux]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
-      { title: "[ESPACE RÉSERVÉ — raison trois]", body: "[ESPACE RÉSERVÉ — une ligne, environ 90 caractères, vraie pour chaque poste et chaque site.]" },
+      {
+        title: "Des équipes réduites",
+        body: "Vous êtes l'une des quelques personnes sur un projet, pas l'une de quarante. Votre travail se voit.",
+      },
+      {
+        title: "Le client est dans la pièce",
+        body: "Vous travaillez directement avec les responsables du système, sans intermédiaire commercial.",
+      },
+      {
+        title: "Sur site, offshore et nearshore",
+        body: "Nous livrons selon les trois modes : le lieu de travail se discute, il ne s'impose pas.",
+      },
+    ],
+
+    processEyebrow: "Notre processus de recrutement",
+    processHeading: "Ce qui se passe après votre candidature",
+    processSub:
+      "Quatre étapes, et nous vous disons où vous en êtes à chacune. Si une candidature n'avance pas, nous vous le disons plutôt que de ne plus donner signe de vie.",
+    process: [
+      {
+        title: "Vous envoyez votre CV",
+        body: "Indiquez l'intitulé et le code du poste pour qu'il arrive à la bonne personne. Pas de compte à créer, pas de formulaire.",
+      },
+      {
+        title: "Un échange avec votre futur responsable",
+        body: "Pas un entretien de présélection. Une demi-heure sur le travail lui-même et sur ce qui vous attend.",
+      },
+      {
+        title: "Une conversation technique",
+        body: "Nous parlons de systèmes que vous avez réellement construits : décisions, arbitrages, ce qui a cassé. Pas d'énigmes.",
+      },
+      {
+        title: "Une offre écrite",
+        body: "Rémunération, avantages et date de début par écrit, et nous passons en revue ce qui s'applique à votre poste avant que vous acceptiez.",
+      },
     ],
     legalHelper: "Les conditions qui s'appliquent à tous les postes. Ouvrez un élément pour le lire.",
     expand: "Afficher",
