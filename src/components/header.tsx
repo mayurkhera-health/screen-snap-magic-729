@@ -4,6 +4,7 @@ import { ArrowRight, Menu } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/language-toggle";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { HeaderRule } from "@/components/header-rule";
 
 /**
  * Served straight from public/. The previous source was a Lovable asset-manifest
@@ -44,10 +45,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-200 ${
-        scrolled
-          ? "border-b border-border bg-background/92 backdrop-blur-[16px]"
-          : "border-b border-transparent bg-background"
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter] duration-200 ${
+        scrolled ? "bg-background/92 backdrop-blur-[16px]" : "bg-background"
       }`}
       style={{ transitionTimingFunction: "var(--ease)" }}
     >
@@ -124,6 +123,8 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+
+      <HeaderRule scrolled={scrolled} />
     </header>
   );
 }
