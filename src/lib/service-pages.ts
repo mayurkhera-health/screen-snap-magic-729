@@ -282,24 +282,63 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     sap: {
       name: "SAP",
       heroImageHint: "An SAP module screen, or a rollout workshop in progress",
-      outcome: "Extend SAP without rebuilding the problems clean core was meant to remove.",
+      // S7: outcome, not the service name, and not accusatory. The client is
+      // not being blamed for the customisation they inherited.
+      outcome: "Modernize SAP without disrupting the business it runs.",
       intro:
-        "The discipline that matters in SAP work is knowing what belongs in the core and what belongs beside it. We build extensions and integrations that keep that line intact, including AI agents that reach real ERP context.",
+        "ZEDventures delivers S/4HANA migration, BTP extension and Fiori engineering with clean-core discipline, so the system can keep taking upgrades after the project team has gone.",
       problems: [
         "Customisation in the core that now blocks every upgrade.",
         "Integrations built point-to-point until nobody can map them.",
         "AI pilots that cannot see live ERP data, so they stay pilots.",
       ],
+      /**
+       * [CONFIRM] Drafted, not written from experience. Mayur has not yet
+       * supplied the SAP situation paragraph, and this is the one section on
+       * the page that cannot be produced from a service description — it is
+       * meant to prove someone has been in the room. Read it as a placeholder
+       * with the right shape rather than as finished copy.
+       */
+      situation:
+        "The system was fitted to the business years ago, and every fit was a change to the core. Upgrades now mean regression-testing work nobody has documented, so they get deferred. Each deferral makes the next one larger, and the platform quietly stops being something anyone wants to touch.",
       capabilities: [
-        { title: "S/4HANA", desc: "Migration and greenfield work with the core kept clean enough to upgrade." },
-        { title: "BTP extensions", desc: "Side-by-side extension where the logic belongs outside the core." },
-        { title: "Fiori applications", desc: "Interfaces built for the people doing the process, not the module." },
-        { title: "SAP-grounded AI", desc: "Agents with governed access to real ERP context rather than a copied extract." },
+        { title: "S/4HANA migration", desc: "Move to S/4HANA with the core kept clean enough to keep taking upgrades afterwards." },
+        { title: "Clean-core remediation", desc: "Move logic out of the core where it blocks upgrades, without changing what the business sees." },
+        { title: "BTP extensions", desc: "Side-by-side extension for the logic that does not belong inside the core." },
+        { title: "Fiori applications", desc: "Interfaces built around the people running the process rather than the module." },
+        { title: "Integration and interfaces", desc: "Replace point-to-point connections with integration somebody can still map next year." },
+        { title: "SAP-grounded AI", desc: "Agents with governed access to real ERP context instead of a copied extract." },
+      ],
+      /**
+       * [CONFIRM] Same rule as Analytics: only platforms ZED can substantiate.
+       * These six are the stack already named on the live site; nothing has
+       * been added to lengthen the list.
+       */
+      technologyGroups: [
+        { label: "Core platform", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        { label: "Extension", items: ["SAP BTP", "CAP", "OData"] },
+        { label: "Integration", items: ["SAP Integration Suite", "Microsoft Azure"] },
       ],
       technologies: ["S/4HANA", "SAP BTP", "Fiori", "CAP", "ABAP", "OData"],
-      seoTitle: "SAP Consulting & Engineering | Zed Ventures",
+      whyIntro:
+        "We treat SAP as a business process that happens to run on software, and keep the core clean enough that the next upgrade is routine.",
+      whyPillars: [
+        {
+          title: "Business process + technology",
+          body: "We start from what the process has to do and what the business cannot afford to stop, then decide what the system change should be — not the other way round.",
+        },
+        {
+          title: "Operational continuity",
+          body: "The system is carrying live operations while we work on it. Migration and remediation are sequenced so the business keeps running through the change.",
+        },
+        {
+          title: "Clean core, kept clean",
+          body: "Extensions go beside the core, not inside it, and we document the boundary so it survives the people who drew it.",
+        },
+      ],
+      seoTitle: "SAP Consulting, S/4HANA Migration & BTP Engineering | ZEDventures",
       seoDescription:
-        "Zed Ventures delivers SAP S/4HANA, BTP and Fiori engineering with clean-core discipline, plus SAP-grounded AI agents with governed access to ERP context.",
+        "ZEDventures delivers SAP S/4HANA migration, clean-core remediation, BTP extension and Fiori engineering, keeping the core upgradeable after the project ends.",
     },
     "product-engineering": {
       name: "Product Engineering",
@@ -465,24 +504,49 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     sap: {
       name: "SAP",
       heroImageHint: "Un écran de module SAP, ou un atelier de déploiement",
-      outcome: "Étendre SAP sans recréer les problèmes que le clean core devait éliminer.",
+      outcome: "Moderniser SAP sans perturber l'activité qu'il fait tourner.",
       intro:
-        "La discipline qui compte dans le travail SAP consiste à savoir ce qui appartient au cœur et ce qui doit rester à côté. Nous construisons des extensions et des intégrations qui préservent cette frontière, y compris des agents d'IA reliés au contexte ERP réel.",
+        "ZEDventures livre migration S/4HANA, extensions BTP et ingénierie Fiori avec une discipline clean core, pour que le système continue d'accepter les montées de version après le départ de l'équipe projet.",
       problems: [
         "De la personnalisation dans le cœur qui bloque désormais chaque montée de version.",
         "Des intégrations point à point que plus personne ne sait cartographier.",
         "Des pilotes d'IA sans accès aux données ERP réelles, qui restent des pilotes.",
       ],
+      situation:
+        "Le système a été ajusté à l'entreprise il y a des années, et chaque ajustement a touché le cœur. Les montées de version imposent aujourd'hui des tests de non-régression que personne n'a documentés : on les reporte. Chaque report rend le suivant plus lourd, et la plateforme devient peu à peu ce que personne ne veut toucher.",
       capabilities: [
-        { title: "S/4HANA", desc: "Migration et projets neufs avec un cœur suffisamment propre pour rester évolutif." },
-        { title: "Extensions BTP", desc: "Extension côte à côte lorsque la logique n'a pas sa place dans le cœur." },
-        { title: "Applications Fiori", desc: "Des interfaces conçues pour les personnes qui exécutent le processus, pas pour le module." },
+        { title: "Migration S/4HANA", desc: "Passer à S/4HANA en gardant un cœur assez propre pour rester évolutif ensuite." },
+        { title: "Assainissement du cœur", desc: "Sortir du cœur la logique qui bloque les montées de version, sans rien changer pour les utilisateurs." },
+        { title: "Extensions BTP", desc: "Extension côte à côte pour la logique qui n'a pas sa place dans le cœur." },
+        { title: "Applications Fiori", desc: "Des interfaces conçues autour des personnes qui exécutent le processus, pas du module." },
+        { title: "Intégration et interfaces", desc: "Remplacer les liaisons point à point par une intégration encore cartographiable l'an prochain." },
         { title: "IA ancrée dans SAP", desc: "Des agents disposant d'un accès gouverné au contexte ERP réel plutôt qu'à un extrait copié." },
       ],
+      technologyGroups: [
+        { label: "Plateforme", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        { label: "Extension", items: ["SAP BTP", "CAP", "OData"] },
+        { label: "Intégration", items: ["SAP Integration Suite", "Microsoft Azure"] },
+      ],
       technologies: ["S/4HANA", "SAP BTP", "Fiori", "CAP", "ABAP", "OData"],
-      seoTitle: "Conseil et ingénierie SAP | Zed Ventures",
+      whyIntro:
+        "Nous traitons SAP comme un processus métier qui se trouve tourner sur un logiciel, et gardons le cœur assez propre pour que la prochaine montée de version soit une routine.",
+      whyPillars: [
+        {
+          title: "Processus métier et technologie",
+          body: "Nous partons de ce que le processus doit accomplir et de ce que l'entreprise ne peut pas se permettre d'arrêter, puis décidons du changement système — et non l'inverse.",
+        },
+        {
+          title: "Continuité opérationnelle",
+          body: "Le système porte l'exploitation pendant que nous y travaillons. Migration et assainissement sont séquencés pour que l'activité continue malgré le chantier.",
+        },
+        {
+          title: "Un cœur propre, qui le reste",
+          body: "Les extensions se placent à côté du cœur, pas dedans, et nous documentons la frontière pour qu'elle survive à ceux qui l'ont tracée.",
+        },
+      ],
+      seoTitle: "Conseil SAP, migration S/4HANA et ingénierie BTP | ZEDventures",
       seoDescription:
-        "Zed Ventures livre de l'ingénierie SAP S/4HANA, BTP et Fiori avec une discipline clean core, ainsi que des agents d'IA reliés au contexte ERP.",
+        "ZEDventures livre migration S/4HANA, assainissement du cœur, extensions BTP et ingénierie Fiori, en gardant le cœur évolutif après la fin du projet.",
     },
     "product-engineering": {
       name: "Ingénierie produit",
