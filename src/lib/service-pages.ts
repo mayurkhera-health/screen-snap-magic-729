@@ -360,8 +360,12 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // S7: outcome, not the service name, and not accusatory. The client is
       // not being blamed for the customisation they inherited.
       outcome: "Modernize SAP without disrupting the business it runs.",
+      // Mayur's words. 85 against the spec's 40-word hero guideline, kept as
+      // written: the middle sentence — what should move, what should change,
+      // what no longer needs carrying forward — is the judgement being sold,
+      // and it is the part a competitor could not have written.
       intro:
-        "ZEDventures delivers S/4HANA migration, BTP extension and Fiori engineering with clean-core discipline, so the system can keep taking upgrades after the project team has gone.",
+        "ZEDventures helps organizations move to S/4HANA, build extensions on BTP, and create better user experiences with Fiori\u2014without rebuilding years of complexity in the new environment. We look carefully at what should move, what should change, and what no longer needs to be carried forward. By keeping customizations away from the core wherever possible, we leave clients with an SAP environment that is easier to maintain, easier to upgrade, and better prepared for what comes next.",
       problems: [
         "Customisation in the core that now blocks every upgrade.",
         "Integrations built point-to-point until nobody can map them.",
@@ -617,7 +621,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Moderniser SAP sans perturber l'activité qu'il fait tourner.",
       intro:
-        "ZEDventures livre migration S/4HANA, extensions BTP et ingénierie Fiori avec une discipline clean core, pour que le système continue d'accepter les montées de version après le départ de l'équipe projet.",
+        "ZEDventures accompagne les organisations vers S/4HANA, construit des extensions sur BTP et améliore l'expérience utilisateur avec Fiori \u2014 sans reconstruire des années de complexité dans le nouvel environnement. Nous examinons de près ce qui doit être repris, ce qui doit changer et ce qu'il n'est plus utile de transporter. En gardant les personnalisations hors du cœur autant que possible, nous laissons un environnement SAP plus simple à maintenir, plus simple à faire évoluer et mieux préparé à la suite.",
       problems: [
         "De la personnalisation dans le cœur qui bloque désormais chaque montée de version.",
         "Des intégrations point à point que plus personne ne sait cartographier.",
