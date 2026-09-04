@@ -235,20 +235,29 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
                 Still names only, no logos: no licensing question per mark and
                 no implied partner status. */}
-            {/* The outer edge takes --border-strong (#d8d8d5) while the row
-                dividers stay on --border (#e7e7e4). Two weights, not one: the
-                stronger line draws the block as a single object, the lighter
-                ones separate rows inside it. A card where the frame and the
-                dividers are the same weight reads as a stack of unrelated
-                strips rather than one table. */}
-            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-border-strong bg-background">
+            {/* Two border weights, and both are heavier than the site's content
+                dividers. The --border / --border-strong tokens are tuned for
+                hairlines *inside* prose, where barely-there is right; this
+                card is a discrete object sitting on a tinted band and has to
+                hold its own edge, so it takes its own values.
+
+                Measured against the card ground (#ffffff):
+                  #e7e7e4  1.24  --border, the content hairline
+                  #d8d8d5  1.43  --border-strong
+                  #c2c2be  1.79  <- row dividers
+                  #a8a8a3  2.39  <- card frame
+                  #8e8e89  3.29  reads as a drawn box, too heavy here
+
+                The frame stays a step above the dividers so the card still
+                reads as one object rather than three stacked strips. */}
+            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-[#a8a8a3] bg-background">
               {groups.map((g, i) => {
                 const Icon = g.icon ? TECH_ICONS[g.icon] : null;
                 return (
                   <div
                     key={g.label}
                     className={`grid gap-2 px-4 py-3 sm:px-[18px] lg:grid-cols-[minmax(0,170px)_minmax(0,1fr)] lg:items-center lg:gap-3 ${
-                      i > 0 ? "border-t border-border" : ""
+                      i > 0 ? "border-t border-[#c2c2be]" : ""
                     }`}
                   >
                     <dt className="flex items-center gap-1.5">
