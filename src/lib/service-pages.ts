@@ -216,6 +216,43 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Orchestration APIs", desc: "The authentication, conversation state and validation layer between a model and your users." },
       ],
       technologies: ["Azure OpenAI", "Azure AI Search", "Python", "Vector databases", "Databricks", "Airflow"],
+      /**
+       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
+       * file, not written from experience. The situation paragraph in
+       * particular has to come from someone who has been in the room — that
+       * is what it is for, and it is the reason the Analytics and SAP pages
+       * read differently from a competitor's. This service stays in
+       * DRAFT_SERVICES until it is replaced.
+       */
+      situation:
+        "Most enterprise AI stops at a good demo. The prototype answers well in a meeting, then nobody will approve it for customers because no one can say where an answer came from, what it saw, or what it would do on a bad day. Meanwhile the data it needs sits across systems that were never designed to be read together.",
+      technologyGroups: [
+        { label: "Models and retrieval", icon: "chart", items: ["Azure OpenAI", "Azure AI Search", "Vector databases"] },
+        { label: "Data platforms", icon: "cube", items: ["Databricks", "Airflow"] },
+        { label: "Engineering", icon: "layers", items: ["Python"] },
+      ],
+      platformsSub:
+        "We work with the AI and data platforms enterprise teams are already standardising on.",
+      whyIntro:
+        "We treat enterprise AI as a production systems problem, not a modelling one — the hard part is everything around the model.",
+      whyPillars: [
+        {
+          title: "Built for approval, not for demos",
+          body: "Retrieval, guardrails and evaluation are in from the first build, because they are what a risk owner asks about and what a prototype never has.",
+        },
+        {
+          title: "The data platform underneath",
+          body: "A model is only as good as what it can reach. We build the ingestion and storage as part of the work rather than assuming it exists.",
+        },
+        {
+          title: "Accountable in production",
+          body: "Monitoring, versioning and a path to change the system once real users are on it, not a handover at launch.",
+        },
+      ],
+      finalCta: {
+        title: "Let's talk about your AI and data priorities.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "AI & Data Consulting Services | Zed Ventures",
       seoDescription:
         "Zed Ventures builds enterprise AI and data platforms — retrieval-augmented applications, machine learning pipelines and orchestration built to run in production.",
@@ -324,6 +361,43 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Location analytics", desc: "Spatial questions answered in the same tools as the rest of the business." },
       ],
       technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
+      /**
+       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
+       * file, not written from experience. The situation paragraph in
+       * particular has to come from someone who has been in the room — that
+       * is what it is for, and it is the reason the Analytics and SAP pages
+       * read differently from a competitor's. This service stays in
+       * DRAFT_SERVICES until it is replaced.
+       */
+      situation:
+        "Spatial data usually lives in its own system, queried by the one team that knows the tooling. Everyone else works from addresses and postcodes, so exposure and risk get assessed on approximations of geography rather than geography. Imagery and sensor data keep arriving, and most of it is never looked at.",
+      technologyGroups: [
+        { label: "Spatial platforms", icon: "cube", items: ["PostGIS", "Apache Sedona"] },
+        { label: "GIS tooling", icon: "layers", items: ["ArcGIS", "QGIS"] },
+        { label: "Analysis", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
+      ],
+      platformsSub:
+        "We work with the open and commercial geospatial stack, alongside the platforms the rest of the business already uses.",
+      whyIntro:
+        "We build location into the same pipelines and the same analysis as the rest of the estate, rather than beside it.",
+      whyPillars: [
+        {
+          title: "Spatial and enterprise data together",
+          body: "Geometry belongs in the same platform as everything else, so a spatial question can be answered in the tools the business already uses.",
+        },
+        {
+          title: "Operational, not cartographic",
+          body: "The output is a number a decision depends on — exposure, routing, coverage — rather than a map somebody looks at.",
+        },
+        {
+          title: "From field to enterprise",
+          body: "Collection, imagery and sensor feeds through to the models and reports that consume them, as one path.",
+        },
+      ],
+      finalCta: {
+        title: "Let's talk about your GIS environment.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "GIS & Geospatial Solutions | Zed Ventures",
       seoDescription:
         "Zed Ventures builds geospatial systems — spatial data platforms, exposure mapping, imagery-based risk assessment and location analytics for enterprise use.",
@@ -346,6 +420,43 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Cloud migration", desc: "Getting to Guidewire Cloud with the integration surface intact." },
       ],
       technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "REST integrations"],
+      /**
+       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
+       * file, not written from experience. The situation paragraph in
+       * particular has to come from someone who has been in the room — that
+       * is what it is for, and it is the reason the Analytics and SAP pages
+       * read differently from a competitor's. This service stays in
+       * DRAFT_SERVICES until it is replaced.
+       */
+      situation:
+        "Claims still have to be paid while the platform is worked on. Configuration has drifted over the years, nobody holds a full picture of it, and an upgrade deferred long enough stops being an upgrade and becomes the project. The integrations hanging off the edges are usually what makes it hard.",
+      technologyGroups: [
+        { label: "Guidewire suite", icon: "layers", items: ["PolicyCenter", "BillingCenter", "ClaimCenter"] },
+        { label: "Platform", icon: "cube", items: ["Guidewire Cloud", "Gosu"] },
+        { label: "Integration", icon: "plug", items: ["REST integrations"] },
+      ],
+      platformsSub:
+        "We work across the Guidewire suite and the integration surface around it.",
+      whyIntro:
+        "We sequence Guidewire work around the one constraint that does not move: the business keeps running on it while we work.",
+      whyPillars: [
+        {
+          title: "Insurance domain understanding",
+          body: "Underwriting and claims process first, product model second. Configuration decisions follow from how the business actually works.",
+        },
+        {
+          title: "Platform and integration expertise",
+          body: "The suite and the systems around it. Most of the difficulty in a Guidewire programme lives at the edges, not in the core.",
+        },
+        {
+          title: "Implementation through production",
+          body: "Planned around the customisation that exists rather than the vanilla product, and accountable after go-live.",
+        },
+      ],
+      finalCta: {
+        title: "Let's talk about your Guidewire programme.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "Guidewire Consulting Services | Zed Ventures",
       seoDescription:
         "Zed Ventures delivers Guidewire implementation, configuration, upgrades and cloud migration across PolicyCenter, BillingCenter and ClaimCenter.",
@@ -480,6 +591,43 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Release and operations", desc: "Deployment, observability and the on-call reality that follows a launch." },
       ],
       technologies: ["TypeScript", "React", "Node.js", "Python", "Kubernetes", "Terraform"],
+      /**
+       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
+       * file, not written from experience. The situation paragraph in
+       * particular has to come from someone who has been in the room — that
+       * is what it is for, and it is the reason the Analytics and SAP pages
+       * read differently from a competitor's. This service stays in
+       * DRAFT_SERVICES until it is replaced.
+       */
+      situation:
+        "The roadmap slips because the architecture cannot absorb the next feature, and quality gets checked at the end, when fixing anything is most expensive. Teams ship code without the operational readiness around it, so the release is the start of the problem rather than the end of the work.",
+      technologyGroups: [
+        { label: "Application", icon: "layers", items: ["TypeScript", "React", "Node.js"] },
+        { label: "Services and data", icon: "cube", items: ["Python"] },
+        { label: "Platform", icon: "cloud", items: ["Kubernetes", "Terraform"] },
+      ],
+      platformsSub:
+        "We work with the languages and platforms enterprise product teams run on today.",
+      whyIntro:
+        "We stay accountable after the release rather than handing over a repository, which changes how the architecture gets decided in the first place.",
+      whyPillars: [
+        {
+          title: "Product thinking and engineering",
+          body: "We ask what the software has to do for the business before deciding what to build, so the architecture serves the roadmap rather than constraining it.",
+        },
+        {
+          title: "Architecture built to scale",
+          body: "Sized for the load it will carry and for the team that has to maintain it after we leave.",
+        },
+        {
+          title: "Build through operations",
+          body: "Testing in the pipeline, observability at launch, and the on-call reality that follows it.",
+        },
+      ],
+      finalCta: {
+        title: "Let's talk about your product roadmap.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "Product Engineering Services | Zed Ventures",
       seoDescription:
         "Zed Ventures provides full-cycle product engineering — architecture, cloud-native development, quality engineering and release operations for enterprise software.",
@@ -502,6 +650,43 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Blended engagement", desc: "The split decided by what each workstream needs, not by a single contract shape." },
       ],
       technologies: ["Distributed delivery", "Follow-the-sun support", "Agile at scale", "Shared tooling", "Embedded QA", "Knowledge transfer"],
+      /**
+       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
+       * file, not written from experience. The situation paragraph in
+       * particular has to come from someone who has been in the room — that
+       * is what it is for, and it is the reason the Analytics and SAP pages
+       * read differently from a competitor's. This service stays in
+       * DRAFT_SERVICES until it is replaced.
+       */
+      situation:
+        "Hiring timelines rarely match delivery dates, so capacity arrives late or not at all. Distributed teams lose a day to every question, and vendor teams often never absorb enough context to work without being told what to do next — which turns extra people into extra coordination.",
+      technologyGroups: [
+        { label: "Delivery model", icon: "layers", items: ["Dedicated teams", "Distributed delivery", "Blended onshore & offshore"] },
+        { label: "Practices", icon: "cube", items: ["Agile at scale", "Embedded QA", "Shared tooling"] },
+        { label: "Continuity", icon: "plug", items: ["Follow-the-sun support", "Knowledge transfer"] },
+      ],
+      platformsSub:
+        "How we work, rather than what we work with — the practices that make distributed delivery hold together.",
+      whyIntro:
+        "We add engineering capacity as a team that holds context, not as headcount somebody else has to direct.",
+      whyPillars: [
+        {
+          title: "Integrated teams, not staffing",
+          body: "Engineers stay on your product long enough to hold its context and make decisions without waiting to be told.",
+        },
+        {
+          title: "Engineering accountability",
+          body: "We are answerable for what ships, not for hours logged. The measure is working software in your environment.",
+        },
+        {
+          title: "Flexible global delivery",
+          body: "Offshore in India for depth and cost-efficient capacity, nearshore across the Americas for overlapping hours. The split is decided per workstream.",
+        },
+      ],
+      finalCta: {
+        title: "Let's talk about your delivery capacity.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "Offshore & Nearshore Engineering | Zed Ventures",
       seoDescription:
         "Zed Ventures provides offshore delivery in India and nearshore delivery across the Americas — dedicated engineering teams for design, development, QA and support.",
@@ -527,6 +712,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "API d'orchestration", desc: "La couche d'authentification, d'état conversationnel et de validation entre un modèle et vos utilisateurs." },
       ],
       technologies: ["Azure OpenAI", "Azure AI Search", "Python", "Bases vectorielles", "Databricks", "Airflow"],
+      situation:
+        "La plupart des projets d'IA en entreprise s'arrêtent à une bonne démonstration. Le prototype répond bien en réunion, puis personne ne veut l'exposer aux clients : nul ne peut dire d'où vient une réponse, ce que le modèle a consulté, ni ce qu'il ferait un mauvais jour. Pendant ce temps, les données nécessaires restent éparpillées dans des systèmes jamais conçus pour être lus ensemble.",
+      technologyGroups: [
+        { label: "Modèles et recherche", icon: "chart", items: ["Azure OpenAI", "Azure AI Search", "Bases vectorielles"] },
+        { label: "Plateformes de données", icon: "cube", items: ["Databricks", "Airflow"] },
+        { label: "Ingénierie", icon: "layers", items: ["Python"] },
+      ],
+      platformsSub:
+        "Nous travaillons avec les plateformes d'IA et de données que les entreprises adoptent aujourd'hui.",
+      whyIntro:
+        "Nous traitons l'IA d'entreprise comme un problème de système en production, pas de modélisation : le plus difficile est tout ce qui entoure le modèle.",
+      whyPillars: [
+        {
+          title: "Conçu pour être validé, pas démontré",
+          body: "Recherche documentaire, garde-fous et évaluation dès la première version : c'est ce que demande un responsable des risques, et ce qu'un prototype n'a jamais.",
+        },
+        {
+          title: "La plateforme de données en dessous",
+          body: "Un modèle ne vaut que ce qu'il peut atteindre. L'ingestion et le stockage font partie du travail, pas d'une hypothèse.",
+        },
+        {
+          title: "Responsables en production",
+          body: "Supervision, versionnage et capacité à faire évoluer le système une fois de vrais utilisateurs dessus — pas une passation au lancement.",
+        },
+      ],
+      finalCta: {
+        title: "Parlons de vos priorités en IA et données.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Services-conseils en IA et données | Zed Ventures",
       seoDescription:
         "Zed Ventures conçoit des plateformes d'IA et de données d'entreprise — applications à recherche augmentée, pipelines d'apprentissage automatique et orchestration prêtes pour la production.",
@@ -608,6 +822,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Analytique de localisation", desc: "Des questions spatiales traitées dans les mêmes outils que le reste de l'entreprise." },
       ],
       technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
+      situation:
+        "La donnée spatiale vit généralement dans son propre système, interrogée par la seule équipe qui en maîtrise les outils. Les autres travaillent sur des adresses et des codes postaux : l'exposition et le risque sont donc évalués sur une approximation de la géographie plutôt que sur la géographie. Imagerie et données de capteurs continuent d'arriver, et l'essentiel n'est jamais exploité.",
+      technologyGroups: [
+        { label: "Plateformes spatiales", icon: "cube", items: ["PostGIS", "Apache Sedona"] },
+        { label: "Outils SIG", icon: "layers", items: ["ArcGIS", "QGIS"] },
+        { label: "Analyse", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
+      ],
+      platformsSub:
+        "Nous travaillons avec l'écosystème géospatial libre et commercial, aux côtés des plateformes déjà en place.",
+      whyIntro:
+        "Nous intégrons la localisation aux mêmes pipelines et aux mêmes analyses que le reste du patrimoine applicatif, plutôt qu'à côté.",
+      whyPillars: [
+        {
+          title: "Données spatiales et données d'entreprise ensemble",
+          body: "La géométrie a sa place dans la même plateforme que le reste : une question spatiale se répond dans les outils que le métier utilise déjà.",
+        },
+        {
+          title: "Opérationnel, pas cartographique",
+          body: "Le résultat est un chiffre sur lequel une décision repose — exposition, tournées, couverture — et non une carte que l'on regarde.",
+        },
+        {
+          title: "Du terrain à l'entreprise",
+          body: "De la collecte, de l'imagerie et des capteurs jusqu'aux modèles et rapports qui les consomment, en un seul parcours.",
+        },
+      ],
+      finalCta: {
+        title: "Parlons de votre environnement SIG.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Solutions SIG et géospatiales | Zed Ventures",
       seoDescription:
         "Zed Ventures conçoit des systèmes géospatiaux — plateformes de données spatiales, cartographie de l'exposition, analyse d'imagerie et analytique de localisation.",
@@ -630,6 +873,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Migration infonuagique", desc: "Atteindre Guidewire Cloud avec la surface d'intégration intacte." },
       ],
       technologies: ["PolicyCenter", "BillingCenter", "ClaimCenter", "Gosu", "Guidewire Cloud", "Intégrations REST"],
+      situation:
+        "Les sinistres doivent continuer d'être réglés pendant que la plateforme évolue. La configuration a dérivé au fil des ans, personne n'en a une vue complète, et une montée de version trop longtemps reportée cesse d'être une montée de version pour devenir le projet. Ce sont généralement les intégrations périphériques qui rendent l'exercice difficile.",
+      technologyGroups: [
+        { label: "Suite Guidewire", icon: "layers", items: ["PolicyCenter", "BillingCenter", "ClaimCenter"] },
+        { label: "Plateforme", icon: "cube", items: ["Guidewire Cloud", "Gosu"] },
+        { label: "Intégration", icon: "plug", items: ["Intégrations REST"] },
+      ],
+      platformsSub:
+        "Nous intervenons sur la suite Guidewire et sur les intégrations qui l'entourent.",
+      whyIntro:
+        "Nous séquençons les travaux Guidewire autour de la seule contrainte qui ne bouge pas : l'activité continue de tourner dessus pendant le chantier.",
+      whyPillars: [
+        {
+          title: "Compréhension du métier de l'assurance",
+          body: "Souscription et gestion des sinistres d'abord, modèle produit ensuite. Les choix de configuration découlent du fonctionnement réel.",
+        },
+        {
+          title: "Maîtrise plateforme et intégration",
+          body: "La suite et les systèmes autour. L'essentiel de la difficulté d'un programme Guidewire se situe aux interfaces, pas au cœur.",
+        },
+        {
+          title: "De la mise en œuvre à la production",
+          body: "Planifié sur la personnalisation réelle plutôt que sur le produit standard, et responsable après la mise en service.",
+        },
+      ],
+      finalCta: {
+        title: "Parlons de votre programme Guidewire.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Services-conseils Guidewire | Zed Ventures",
       seoDescription:
         "Zed Ventures assure l'implémentation, la configuration, les montées de version et la migration infonuagique Guidewire sur PolicyCenter, BillingCenter et ClaimCenter.",
@@ -733,6 +1005,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Livraison et exploitation", desc: "Déploiement, observabilité et la réalité des astreintes qui suit un lancement." },
       ],
       technologies: ["TypeScript", "React", "Node.js", "Python", "Kubernetes", "Terraform"],
+      situation:
+        "La feuille de route dérape parce que l'architecture n'absorbe plus la fonctionnalité suivante, et la qualité se vérifie à la fin, au moment où corriger coûte le plus cher. Les équipes livrent du code sans la préparation opérationnelle autour : la mise en production devient le début du problème plutôt que la fin du travail.",
+      technologyGroups: [
+        { label: "Application", icon: "layers", items: ["TypeScript", "React", "Node.js"] },
+        { label: "Services et données", icon: "cube", items: ["Python"] },
+        { label: "Plateforme", icon: "cloud", items: ["Kubernetes", "Terraform"] },
+      ],
+      platformsSub:
+        "Nous travaillons avec les langages et plateformes sur lesquels tournent les équipes produit aujourd'hui.",
+      whyIntro:
+        "Nous restons responsables après la mise en production plutôt que de remettre un dépôt de code, ce qui change la façon dont l'architecture se décide dès le départ.",
+      whyPillars: [
+        {
+          title: "Vision produit et ingénierie",
+          body: "Nous cherchons d'abord ce que le logiciel doit apporter au métier : l'architecture sert la feuille de route au lieu de la contraindre.",
+        },
+        {
+          title: "Une architecture dimensionnée",
+          body: "Pour la charge qu'elle portera et pour l'équipe qui devra la maintenir après notre départ.",
+        },
+        {
+          title: "Du développement à l'exploitation",
+          body: "Tests dans la chaîne, observabilité au lancement, et la réalité des astreintes qui suit.",
+        },
+      ],
+      finalCta: {
+        title: "Parlons de votre feuille de route produit.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Services d'ingénierie produit | Zed Ventures",
       seoDescription:
         "Zed Ventures assure l'ingénierie produit de bout en bout — architecture, développement infonuagique natif, qualité et exploitation pour les logiciels d'entreprise.",
@@ -755,6 +1056,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Engagement mixte", desc: "Une répartition décidée par les besoins de chaque chantier, non par la forme d'un contrat unique." },
       ],
       technologies: ["Livraison distribuée", "Soutien continu", "Agilité à l'échelle", "Outillage partagé", "QA intégrée", "Transfert de connaissances"],
+      situation:
+        "Les délais de recrutement correspondent rarement aux dates de livraison : la capacité arrive tard, ou pas. Les équipes distribuées perdent une journée à chaque question, et les équipes prestataires n'absorbent souvent jamais assez de contexte pour avancer sans qu'on leur dise quoi faire — ce qui transforme des renforts en coordination supplémentaire.",
+      technologyGroups: [
+        { label: "Modèle de livraison", icon: "layers", items: ["Équipes dédiées", "Livraison distribuée", "Modèle mixte"] },
+        { label: "Pratiques", icon: "cube", items: ["Agilité à l'échelle", "QA intégrée", "Outillage partagé"] },
+        { label: "Continuité", icon: "plug", items: ["Support en continu", "Transfert de connaissances"] },
+      ],
+      platformsSub:
+        "Notre façon de travailler, plutôt que nos outils : les pratiques qui tiennent une livraison distribuée.",
+      whyIntro:
+        "Nous ajoutons de la capacité d'ingénierie sous forme d'équipe qui détient le contexte, pas d'effectifs qu'il faut piloter.",
+      whyPillars: [
+        {
+          title: "Des équipes intégrées, pas de la mise à disposition",
+          body: "Les ingénieurs restent assez longtemps sur votre produit pour en détenir le contexte et décider sans attendre des consignes.",
+        },
+        {
+          title: "Responsabilité d'ingénierie",
+          body: "Nous répondons de ce qui est livré, pas d'heures déclarées. La mesure est du logiciel qui fonctionne chez vous.",
+        },
+        {
+          title: "Une livraison mondiale souple",
+          body: "Offshore en Inde pour la profondeur et le coût, nearshore dans les Amériques pour les heures communes. La répartition se décide par chantier.",
+        },
+      ],
+      finalCta: {
+        title: "Parlons de vos besoins en capacité de livraison.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Ingénierie délocalisée et de proximité | Zed Ventures",
       seoDescription:
         "Zed Ventures offre une livraison délocalisée en Inde et de proximité dans les Amériques — équipes d'ingénierie dédiées pour la conception, le développement, la QA et le soutien.",
