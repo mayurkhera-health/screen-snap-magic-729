@@ -197,27 +197,40 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               heading={t.services.platformsHeading}
               sub={t.services.platformsSub}
             />
-            <div
-              className={`mt-11 grid gap-x-10 gap-y-10 sm:grid-cols-2 ${
-                groups.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
-              }`}
-            >
-              {groups.map((g) => (
-                <div key={g.label} className="border-t border-border pt-6">
-                  <h3 className="eyebrow text-subtle-foreground">{g.label}</h3>
-                  <ul className="mt-4 space-y-1">
+            {/* A bordered rail rather than three loose columns. Each category
+                is a row: label on the left, tools on the right as pills.
+
+                Three things this fixes over the column layout. Categories with
+                different counts no longer leave ragged white space. The eye
+                reads label-then-tools in one direction instead of scanning
+                three stacks. And on a phone it degrades to label-above-tools
+                rather than three columns collapsing into one long list where
+                the group boundaries disappear.
+
+                Still no logos: names only, so there is no licensing question
+                per mark and no implied partner status. */}
+            <dl className="mt-10 max-w-[58rem] overflow-hidden rounded-2xl border border-border bg-background">
+              {groups.map((g, i) => (
+                <div
+                  key={g.label}
+                  className={`grid gap-3 px-6 py-6 sm:px-7 lg:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] lg:items-baseline lg:gap-8 ${
+                    i > 0 ? "border-t border-border" : ""
+                  }`}
+                >
+                  <dt className="eyebrow text-subtle-foreground">{g.label}</dt>
+                  <dd className="flex flex-wrap gap-2">
                     {g.items.map((item) => (
-                      <li
+                      <span
                         key={item}
-                        className="text-[0.9375rem] font-medium leading-[1.8] text-foreground"
+                        className="rounded-full border border-border-strong px-3.5 py-1.5 text-[0.9375rem] font-medium leading-none text-foreground"
                       >
                         {item}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
         </section>
       )}
