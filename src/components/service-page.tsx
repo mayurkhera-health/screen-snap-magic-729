@@ -209,20 +209,20 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
                 Still no logos: names only, so there is no licensing question
                 per mark and no implied partner status. */}
-            <dl className="mt-10 max-w-[58rem] overflow-hidden rounded-2xl border border-border bg-background">
+            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-border bg-background">
               {groups.map((g, i) => (
                 <div
                   key={g.label}
-                  className={`grid gap-3 px-6 py-6 sm:px-7 lg:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] lg:items-baseline lg:gap-8 ${
+                  className={`grid gap-2 px-5 py-3.5 sm:px-6 lg:grid-cols-[minmax(0,12rem)_minmax(0,1fr)] lg:items-center lg:gap-6 ${
                     i > 0 ? "border-t border-border" : ""
                   }`}
                 >
                   <dt className="eyebrow text-subtle-foreground">{g.label}</dt>
-                  <dd className="flex flex-wrap gap-2">
+                  <dd className="flex flex-wrap gap-1.5">
                     {g.items.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-border-strong px-3.5 py-1.5 text-[0.9375rem] font-medium leading-none text-foreground"
+                        className="rounded-full border border-border-strong px-3 py-1 text-[0.875rem] font-medium leading-[1.5] text-foreground"
                       >
                         {item}
                       </span>
