@@ -273,15 +273,21 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           writes, which no competitor service page reviewed for this project
           provides.
 
-          It is intentionally not a call to action. Nothing here competes with
-          the header control; this closes the argument rather than asking for
-          the click.
+          The button is deliberately labelled differently from the header's
+          "Let's talk" — same destination, but two controls carrying identical
+          words read as one repeated element rather than two chances to act.
           --------------------------------------------------------------- */}
-      <section>
-        <div className="container-page section-y">
-          <p className="font-display max-w-[34ch] text-[1.375rem] leading-[1.3] tracking-[-0.02em] sm:text-[1.625rem]">
+      <section aria-label={t.contact.eyebrow}>
+        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
+          <p className="font-display max-w-[36ch] text-[1.375rem] leading-[1.3] tracking-[-0.02em] sm:text-[1.625rem]">
             {t.services.startNext}
           </p>
+          <div className="lg:justify-self-end">
+            <Link to="/contact" className="btn btn-wrap btn-primary">
+              {t.services.startNextCta}
+              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
 

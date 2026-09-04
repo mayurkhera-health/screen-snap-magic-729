@@ -54,15 +54,18 @@ const en = {
      * [CONFIRM] The one line on a service page that no competitor page has:
      * what actually happens after you write. S36 makes it conditional — use
      * the one-business-day version only if it can be held. The weaker fallback
-     * is "...who will follow up directly."
+     * is "...a senior member of our team will follow up directly."
      *
-     * Deliberately not a call to action. It carries no heading and no button,
-     * so it cannot repeat the "Let's talk" button pinned in the header, and it
-     * is true of every service, so it cannot go stale the way the proof block
-     * did. That is why it survives when the closing CTA section did not.
+     * Phrased around what the reader gets rather than what we do: "your
+     * enquiry goes to" reads as process, "you are talking to" reads as an
+     * answer to the question they are actually asking, which is whether a
+     * form swallows the message.
      */
     startNext:
-      "Your message is reviewed by a senior member of our delivery team. We'll respond within one business day.",
+      "Write to us and you are talking to the people who would do the work, not a form queue. A senior member of the delivery team replies within one business day.",
+    /** Distinct from the header's "Let's talk" so the two do not read as the
+     *  same control repeated. Same label on every service page. */
+    startNextCta: "Start a conversation",
     // [CONFIRM] Answers "what happens if I get in touch" — the friction that
     // stops people writing. Same line on every service page.
     items: [
@@ -482,7 +485,8 @@ const fr: Copy = {
     proofEyebrow: "Nos réalisations",
     proofCta: "Lire l'étude de cas",
     startNext:
-      "Votre message est lu par un membre senior de notre équipe de livraison. Nous répondons sous un jour ouvré.",
+      "Écrivez-nous et vous parlez directement à ceux qui feraient le travail, pas à un formulaire. Un membre senior de l'équipe de livraison répond sous un jour ouvré.",
+    startNextCta: "Démarrer la conversation",
     items: [
       {
         title: "IA et données",
