@@ -390,7 +390,25 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        * been added to lengthen the list.
        */
       technologyGroups: [
-        { label: "Core platform", icon: "layers", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        {
+          label: "Core platform",
+          icon: "layers",
+          // Chip labels are short forms. The full names — "ABAP RESTful
+          // Application Programming Model", "Core Data Services",
+          // "SAP S/4HANA Cloud, public and private edition" — are correct but
+          // three to six words each, and a chip is a label rather than a
+          // glossary entry: one long name forces the row to two lines and
+          // makes the shorter names beside it look like lesser claims.
+          items: [
+            "SAP S/4HANA",
+            "S/4HANA Cloud",
+            "SAP HANA",
+            "ABAP",
+            "ABAP RAP",
+            "CDS views",
+            "Fiori",
+          ],
+        },
         { label: "Extension", icon: "cube", items: ["SAP BTP", "CAP", "OData"] },
         { label: "Integration", icon: "plug", items: ["SAP Integration Suite", "Microsoft Azure"] },
       ],
@@ -613,7 +631,19 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "IA ancrée dans SAP", desc: "Des agents disposant d'un accès gouverné au contexte ERP réel plutôt qu'à un extrait copié." },
       ],
       technologyGroups: [
-        { label: "Plateforme", icon: "layers", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        {
+          label: "Plateforme",
+          icon: "layers",
+          items: [
+            "SAP S/4HANA",
+            "S/4HANA Cloud",
+            "SAP HANA",
+            "ABAP",
+            "ABAP RAP",
+            "CDS views",
+            "Fiori",
+          ],
+        },
         { label: "Extension", icon: "cube", items: ["SAP BTP", "CAP", "OData"] },
         { label: "Intégration", icon: "plug", items: ["SAP Integration Suite", "Microsoft Azure"] },
       ],
