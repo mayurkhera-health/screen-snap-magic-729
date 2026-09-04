@@ -79,7 +79,14 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       {/* ---------------------------------------------------------------
           01 — HERO
 
-          Two columns: copy left, one image right.
+          Two columns: copy left, one image right, tops aligned.
+
+          items-start, not items-center. The text column runs roughly 500px
+          and the image 318px, so centring the two left the image floating
+          with unequal space above and below it and no shared line anywhere
+          on the row. Top-aligned, the eyebrow and the image edge start
+          together and the leftover space collects in one place at the
+          bottom, which reads as composition rather than as drift.
 
           The image slot resolves three ways, and the third is the point:
 
@@ -97,7 +104,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       <section className="border-b border-border">
         <div
           className={`container-page section-y ${
-            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-14" : ""
+            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-start lg:gap-14" : ""
           }`}
         >
           <div>
