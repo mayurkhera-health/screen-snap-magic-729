@@ -181,6 +181,14 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     analytics: {
       name: "Analytics",
       heroImageHint: "A real reporting or dashboard screen, blurred or anonymized if it is client work",
+      heroImage: {
+        src: "/analytics-hero.webp",
+        // Describes what is shown, not what it means. "Illustrative" is not in
+        // the alt text: the figures on the dashboard are generic and no client
+        // is named, so the image does not claim to be a ZED result and the alt
+        // text does not need to disclaim one.
+        alt: "A laptop showing an analytics dashboard: a twelve-month sales trend charted by channel, above summary tiles for total sales, orders and average order value.",
+      },
       // S7: the H1 states the outcome. v1.1 used "reporting that nobody
       // trusts", which S7 rejects as accusatory - the reader being blamed is
       // the person we want to hear from.
@@ -420,6 +428,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     analytics: {
       name: "Analytique",
       heroImageHint: "Un véritable écran de reporting ou tableau de bord, flouté si nécessaire",
+      heroImage: {
+        src: "/analytics-hero.webp",
+        alt: "Un ordinateur portable affichant un tableau de bord analytique : une tendance des ventes sur douze mois par canal, au-dessus d'indicateurs de ventes totales, de commandes et de panier moyen.",
+      },
       outcome: "Transformer des rapports fragmentés en décisions fiables.",
       intro:
         "ZEDventures aide les organisations à évaluer, moderniser, migrer et optimiser leurs environnements analytiques, pour que les équipes métier disposent d'informations plus cohérentes, plus exploitables et plus fiables.",
