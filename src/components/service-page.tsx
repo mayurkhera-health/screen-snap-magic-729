@@ -260,36 +260,22 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       )}
 
       {/* ---------------------------------------------------------------
-          06B — NEXT STEP (S35-S37)
+          NO CLOSING CTA SECTION.
 
-          White, not dark: S3 reserves the single dark band for Why ZED.
+          Removed at Mayur's direction. The v1.2 spec's section 06B carried a
+          headline, a reassurance line and a service-specific button; the
+          headline duplicated the button, and the whole block duplicated the
+          "Let's talk" button that is pinned in the header on every scroll
+          position of every page.
 
-          No heading. The spec's "Let's talk about your analytics priorities."
-          sat directly above a button reading "Discuss your analytics
-          priorities", one screen below a hero CTA reading "Talk to our
-          Analytics team" — the same sentence three times, and the third time
-          it stops being a call to action and becomes noise.
-
-          What survives is the part no competitor page has: a statement of what
-          actually happens after you write. That is a promise, and only worth
-          making if it is kept.
+          Consequence, recorded so it is a decision rather than an oversight:
+          this page now has no in-page conversion point. The header button is
+          the only path to /contact, and the one-business-day commitment - the
+          only line on the page a competitor site does not also have - is gone
+          with it. If service pages later prove to convert poorly, this is the
+          first thing to put back, and the reassurance line is the part worth
+          restoring, not the headline.
           --------------------------------------------------------------- */}
-      <section aria-label={t.contact.eyebrow}>
-        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
-          <div className="flex max-w-[42rem] flex-col gap-4">
-            <p className="eyebrow text-accent">{t.contact.eyebrow}</p>
-            <p className="font-display text-[1.5rem] leading-[1.25] tracking-[-0.02em] sm:text-[1.875rem]">
-              {t.services.startNext}
-            </p>
-          </div>
-          <div className="lg:justify-self-end">
-            <Link to="/contact" className="btn btn-wrap btn-primary">
-              {s.finalCta?.buttonLabel ?? t.services.pageCta}
-              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
     </>
   );

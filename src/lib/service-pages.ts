@@ -76,10 +76,6 @@ export type ServiceContent = {
   whyIntro?: string;
   /** Exactly three, and they must differ from every other service's (S29). */
   whyPillars?: { title: string; body: string }[];
-  /** Service-specific CTA label (S37). The spec's matching closing headline
-   *  was dropped: it repeated this button word for word, one screen below a
-   *  hero CTA saying the same thing a third time. */
-  finalCta?: { buttonLabel: string };
 };
 
 export const SERVICE_SLUGS = [
@@ -199,9 +195,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       proof: { index: 3, headline: "Real-time visibility across every country" },
-      finalCta: {
-        buttonLabel: "Discuss your analytics priorities",
-      },
       seoTitle: "Analytics Consulting & Modernization Services | ZEDventures",
       seoDescription:
         "ZEDventures helps enterprises assess, modernize, migrate and optimize analytics environments across Power BI, SAP BusinessObjects and modern data platforms.",
@@ -378,9 +371,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         },
       ],
       proof: { index: 3, headline: "Visibilité en temps réel sur tous les pays" },
-      finalCta: {
-        buttonLabel: "Discuter de vos priorités analytiques",
-      },
       seoTitle: "Conseil et modernisation analytique | ZEDventures",
       seoDescription:
         "ZEDventures aide les entreprises à évaluer, moderniser, migrer et optimiser leurs environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",

@@ -52,12 +52,6 @@ const en = {
     proofCta: "Read the case study",
     // [CONFIRM] Answers "what happens if I get in touch" — the friction that
     // stops people writing. Same line on every service page.
-    // [CONFIRM] S36 makes this conditional: use the one-business-day version
-    // only if ZED can operationally hold it. If not, the spec's fallback is
-    // "...who will follow up directly." Breaking this once costs more than the
-    // sentence earns.
-    startNext:
-      "Your message is reviewed by a senior member of our delivery team. We'll respond within one business day.",
     items: [
       {
         title: "AI & Data",
@@ -474,8 +468,6 @@ const fr: Copy = {
     whyHeading: "Pourquoi ZED pour",
     proofEyebrow: "Nos réalisations",
     proofCta: "Lire l'étude de cas",
-    startNext:
-      "Votre message est lu par un membre senior de notre équipe de livraison. Nous répondons sous un jour ouvré.",
     items: [
       {
         title: "IA et données",
