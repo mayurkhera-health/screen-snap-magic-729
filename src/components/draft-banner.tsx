@@ -5,7 +5,7 @@ import { AlertTriangle } from "lucide-react";
  * be mistaken for finished content in a review, a screenshot or a stakeholder
  * walkthrough. Pages showing this also emit a noindex robots tag.
  *
- * Remove by setting DRAFT_SERVICE_PAGES to false in src/lib/service-pages.ts
+ * Remove for one service by taking its slug out of DRAFT_SERVICES in src/lib/service-pages.ts
  * once the real copy is in.
  */
 export function DraftBanner({ note }: { note?: string }) {

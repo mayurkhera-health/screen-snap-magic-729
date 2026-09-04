@@ -12,7 +12,7 @@ import {
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import {
-  DRAFT_SERVICE_PAGES,
+  isServiceDraft,
   SERVICE_PAGES,
   SHOW_SERVICE_PROOF,
   type ServiceSlug,
@@ -72,7 +72,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
   // Right-hand hero column exists when there is a real image, or while the
   // page is still a draft and a placeholder is useful. Never otherwise.
-  const showImageSlot = Boolean(s.heroImage) || DRAFT_SERVICE_PAGES;
+  const showImageSlot = Boolean(s.heroImage) || isServiceDraft(slug);
 
   return (
     <>
@@ -90,7 +90,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                                         single-column text-led layout
 
           A placeholder that renders unconditionally is how a grey box ends
-          up on a production page. Tying it to DRAFT_SERVICE_PAGES means
+          up on a production page. Tying it to the draft list means
           turning the draft flag off either reveals real images or quietly
           restores a hero that still reads correctly without them.
           --------------------------------------------------------------- */}

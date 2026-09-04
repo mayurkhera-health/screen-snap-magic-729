@@ -6,11 +6,11 @@
  * about Zedventures: there are deliberately no metrics, client names, dates or
  * outcome numbers anywhere in this file, because those cannot be invented.
  *
- * While DRAFT_SERVICE_PAGES is true the pages carry a visible draft banner and
- * a noindex robots tag, so this text cannot be indexed before it is replaced.
- * Set it to false once the copy is real.
+ * A service listed in DRAFT_SERVICES (below) carries a visible draft banner and
+ * a noindex robots tag, so its text cannot be indexed before it is replaced.
+ * Analytics has been through the copy review and is no longer listed.
  */
-export const DRAFT_SERVICE_PAGES = true;
+
 
 /**
  * The proof block on service detail pages.
@@ -104,8 +104,8 @@ export type ServiceContent = {
    * Hero image, right column.
    *
    * `src` is a real file under /public. While it is absent the hero renders a
-   * labelled placeholder — but ONLY while DRAFT_SERVICE_PAGES is true. With
-   * the draft flag off and no src, the hero falls back to the single-column
+   * labelled placeholder — but ONLY while this service is still a draft. Off
+   * the draft list and with no src, the hero falls back to the single-column
    * text-led layout it had before. That is deliberate: a grey box cannot
    * reach production by being forgotten, which is the usual fate of a
    * placeholder that renders unconditionally.
@@ -144,6 +144,35 @@ export const SERVICE_SLUGS = [
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+
+/**
+ * Which service pages are still drafts.
+ *
+ * This was one boolean covering all seven. That is wrong once the seven stop
+ * moving together: turning it off to publish one finished page would also
+ * strip the noindex from six pages whose copy is, by the note at the top of
+ * this file, explicitly sample text.
+ *
+ * A slug listed here carries the draft banner, a noindex robots tag, and the
+ * hero image placeholder. Remove a slug only when its copy is real, its
+ * technology claims are confirmed, and its hero image exists.
+ *
+ * Removing the LAST entry does not make the site launch-ready on its own —
+ * every route in this app still declares a canonical URL on the old
+ * screen-snap-magic-729.lovable.app domain.
+ */
+export const DRAFT_SERVICES: readonly ServiceSlug[] = [
+  "ai-data",
+  "gis-geospatial",
+  "guidewire",
+  "sap",
+  "product-engineering",
+  "offshore-nearshore",
+];
+
+export function isServiceDraft(slug: ServiceSlug): boolean {
+  return (DRAFT_SERVICES as readonly string[]).includes(slug);
+}
 
 /** Maps each capability row on the homepage to its service page. */
 export const SERVICE_SLUG_BY_INDEX: ServiceSlug[] = [...SERVICE_SLUGS];

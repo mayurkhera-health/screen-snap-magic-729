@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/section-header";
 import { ServicePageV12 } from "@/components/service-page";
 import { DraftBanner } from "@/components/draft-banner";
 import {
-  DRAFT_SERVICE_PAGES,
+  isServiceDraft,
   HOW_WE_WORK,
   SERVICE_PAGES,
   SERVICE_SLUGS,
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services_/$slug")({
         { title: s.seoTitle },
         { name: "description", content: s.seoDescription },
         // While the copy is sample text these pages must not be indexed.
-        ...(DRAFT_SERVICE_PAGES ? [{ name: "robots", content: "noindex, nofollow" }] : []),
+        ...(isServiceDraft(slug) ? [{ name: "robots", content: "noindex, nofollow" }] : []),
         { property: "og:title", content: s.seoTitle },
         { property: "og:description", content: s.seoDescription },
         { property: "og:type", content: "website" },
@@ -48,11 +48,12 @@ export const Route = createFileRoute("/services_/$slug")({
 });
 
 function ServiceDetailPage() {
+  const { slug } = Route.useLoaderData();
   return (
     <LanguageProvider>
       <Header />
       <main className="pt-16 sm:pt-20">
-        {DRAFT_SERVICE_PAGES && <DraftBanner />}
+        {isServiceDraft(slug) && <DraftBanner />}
         <ServiceDetailBody />
       </main>
       <Footer />
