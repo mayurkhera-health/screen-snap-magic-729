@@ -118,6 +118,19 @@ export type ServiceContent = {
    */
   heroImage?: { src: string; alt: string };
   heroImageHint?: string;
+
+  /** Per-service intro line above the platform table. Falls back to the shared
+   *  wording when absent, so SAP does not inherit Analytics' sentence. */
+  platformsSub?: string;
+
+  /**
+   * Closing block headline and button.
+   *
+   * The headline is back. It was removed when the button beneath it read
+   * "Discuss your analytics priorities" and the two were the same sentence
+   * twice; the button now reads "Start a conversation", so they are not.
+   */
+  finalCta?: { title: string; buttonLabel: string };
 };
 
 export const SERVICE_SLUGS = [
@@ -194,7 +207,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // the person we want to hear from.
       outcome: "Turn fragmented reporting into trusted business decisions.",
       intro:
-        "ZEDventures helps organizations assess, modernize, migrate and optimize analytics environments so business teams can work with more consistent, usable and reliable information.",
+        "We help companies clean up complex reporting environments, modernize outdated tools, and make it easier for teams to trust and use their data.",
       problems: [
         "Two teams reporting different numbers for the same measure.",
         "Reports assembled by hand every month because the pipeline never landed.",
@@ -204,16 +217,16 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // The last sentence rejects the false solution - that is the line that
       // signals experience, and it names the situation rather than the reader.
       situation:
-        "Reporting often grows one team at a time. Definitions drift, manual workarounds become permanent, and users begin questioning which numbers they can rely on. Adding another dashboard rarely fixes the underlying data, governance and process issues.",
+        "Reporting often grows over time, team by team. Different groups start using different numbers, manual workarounds creep in, and people spend more time checking the data than using it. Adding another dashboard usually doesn\u2019t solve the real problem underneath.",
       // S14: six capabilities, range 5-7. Managed support stays in the sales
       // conversation - nobody arrives here looking for the seventh thing we do.
       capabilities: [
-        { title: "Analytics strategy & assessment", desc: "Evaluate the analytics environment, identify gaps, and define a practical modernization roadmap." },
-        { title: "Platform upgrades", desc: "Modernize existing BI environments while minimizing disruption to business reporting." },
-        { title: "Platform migration", desc: "Move legacy or fragmented analytics environments to modern enterprise and cloud platforms." },
-        { title: "Reporting & dashboard modernization", desc: "Improve the usability, consistency, performance and effectiveness of enterprise reporting." },
-        { title: "Data visualization & UX", desc: "Turn complex business information into clearer analytical experiences users can act on." },
-        { title: "Performance & governance", desc: "Improve performance, standards, data consistency, ownership and reporting practices across the environment." },
+        { title: "Analytics strategy & assessment", desc: "We review your current reporting setup, find the gaps, and help you decide what needs to change first." },
+        { title: "Platform upgrades", desc: "Upgrade older BI platforms without disrupting the reports and dashboards your teams rely on every day." },
+        { title: "Platform migration", desc: "Move from older or fragmented reporting tools to a more modern platform without losing what already works." },
+        { title: "Reporting & dashboard modernization", desc: "Simplify reports and dashboards so they are easier to use, easier to maintain, and more useful to the business." },
+        { title: "Data visualization & UX", desc: "Make complex information easier to understand so users can quickly see what matters and what action to take." },
+        { title: "Performance & data consistency", desc: "Improve slow reports, reduce conflicting numbers, and put clearer standards around how data is defined and used." },
       ],
       /**
        * [CONFIRM] 18 entries across 4 groups, added at Mayur's direction.
@@ -237,23 +250,29 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // Kept so the legacy template still renders for any service that has not
       // been converted; the v1.2 layout reads technologyGroups instead.
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
+      platformsSub:
+        "We work with the analytics and data platforms many enterprise teams already use today.",
       whyIntro:
-        "We combine analytics engineering, enterprise data expertise and business context to modernize reporting without losing what already works.",
+        "We know analytics projects are not just about tools. They are about fixing the data, reporting, and processes people depend on every day.",
       whyPillars: [
         {
           title: "Modernize without starting over",
-          body: "We work across legacy and modern analytics environments, helping organizations preserve what works while progressively replacing what no longer does.",
+          body: "Not everything needs to be replaced. We help clients keep what is working, fix what is not, and modernize in practical steps.",
         },
         {
           title: "Business + technology",
-          body: "We connect reporting requirements, KPIs, architecture, governance, data and UX rather than treating analytics as purely a technology implementation.",
+          body: "We look at more than the platform. We spend time understanding the reports, metrics, users, and decisions the business actually depends on.",
         },
         {
-          title: "Assessment to production",
-          body: "We support the lifecycle from assessment and architecture through migration, implementation, optimization and ongoing production support.",
+          title: "From assessment to production",
+          body: "We can help from the first review and roadmap through migration, implementation, performance tuning, and ongoing support.",
         },
       ],
       proof: { index: 3, headline: "Real-time visibility across every country" },
+      finalCta: {
+        title: "Let\u2019s talk about your analytics priorities.",
+        buttonLabel: "Start a conversation",
+      },
       seoTitle: "Analytics Consulting & Modernization Services | ZEDventures",
       seoDescription:
         "ZEDventures helps enterprises assess, modernize, migrate and optimize analytics environments across Power BI, SAP BusinessObjects and modern data platforms.",
@@ -441,21 +460,21 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Transformer des rapports fragmentés en décisions fiables.",
       intro:
-        "ZEDventures aide les organisations à évaluer, moderniser, migrer et optimiser leurs environnements analytiques, pour que les équipes métier disposent d'informations plus cohérentes, plus exploitables et plus fiables.",
+        "Nous aidons les entreprises à assainir des environnements de reporting complexes, à moderniser des outils vieillissants et à rendre leurs données plus faciles à utiliser et à croire.",
       problems: [
         "Deux équipes qui publient des chiffres différents pour la même mesure.",
         "Des rapports assemblés à la main chaque mois faute de pipeline.",
         "Des tableaux de bord qui répondent à des questions que personne ne pose.",
       ],
       situation:
-        "Le reporting se construit souvent équipe par équipe. Les définitions divergent, les contournements manuels s'installent, et les utilisateurs finissent par douter des chiffres. Ajouter un tableau de bord de plus règle rarement les problèmes sous-jacents de données, de gouvernance et de processus.",
+        "Le reporting se construit avec le temps, équipe par équipe. Chaque groupe finit par utiliser ses propres chiffres, les contournements manuels s'installent, et l'on passe plus de temps à vérifier les données qu'à s'en servir. Ajouter un tableau de bord de plus ne règle généralement pas le problème de fond.",
       capabilities: [
-        { title: "Stratégie et évaluation analytique", desc: "Évaluer l'environnement analytique, identifier les écarts et définir une feuille de route réaliste." },
-        { title: "Montées de version", desc: "Moderniser les environnements décisionnels existants en limitant les interruptions du reporting métier." },
-        { title: "Migration de plateforme", desc: "Migrer des environnements analytiques anciens ou fragmentés vers des plateformes modernes et cloud." },
-        { title: "Modernisation du reporting", desc: "Améliorer l'ergonomie, la cohérence, la performance et l'efficacité du reporting d'entreprise." },
-        { title: "Visualisation et expérience", desc: "Rendre une information métier complexe lisible et exploitable par ceux qui décident." },
-        { title: "Performance et gouvernance", desc: "Améliorer la performance, les standards, la cohérence des données et les responsabilités sur l'ensemble de l'environnement." },
+        { title: "Stratégie et évaluation analytique", desc: "Nous examinons votre dispositif de reporting actuel, repérons les écarts et vous aidons à décider par quoi commencer." },
+        { title: "Montées de version", desc: "Faire évoluer des plateformes décisionnelles anciennes sans perturber les rapports dont vos équipes se servent chaque jour." },
+        { title: "Migration de plateforme", desc: "Quitter des outils anciens ou éparpillés pour une plateforme plus moderne, sans perdre ce qui fonctionne déjà." },
+        { title: "Modernisation du reporting", desc: "Simplifier rapports et tableaux de bord pour qu'ils soient plus faciles à utiliser, à maintenir et plus utiles au métier." },
+        { title: "Visualisation et expérience", desc: "Rendre une information complexe plus lisible, pour voir vite ce qui compte et ce qu'il faut en faire." },
+        { title: "Performance et cohérence des données", desc: "Accélérer les rapports lents, réduire les chiffres contradictoires et clarifier la façon dont les données sont définies et utilisées." },
       ],
       technologyGroups: [
         { label: "Décisionnel", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects", "Google Looker", "Qlik Sense", "ThoughtSpot"] },
@@ -464,23 +483,29 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { label: "Ingénierie des données", icon: "layers", items: ["SQL Server", "Python", "Apache Spark", "Apache Airflow"] },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
+      platformsSub:
+        "Nous travaillons avec les plateformes analytiques et de données que beaucoup d'équipes utilisent déjà.",
       whyIntro:
-        "Nous associons ingénierie analytique, expertise des données d'entreprise et compréhension du métier pour moderniser le reporting sans perdre ce qui fonctionne déjà.",
+        "Un projet analytique ne se résume pas aux outils. Il s'agit de réparer les données, le reporting et les processus dont les équipes dépendent chaque jour.",
       whyPillars: [
         {
           title: "Moderniser sans tout reprendre",
-          body: "Nous intervenons sur les environnements anciens comme modernes, en préservant ce qui fonctionne et en remplaçant progressivement ce qui ne suffit plus.",
+          body: "Tout n'a pas besoin d'être remplacé. Nous gardons ce qui fonctionne, corrigeons ce qui ne va plus, et modernisons par étapes concrètes.",
         },
         {
           title: "Métier et technologie",
-          body: "Nous relions besoins de reporting, indicateurs, architecture, gouvernance, données et expérience utilisateur, au lieu de traiter l'analytique comme un seul chantier technique.",
+          body: "Nous regardons au-delà de la plateforme : les rapports, les indicateurs, les utilisateurs et les décisions dont l'entreprise dépend réellement.",
         },
         {
           title: "De l'évaluation à la production",
-          body: "Nous couvrons le cycle complet : évaluation, architecture, migration, mise en œuvre, optimisation et exploitation en production.",
+          body: "Nous accompagnons depuis le premier diagnostic et la feuille de route jusqu'à la migration, la mise en œuvre, l'optimisation et le support.",
         },
       ],
       proof: { index: 3, headline: "Visibilité en temps réel sur tous les pays" },
+      finalCta: {
+        title: "Parlons de vos priorités analytiques.",
+        buttonLabel: "Démarrer la conversation",
+      },
       seoTitle: "Conseil et modernisation analytique | ZEDventures",
       seoDescription:
         "ZEDventures aide les entreprises à évaluer, moderniser, migrer et optimiser leurs environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",

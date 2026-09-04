@@ -62,7 +62,7 @@ const en = {
      * form swallows the message.
      */
     startNext:
-      "Write to us and you are talking to the people who would do the work, not a form queue. A senior member of the delivery team replies within one business day.",
+      "Your message goes directly to our delivery team. A senior member of the team will follow up within one business day.",
     /** Distinct from the header's "Let's talk" so the two do not read as the
      *  same control repeated. Same label on every service page. */
     startNextCta: "Start a conversation",
@@ -485,7 +485,7 @@ const fr: Copy = {
     proofEyebrow: "Nos réalisations",
     proofCta: "Lire l'étude de cas",
     startNext:
-      "Écrivez-nous et vous parlez directement à ceux qui feraient le travail, pas à un formulaire. Un membre senior de l'équipe de livraison répond sous un jour ouvré.",
+      "Votre message arrive directement à notre équipe de livraison. Un membre senior de l'équipe vous répond sous un jour ouvré.",
     startNextCta: "Démarrer la conversation",
     items: [
       {

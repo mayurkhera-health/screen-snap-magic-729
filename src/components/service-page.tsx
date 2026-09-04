@@ -218,7 +218,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               align="left"
               eyebrow={t.services.platformsEyebrow}
               heading={t.services.platformsHeading}
-              sub={t.services.platformsSub}
+              sub={s.platformsSub ?? t.services.platformsSub}
             />
             {/* One card, three rows, flat dot-marked chips.
                 Adapted from the chip spec: 170px label column, 12px/18px row
@@ -389,12 +389,15 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
           One sentence. No heading, no button, no eyebrow.
 
-          The spec's full closing block was removed: its headline repeated its
-          button, and the button repeated the "Let's talk" control pinned in
-          the header at every scroll position. What is left is the only part
-          that was not a duplicate — a statement of what happens after someone
-          writes, which no competitor service page reviewed for this project
-          provides.
+          The headline is back. It came off when the button below it read
+          "Discuss your analytics priorities" and the two were the same
+          sentence twice; the button now reads "Start a conversation", so they
+          are not. Both are per-service and optional, and a service without
+          them falls back to the shared wording.
+
+          The line under the headline is the part no competitor service page
+          reviewed for this project provides: a statement of what actually
+          happens after someone writes.
 
           The button is deliberately labelled differently from the header's
           "Let's talk" — same destination, but two controls carrying identical
@@ -402,12 +405,23 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           --------------------------------------------------------------- */}
       <section aria-label={t.contact.eyebrow}>
         <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
-          <p className="font-display max-w-[36ch] text-[1.375rem] leading-[1.3] tracking-[-0.02em] sm:text-[1.625rem]">
-            {t.services.startNext}
-          </p>
+          <div className="max-w-[36rem]">
+            {s.finalCta?.title && (
+              <h2 className="font-display max-w-[20ch] text-[1.75rem] leading-[1.12] tracking-[-0.025em] sm:text-[2.125rem]">
+                {s.finalCta.title}
+              </h2>
+            )}
+            <p
+              className={`text-[1.0625rem] leading-[1.6] text-muted-foreground ${
+                s.finalCta?.title ? "mt-4" : ""
+              }`}
+            >
+              {t.services.startNext}
+            </p>
+          </div>
           <div className="lg:justify-self-end">
             <Link to="/contact" className="btn btn-wrap btn-primary">
-              {t.services.startNextCta}
+              {s.finalCta?.buttonLabel ?? t.services.startNextCta}
               <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
