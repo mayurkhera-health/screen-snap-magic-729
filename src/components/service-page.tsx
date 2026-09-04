@@ -235,7 +235,13 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
                 Still names only, no logos: no licensing question per mark and
                 no implied partner status. */}
-            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-border bg-background">
+            {/* The outer edge takes --border-strong (#d8d8d5) while the row
+                dividers stay on --border (#e7e7e4). Two weights, not one: the
+                stronger line draws the block as a single object, the lighter
+                ones separate rows inside it. A card where the frame and the
+                dividers are the same weight reads as a stack of unrelated
+                strips rather than one table. */}
+            <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-border-strong bg-background">
               {groups.map((g, i) => {
                 const Icon = g.icon ? TECH_ICONS[g.icon] : null;
                 return (
