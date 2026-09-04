@@ -55,7 +55,7 @@ function CaseStudiesPageBody() {
         <div className="mx-auto max-w-6xl">
           <div className="border-l-4 border-primary pl-5 sm:pl-8 md:pl-12">
             <p className="eyebrow text-accent">{p.eyebrow}</p>
-            <h1 className="font-display mt-2 text-5xl leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+            <h1 className="font-display mt-2 text-[2.25rem] leading-[0.95] tracking-tight [overflow-wrap:anywhere] sm:text-7xl sm:leading-[0.9] md:text-8xl lg:text-9xl">
               {p.heading}
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
