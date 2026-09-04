@@ -23,6 +23,22 @@ import {
  * Category icons. Lucide, not Ionicons — the site already ships lucide and
  * adding a second icon library for six glyphs is weight for nothing.
  */
+/**
+ * Row accents for the platform table.
+ *
+ * [CONFIRM] These are the only colours on the site other than brand red.
+ * styles.css defines one accent and a grey ramp, deliberately, so three of
+ * these four are new. They are applied ONLY to the 13px category icon and the
+ * 4px chip dot — both decorative, neither carrying text — so no contrast
+ * requirement is involved and no type colour changes. Nothing else on the page
+ * uses them.
+ *
+ * Chosen to sit at similar weight to the brand red so no row shouts louder
+ * than another, and desaturated enough not to read as a chart legend. If these
+ * stay, they belong in styles.css as tokens rather than living in a component.
+ */
+const ROW_TONES = ["#E31937", "#1F6F5C", "#2F5DA8", "#B4651A"] as const;
+
 const TECH_ICONS: Record<TechIcon, typeof BarChart3> = {
   chart: BarChart3,
   cube: Box,
@@ -262,6 +278,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
             <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-[#a8a8a3] bg-background">
               {groups.map((g, i) => {
                 const Icon = g.icon ? TECH_ICONS[g.icon] : null;
+                const tone = ROW_TONES[i % ROW_TONES.length];
                 return (
                   <div
                     key={g.label}
@@ -272,7 +289,8 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                     <dt className="flex items-center gap-1.5">
                       {Icon && (
                         <Icon
-                          className="h-[13px] w-[13px] shrink-0 text-accent"
+                          className="h-[13px] w-[13px] shrink-0"
+                          style={{ color: tone }}
                           strokeWidth={2}
                           aria-hidden="true"
                         />
@@ -288,7 +306,8 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                           className="inline-flex items-center gap-1.5 rounded-[5px] bg-secondary py-1 pl-[7px] pr-[9px] text-[12.5px] font-semibold leading-[1.5] text-foreground"
                         >
                           <span
-                            className="h-1 w-1 shrink-0 rounded-full bg-accent"
+                            className="h-1 w-1 shrink-0 rounded-full"
+                            style={{ backgroundColor: tone }}
                             aria-hidden="true"
                           />
                           {item}
