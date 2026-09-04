@@ -81,23 +81,38 @@ function ServicesPageBody() {
             key={item.title}
             className={`border-b border-border ${isDark ? "section-dark" : "bg-background"}`}
           >
+            {/* The whole band is the link, and it always was — the "View
+                service" text under it was a second control for the same
+                destination, which is why it read as the only clickable part.
+
+                What replaces it is an affordance rather than a label: a
+                persistent arrow at the right edge that moves on hover, the
+                title shifting with it, and a ground change across the row.
+                aria-label carries the service name so a screen reader hears
+                "AI & Data, view service" rather than seven identical links. */}
             <Link
               to="/services/$slug"
               params={{ slug }}
+              aria-label={`${item.title} — ${t.services.viewService}`}
               className="group block px-5 py-8 transition-colors hover:bg-secondary sm:px-8 sm:py-10"
               style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
             >
-              <div className="mx-auto max-w-6xl">
-                <h2 className="font-display text-2xl tracking-tight transition-transform group-hover:translate-x-1 sm:text-3xl">
-                  {item.title}
-                </h2>
-                <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                  {item.desc}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-accent">
-                  {t.services.viewService}
-                  <ArrowUpRight className="arrow-shift h-4 w-4" aria-hidden="true" />
-                </span>
+              <div className="mx-auto flex max-w-6xl items-start gap-6">
+                <div className="min-w-0 flex-1">
+                  <h2
+                    className="font-display text-2xl tracking-tight transition-transform group-hover:translate-x-1 sm:text-3xl"
+                    style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+                  >
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
+                </div>
+                <ArrowUpRight
+                  className="arrow-shift mt-1 h-6 w-6 shrink-0 text-accent"
+                  aria-hidden="true"
+                />
               </div>
             </Link>
           </section>
