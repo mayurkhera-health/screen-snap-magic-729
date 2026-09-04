@@ -216,16 +216,23 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Performance & governance", desc: "Improve performance, standards, data consistency, ownership and reporting practices across the environment." },
       ],
       /**
-       * [CONFIRM] Every name here is a claim S20 requires ZEDventures to be
-       * able to substantiate. Six of these nine appear on the current live
-       * site; Tableau, Microsoft Fabric and Databricks do not. Confirm each or
-       * cut it - a CTO who asks about Databricks and gets silence has learned
-       * more than the longer list gained.
+       * [CONFIRM] 18 entries across 4 groups, added at Mayur's direction.
+       *
+       * This is over the spec's own ceiling. v1.2 S21 and S47 cap the section
+       * at 8-12 total entries, and S20 requires that every name be one ZED can
+       * substantiate with delivery experience. Six of these 18 appear on the
+       * current live site: Power BI, Azure Data Factory, SQL Server,
+       * Snowflake, dbt and Python. The other twelve do not.
+       *
+       * Recorded here rather than argued again: the risk is not the length,
+       * it is that one unanswerable question on a sales call costs more than
+       * the extra names win. Cut any that cannot be defended.
        */
       technologyGroups: [
-        { label: "Business intelligence", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
-        { label: "Data platforms", icon: "cube", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
-        { label: "Cloud & engineering", icon: "cloud", items: ["Microsoft Azure", "SQL Server", "Python"] },
+        { label: "Business intelligence", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects", "Google Looker", "Qlik Sense", "ThoughtSpot"] },
+        { label: "Data platforms", icon: "cube", items: ["Snowflake", "Databricks", "Microsoft Fabric", "Google BigQuery", "Amazon Redshift"] },
+        { label: "Cloud", icon: "cloud", items: ["Microsoft Azure", "Amazon Web Services", "Google Cloud Platform"] },
+        { label: "Data engineering", icon: "layers", items: ["SQL Server", "Python", "Apache Spark", "Apache Airflow"] },
       ],
       // Kept so the legacy template still renders for any service that has not
       // been converted; the v1.2 layout reads technologyGroups instead.
@@ -451,9 +458,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Performance et gouvernance", desc: "Améliorer la performance, les standards, la cohérence des données et les responsabilités sur l'ensemble de l'environnement." },
       ],
       technologyGroups: [
-        { label: "Décisionnel", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
-        { label: "Plateformes de données", icon: "cube", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
-        { label: "Cloud et ingénierie", icon: "cloud", items: ["Microsoft Azure", "SQL Server", "Python"] },
+        { label: "Décisionnel", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects", "Google Looker", "Qlik Sense", "ThoughtSpot"] },
+        { label: "Plateformes de données", icon: "cube", items: ["Snowflake", "Databricks", "Microsoft Fabric", "Google BigQuery", "Amazon Redshift"] },
+        { label: "Cloud", icon: "cloud", items: ["Microsoft Azure", "Amazon Web Services", "Google Cloud Platform"] },
+        { label: "Ingénierie des données", icon: "layers", items: ["SQL Server", "Python", "Apache Spark", "Apache Airflow"] },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
       whyIntro:
