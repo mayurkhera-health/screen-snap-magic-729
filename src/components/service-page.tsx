@@ -157,7 +157,14 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               width={1280}
               height={720}
               loading="eager"
-              className="aspect-[16/9] w-full rounded-2xl object-cover"
+              /* A 1px frame, not decoration. These images are light at the
+                 edges — the AI one is almost white in its top-left corner —
+                 and on a white page an unframed photograph bleeds into the
+                 ground and stops reading as an object. --border-strong
+                 (#d8d8d5) is the same weight the platform table's dividers
+                 use, so the frame belongs to the system rather than to this
+                 element. */
+              className="aspect-[16/9] w-full rounded-2xl border border-border-strong object-cover"
             />
           ) : (
             showImageSlot && (

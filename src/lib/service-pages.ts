@@ -201,6 +201,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "ai-data": {
       name: "AI & Data",
       heroImageHint: "A model or pipeline in use — not a stock robot or neural-network render",
+      heroImage: {
+        src: "/ai-data-hero.webp",
+        alt: "An answer panel linked by three lines to three source documents, over a softly blurred office.",
+      },
       outcome: "Get AI out of the proof-of-concept stage and into systems your business can depend on.",
       intro:
         "Plenty of enterprise AI gets as far as a good demo and stops there, because nobody will sign off on putting it in front of customers. Closing that gap is retrieval, orchestration and evaluation work — plus the data platform underneath it.",
@@ -697,6 +701,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "ai-data": {
       name: "IA et données",
       heroImageHint: "Un modèle ou un pipeline en usage réel — ni robot ni réseau de neurones de banque d'images",
+      heroImage: {
+        src: "/ai-data-hero.webp",
+        alt: "Un panneau de réponse relié par trois traits à trois documents sources, sur un bureau flouté.",
+      },
       outcome: "Faire passer l'IA du prototype à des systèmes sur lesquels l'entreprise peut compter.",
       intro:
         "Beaucoup de projets d'IA en entreprise atteignent le stade d'une bonne démonstration et s'arrêtent là, faute de quelqu'un prêt à la mettre devant des clients. Combler cet écart, c'est un travail de recherche, d'orchestration et d'évaluation — et la plateforme de données en dessous.",
