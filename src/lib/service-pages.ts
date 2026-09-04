@@ -236,7 +236,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // the person we want to hear from.
       outcome: "Turn fragmented reporting into trusted business decisions.",
       intro:
-        "We help companies clean up complex reporting environments, modernize outdated tools, and make it easier for teams to trust and use their data.",
+        "We help companies clean up complex reporting environments, modernize outdated tools, and make it easier for teams to trust and use their data. We look at how data moves from source systems into reports and dashboards, where manual workarounds or conflicting numbers have crept in, and what is slowing teams down. From there, we help simplify the environment so people spend less time questioning the data and more time using it to make decisions.",
       problems: [
         "Two teams reporting different numbers for the same measure.",
         "Reports assembled by hand every month because the pipeline never landed.",
@@ -250,12 +250,12 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       // S14: six capabilities, range 5-7. Managed support stays in the sales
       // conversation - nobody arrives here looking for the seventh thing we do.
       capabilities: [
-        { title: "Analytics strategy & assessment", desc: "We review your current reporting setup, find the gaps, and help you decide what needs to change first." },
-        { title: "Platform upgrades", desc: "Upgrade older BI platforms without disrupting the reports and dashboards your teams rely on every day." },
-        { title: "Platform migration", desc: "Move from older or fragmented reporting tools to a more modern platform without losing what already works." },
-        { title: "Reporting & dashboard modernization", desc: "Simplify reports and dashboards so they are easier to use, easier to maintain, and more useful to the business." },
-        { title: "Data visualization & UX", desc: "Make complex information easier to understand so users can quickly see what matters and what action to take." },
-        { title: "Performance & data consistency", desc: "Improve slow reports, reduce conflicting numbers, and put clearer standards around how data is defined and used." },
+        { title: "Analytics strategy & assessment", desc: "We review your current reporting setup, find the gaps, and help you decide what needs to change first. That includes looking at the tools, data sources, reports, processes, and pain points behind how information reaches the business today." },
+        { title: "Platform upgrades", desc: "Upgrade older BI platforms without disrupting the reports and dashboards your teams rely on every day. We identify dependencies and compatibility issues early, plan the upgrade carefully, and test the reports and integrations that matter before anything moves into production." },
+        { title: "Platform migration", desc: "Move from older or fragmented reporting tools to a more modern platform without losing what already works. We help determine what should move, what should be rebuilt, and what can be retired instead of carrying years of unnecessary reporting into the new environment." },
+        { title: "Reporting & dashboard modernization", desc: "Simplify reports and dashboards so they are easier to use, easier to maintain, and more useful to the business. We also look for duplicate reports, inconsistent metrics, and unnecessary complexity that make it harder for users to find the answers they need." },
+        { title: "Data visualization & UX", desc: "Make complex information easier to understand so users can quickly see what matters and what action to take. We design around the questions people are trying to answer, so dashboards feel less like collections of charts and more like useful decision-making tools." },
+        { title: "Performance & data consistency", desc: "Improve slow reports, reduce conflicting numbers, and put clearer standards around how data is defined and used. We trace problems back through reports, models, queries, refresh processes, and data sources to fix the underlying issue instead of simply treating the symptom." },
       ],
       /**
        * [CONFIRM] 18 entries across 4 groups, added at Mayur's direction.
@@ -540,7 +540,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       },
       outcome: "Transformer des rapports fragmentés en décisions fiables.",
       intro:
-        "Nous aidons les entreprises à assainir des environnements de reporting complexes, à moderniser des outils vieillissants et à rendre leurs données plus faciles à utiliser et à croire.",
+        "Nous aidons les entreprises à assainir des environnements de reporting complexes, à moderniser des outils vieillissants et à rendre leurs données plus faciles à utiliser et à croire. Nous regardons comment la donnée circule des systèmes sources jusqu'aux rapports et tableaux de bord, où les contournements manuels et les chiffres contradictoires se sont installés, et ce qui ralentit les équipes. À partir de là, nous simplifions l'environnement : moins de temps à douter des chiffres, plus de temps à décider.",
       problems: [
         "Deux équipes qui publient des chiffres différents pour la même mesure.",
         "Des rapports assemblés à la main chaque mois faute de pipeline.",
@@ -549,12 +549,12 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       situation:
         "Le reporting se construit avec le temps, équipe par équipe. Chaque groupe finit par utiliser ses propres chiffres, les contournements manuels s'installent, et l'on passe plus de temps à vérifier les données qu'à s'en servir. Ajouter un tableau de bord de plus ne règle généralement pas le problème de fond.",
       capabilities: [
-        { title: "Stratégie et évaluation analytique", desc: "Nous examinons votre dispositif de reporting actuel, repérons les écarts et vous aidons à décider par quoi commencer." },
-        { title: "Montées de version", desc: "Faire évoluer des plateformes décisionnelles anciennes sans perturber les rapports dont vos équipes se servent chaque jour." },
-        { title: "Migration de plateforme", desc: "Quitter des outils anciens ou éparpillés pour une plateforme plus moderne, sans perdre ce qui fonctionne déjà." },
-        { title: "Modernisation du reporting", desc: "Simplifier rapports et tableaux de bord pour qu'ils soient plus faciles à utiliser, à maintenir et plus utiles au métier." },
-        { title: "Visualisation et expérience", desc: "Rendre une information complexe plus lisible, pour voir vite ce qui compte et ce qu'il faut en faire." },
-        { title: "Performance et cohérence des données", desc: "Accélérer les rapports lents, réduire les chiffres contradictoires et clarifier la façon dont les données sont définies et utilisées." },
+        { title: "Stratégie et évaluation analytique", desc: "Nous examinons votre dispositif de reporting actuel, repérons les écarts et vous aidons à décider par quoi commencer. Cela couvre les outils, les sources, les rapports, les processus et les irritants qui façonnent la manière dont l'information parvient au métier aujourd'hui." },
+        { title: "Montées de version", desc: "Faire évoluer des plateformes décisionnelles anciennes sans perturber les rapports dont vos équipes se servent chaque jour. Nous identifions tôt les dépendances et les incompatibilités, planifions la montée de version et testons les rapports et intégrations qui comptent avant tout passage en production." },
+        { title: "Migration de plateforme", desc: "Quitter des outils anciens ou éparpillés pour une plateforme plus moderne, sans perdre ce qui fonctionne déjà. Nous déterminons ce qui doit être repris, ce qui doit être reconstruit et ce qui peut être abandonné, plutôt que de transporter des années de reporting inutile." },
+        { title: "Modernisation du reporting", desc: "Simplifier rapports et tableaux de bord pour qu'ils soient plus faciles à utiliser, à maintenir et plus utiles au métier. Nous repérons aussi les doublons, les indicateurs incohérents et la complexité superflue qui empêchent les utilisateurs de trouver leurs réponses." },
+        { title: "Visualisation et expérience", desc: "Rendre une information complexe plus lisible, pour voir vite ce qui compte et ce qu'il faut en faire. Nous concevons autour des questions que se posent les utilisateurs : un tableau de bord devient un outil de décision plutôt qu'une collection de graphiques." },
+        { title: "Performance et cohérence des données", desc: "Accélérer les rapports lents, réduire les chiffres contradictoires et clarifier la façon dont les données sont définies et utilisées. Nous remontons la chaîne — rapports, modèles, requêtes, rafraîchissements, sources — pour corriger la cause plutôt que le symptôme." },
       ],
       technologyGroups: [
         { label: "Décisionnel", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects", "Google Looker", "Qlik Sense", "ThoughtSpot"] },
