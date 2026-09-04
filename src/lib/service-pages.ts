@@ -383,13 +383,35 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        */
       situation:
         "The system was fitted to the business years ago, and every fit was a change to the core. Over time, custom reports, integrations, workarounds, and business rules pile up. The people who built them move on, documentation falls behind, and no one is completely sure what will break when something changes.\n\nUpgrades become bigger than they should be. Testing takes longer, integrations need rework, and each change uncovers another dependency. So upgrades get deferred, technical debt grows, and the platform becomes something the business depends on\u2014but nobody wants to touch.",
+      // Mayur's words. Roughly 50 words per entry against the spec's 20-word
+      // guideline — see the note on the SAP page length in this file's header
+      // comment. Each one says what the work involves rather than naming it,
+      // which is the difference between a capability list and a menu.
       capabilities: [
-        { title: "S/4HANA migration", desc: "Move to S/4HANA with the core kept clean enough to keep taking upgrades afterwards." },
-        { title: "Clean-core remediation", desc: "Move logic out of the core where it blocks upgrades, without changing what the business sees." },
-        { title: "BTP extensions", desc: "Side-by-side extension for the logic that does not belong inside the core." },
-        { title: "Fiori applications", desc: "Interfaces built around the people running the process rather than the module." },
-        { title: "Integration and interfaces", desc: "Replace point-to-point connections with integration somebody can still map next year." },
-        { title: "SAP-grounded AI", desc: "Agents with governed access to real ERP context instead of a copied extract." },
+        {
+          title: "S/4HANA migration",
+          desc: "Move to S/4HANA with a clear plan for what should migrate, what should change, and what should be left behind. We focus on simplifying the environment during the move so the new platform is easier to maintain and can keep taking future upgrades.",
+        },
+        {
+          title: "Clean-core remediation",
+          desc: "Years of customization can make even routine SAP upgrades difficult. We identify the custom logic that is creating those dependencies and move it out of the core where practical, while protecting the business processes and functionality teams rely on every day.",
+        },
+        {
+          title: "BTP extensions",
+          desc: "Build new capabilities on SAP BTP instead of adding more custom code to the ERP core. We use side-by-side extensions to support business-specific requirements while keeping S/4HANA cleaner, easier to maintain, and better prepared for future releases.",
+        },
+        {
+          title: "Fiori applications",
+          desc: "Build Fiori experiences around how people actually perform their work, rather than simply putting a new interface on an old process. We simplify screens, steps, and workflows so users can get to the information and actions they need faster.",
+        },
+        {
+          title: "Integration & interfaces",
+          desc: "SAP rarely operates on its own. We help simplify and modernize the connections between SAP and the applications, data platforms, partners, and services around it\u2014reducing brittle point-to-point integrations and making interfaces easier to understand, support, and change.",
+        },
+        {
+          title: "SAP-grounded AI",
+          desc: "Bring AI into SAP workflows with governed access to real enterprise context rather than relying on copied or disconnected data. We focus on practical use cases where AI can help users find information, understand business activity, and take action while respecting existing access controls.",
+        },
       ],
       /**
        * [CONFIRM] Same rule as Analytics: only platforms ZED can substantiate.
@@ -630,12 +652,30 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       situation:
         "Le système a été ajusté à l'entreprise il y a des années, et chaque ajustement a touché le cœur. Avec le temps, rapports sur mesure, intégrations, contournements et règles de gestion s'accumulent. Ceux qui les ont construits sont partis, la documentation a pris du retard, et plus personne ne sait vraiment ce qui cassera au prochain changement.\n\nLes montées de version deviennent plus lourdes qu'elles ne devraient l'être. Les tests s'allongent, les intégrations demandent des reprises, et chaque changement révèle une dépendance de plus. On reporte donc les montées de version, la dette technique s'accumule, et la plateforme devient ce dont l'entreprise dépend \u2014 sans que personne ne veuille y toucher.",
       capabilities: [
-        { title: "Migration S/4HANA", desc: "Passer à S/4HANA en gardant un cœur assez propre pour rester évolutif ensuite." },
-        { title: "Assainissement du cœur", desc: "Sortir du cœur la logique qui bloque les montées de version, sans rien changer pour les utilisateurs." },
-        { title: "Extensions BTP", desc: "Extension côte à côte pour la logique qui n'a pas sa place dans le cœur." },
-        { title: "Applications Fiori", desc: "Des interfaces conçues autour des personnes qui exécutent le processus, pas du module." },
-        { title: "Intégration et interfaces", desc: "Remplacer les liaisons point à point par une intégration encore cartographiable l'an prochain." },
-        { title: "IA ancrée dans SAP", desc: "Des agents disposant d'un accès gouverné au contexte ERP réel plutôt qu'à un extrait copié." },
+        {
+          title: "Migration S/4HANA",
+          desc: "Passer à S/4HANA avec un plan clair : ce qui doit être repris, ce qui doit changer et ce qu'il faut laisser derrière. Nous simplifions l'environnement pendant la migration, pour une plateforme plus simple à maintenir et capable d'absorber les montées de version à venir.",
+        },
+        {
+          title: "Assainissement du cœur",
+          desc: "Des années de personnalisation rendent difficile la moindre montée de version. Nous identifions la logique sur mesure à l'origine de ces dépendances et la sortons du cœur quand c'est réalisable, tout en préservant les processus et les fonctions dont les équipes se servent chaque jour.",
+        },
+        {
+          title: "Extensions BTP",
+          desc: "Construire les nouvelles capacités sur SAP BTP plutôt que d'ajouter du code sur mesure dans le cœur de l'ERP. Les extensions côte à côte répondent aux besoins spécifiques tout en gardant S/4HANA plus propre, plus simple à maintenir et mieux préparé aux prochaines versions.",
+        },
+        {
+          title: "Applications Fiori",
+          desc: "Concevoir des expériences Fiori autour de la façon dont les gens travaillent réellement, plutôt que de poser une nouvelle interface sur un ancien processus. Nous simplifions écrans, étapes et parcours pour accéder plus vite à l'information et à l'action utiles.",
+        },
+        {
+          title: "Intégration et interfaces",
+          desc: "SAP fonctionne rarement seul. Nous simplifions et modernisons les connexions entre SAP et les applications, plateformes de données, partenaires et services qui l'entourent \u2014 en réduisant les intégrations point à point fragiles et en rendant les interfaces plus lisibles, plus faciles à exploiter et à faire évoluer.",
+        },
+        {
+          title: "IA ancrée dans SAP",
+          desc: "Intégrer l'IA aux processus SAP avec un accès gouverné au contexte réel de l'entreprise, plutôt qu'à des données copiées ou déconnectées. Nous ciblons les usages concrets : retrouver une information, comprendre l'activité, agir — dans le respect des contrôles d'accès existants.",
+        },
       ],
       technologyGroups: [
         {
