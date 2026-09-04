@@ -88,15 +88,17 @@
        --tone-a  #e31937  4.71 / 4.55 / 4.39   brand red; no small text on --secondary
        --tone-b  #1f6f5c  6.02 / 5.82 / 5.62
        --tone-c  #2f5da8  6.46 / 6.24 / 6.02
-       --tone-d  #b4651a  4.36 / 4.21 / 4.06   DECORATIVE ONLY - fails AA as text anywhere
+       --tone-d  #8f4e12  6.43 / 6.20 / 5.99   darkened so it is safe as text
 
-     Today they paint only icons and dots, where contrast does not apply. If
-     one is ever used for text, check this table first: amber does not clear
-     4.5:1 on any ground the site uses. */
+     All four are now safe as small text on white and on --surface. The amber
+     was #b4651a, which measured 4.36 and failed; it was darkened when the
+     platform table began setting category labels in these colours rather than
+     only dots. Check this table before using one on a tinted ground - the
+     washes those labels sit beside are lighter than any of these. */
   --tone-a: #e31937;
   --tone-b: #1f6f5c;
   --tone-c: #2f5da8;
-  --tone-d: #b4651a;
+  --tone-d: #8f4e12;
 
   /* Lead text on the dark band (spec v1.2 S38 --dark-lead). 11.73:1 on
      #0a0a0b. Used for the Why ZED eyebrow and pillar numerals, because brand

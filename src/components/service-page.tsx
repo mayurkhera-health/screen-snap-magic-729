@@ -261,6 +261,22 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 ZEDventures tokens instead: chip ground --secondary, chip text
                 --foreground, label --subtle-foreground, dot and icon --accent.
 
+                Colour carries the grouping. A 3px rail on the left edge of
+                each row and a 12% wash behind that row's chips, both from the
+                same tone — the 4px dot alone was correct in principle and
+                invisible in practice at real viewing size.
+
+                Four places carry the tone now: a 4px rail on the row's left
+                edge, the category label, the chip dot, and a 16% wash with a
+                32% border behind each chip.
+
+                Chip text stays #111111 and measures better than 14:1 on every
+                wash, so nothing readable depends on the tone. The labels DO
+                depend on it: at 10px they are small text and need 4.5:1 on
+                white, which is why --tone-d was darkened from #b4651a (4.36,
+                failing) to #8f4e12 (6.43). Measured on white: red 4.71, green
+                6.02, blue 6.46, amber 6.43.
+
                 Still names only, no logos: no licensing question per mark and
                 no implied partner status. */}
             {/* Two border weights, and both are heavier than the site's content
@@ -285,9 +301,10 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 return (
                   <div
                     key={g.label}
-                    className={`grid gap-2 px-4 py-3 sm:px-[18px] lg:grid-cols-[minmax(0,170px)_minmax(0,1fr)] lg:items-center lg:gap-3 ${
-                      i > 0 ? "border-t border-[#c2c2be]" : ""
+                    className={`grid gap-2 border-l-4 py-3 pl-4 pr-4 sm:pl-[15px] sm:pr-[18px] lg:grid-cols-[minmax(0,170px)_minmax(0,1fr)] lg:items-center lg:gap-3 ${
+                      i > 0 ? "border-t border-t-[#c2c2be]" : ""
                     }`}
+                    style={{ borderLeftColor: tone }}
                   >
                     <dt className="flex items-center gap-1.5">
                       {Icon && (
@@ -298,7 +315,10 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                           aria-hidden="true"
                         />
                       )}
-                      <span className="text-[10px] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
+                      <span
+                        className="text-[10px] font-bold uppercase leading-none tracking-[0.1em]"
+                        style={{ color: tone }}
+                      >
                         {g.label}
                       </span>
                     </dt>
@@ -306,7 +326,11 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                       {g.items.map((item) => (
                         <span
                           key={item}
-                          className="inline-flex items-center gap-1.5 rounded-[5px] bg-secondary py-1 pl-[7px] pr-[9px] text-[12.5px] font-semibold leading-[1.5] text-foreground"
+                          className="inline-flex items-center gap-1.5 rounded-[5px] py-1 pl-[7px] pr-[9px] text-[12.5px] font-semibold leading-[1.5] text-foreground"
+                          style={{
+                            backgroundColor: `color-mix(in srgb, ${tone} 16%, #ffffff)`,
+                            border: `1px solid color-mix(in srgb, ${tone} 32%, #ffffff)`,
+                          }}
                         >
                           <span
                             className="h-1 w-1 shrink-0 rounded-full"
