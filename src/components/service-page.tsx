@@ -2,7 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
-import { SERVICE_PAGES, SHOW_SERVICE_PROOF, type ServiceSlug } from "@/lib/service-pages";
+import {
+  DRAFT_SERVICE_PAGES,
+  SERVICE_PAGES,
+  SHOW_SERVICE_PROOF,
+  type ServiceSlug,
+} from "@/lib/service-pages";
 
 /**
  * Service detail page — spec v1.2.
@@ -14,7 +19,7 @@ import { SERVICE_PAGES, SHOW_SERVICE_PROOF, type ServiceSlug } from "@/lib/servi
  *
  * Six sections, answering the five buyer questions in the order they are asked:
  *
- *   01 HERO           white     am I in the right place
+ *   01 HERO           white     am I in the right place (copy + one image)
  *   02 SITUATION      surface   do they understand my situation
  *   03 CAPABILITIES   white     can they do this
  *   04 TECHNOLOGY     surface   ...with what
@@ -42,29 +47,75 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
   const groups = s.technologyGroups ?? [];
   const pillars = s.whyPillars ?? [];
 
+  // Right-hand hero column exists when there is a real image, or while the
+  // page is still a draft and a placeholder is useful. Never otherwise.
+  const showImageSlot = Boolean(s.heroImage) || DRAFT_SERVICE_PAGES;
+
   return (
     <>
       {/* ---------------------------------------------------------------
-          01 — HERO (S5-S10)
-          Text-led. No decorative image: whitespace is the composition, and
-          an illustration added to fill the right column is a confession
-          that the copy is thin.
+          01 — HERO
+
+          Two columns: copy left, one image right.
+
+          The image slot resolves three ways, and the third is the point:
+
+            heroImage set            -> the real image
+            no image, draft on       -> a labelled placeholder naming the
+                                        subject to source
+            no image, draft OFF      -> nothing; the hero returns to the
+                                        single-column text-led layout
+
+          A placeholder that renders unconditionally is how a grey box ends
+          up on a production page. Tying it to DRAFT_SERVICE_PAGES means
+          turning the draft flag off either reveals real images or quietly
+          restores a hero that still reads correctly without them.
           --------------------------------------------------------------- */}
       <section className="border-b border-border">
-        <div className="container-page section-y">
-          {/* S6: the eyebrow is the service name, because the H1 is
-              deliberately an outcome and no longer says which page this is. */}
-          <p className="eyebrow text-accent">{s.name}</p>
-          <h1 className="font-display mt-3 max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
-            {s.outcome}
-          </h1>
-          <p className="mt-7 max-w-[45rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
-            {s.intro}
-          </p>
-          <Link to="/contact" className="btn btn-wrap btn-primary mt-9">
-            {t.services.heroCtaBefore} {s.name} {t.services.heroCtaAfter}
-            <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
-          </Link>
+        <div
+          className={`container-page section-y ${
+            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-14" : ""
+          }`}
+        >
+          <div>
+            {/* The eyebrow is the service name, because the H1 is deliberately
+                an outcome and no longer says which page this is. */}
+            <p className="eyebrow text-accent">{s.name}</p>
+            <h1 className="font-display mt-3 max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+              {s.outcome}
+            </h1>
+            <p className="mt-7 max-w-[42rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
+              {s.intro}
+            </p>
+            <Link to="/contact" className="btn btn-wrap btn-primary mt-9">
+              {t.services.heroCtaBefore} {s.name} {t.services.heroCtaAfter}
+              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+
+          {s.heroImage ? (
+            <img
+              src={s.heroImage.src}
+              alt={s.heroImage.alt}
+              width={1280}
+              height={720}
+              loading="eager"
+              className="aspect-[16/9] w-full rounded-2xl object-cover"
+            />
+          ) : (
+            showImageSlot && (
+              <div
+                className="flex aspect-[16/9] w-full flex-col justify-end rounded-2xl border border-dashed border-border-strong bg-secondary p-6"
+                role="note"
+                aria-label="Hero image not yet supplied"
+              >
+                <p className="eyebrow text-subtle-foreground">Hero image</p>
+                <p className="mt-2 max-w-[34ch] text-sm leading-[1.5] text-muted-foreground">
+                  {s.heroImageHint}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </section>
 

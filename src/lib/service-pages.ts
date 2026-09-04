@@ -91,6 +91,25 @@ export type ServiceContent = {
   whyIntro?: string;
   /** Exactly three, and they must differ from every other service's (S29). */
   whyPillars?: { title: string; body: string }[];
+
+  /**
+   * Hero image, right column.
+   *
+   * `src` is a real file under /public. While it is absent the hero renders a
+   * labelled placeholder — but ONLY while DRAFT_SERVICE_PAGES is true. With
+   * the draft flag off and no src, the hero falls back to the single-column
+   * text-led layout it had before. That is deliberate: a grey box cannot
+   * reach production by being forgotten, which is the usual fate of a
+   * placeholder that renders unconditionally.
+   *
+   * `alt` is required alongside `src` — a hero image with no alt text fails
+   * the accessibility criteria this page is audited against.
+   *
+   * `hint` is the subject to shoot or source, shown inside the placeholder so
+   * whoever fills it knows what belongs there.
+   */
+  heroImage?: { src: string; alt: string };
+  heroImageHint?: string;
 };
 
 export const SERVICE_SLUGS = [
@@ -131,6 +150,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
   en: {
     "ai-data": {
       name: "AI & Data",
+      heroImageHint: "A model or pipeline in use — not a stock robot or neural-network render",
       outcome: "Get AI out of the proof-of-concept stage and into systems your business can depend on.",
       intro:
         "Plenty of enterprise AI gets as far as a good demo and stops there, because nobody will sign off on putting it in front of customers. Closing that gap is retrieval, orchestration and evaluation work — plus the data platform underneath it.",
@@ -152,6 +172,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     analytics: {
       name: "Analytics",
+      heroImageHint: "A real reporting or dashboard screen, blurred or anonymized if it is client work",
       // S7: the H1 states the outcome. v1.1 used "reporting that nobody
       // trusts", which S7 rejects as accusatory - the reader being blamed is
       // the person we want to hear from.
@@ -216,6 +237,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "gis-geospatial": {
       name: "GIS & Geospatial",
+      heroImageHint: "A map or spatial visualization from actual delivered work",
       outcome: "Make location a dimension your business can analyze, not a map you look at.",
       intro:
         "Spatial data is usually treated as a separate discipline bolted onto the side of the estate. We build it into the same pipelines and the same analysis as everything else.",
@@ -237,6 +259,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     guidewire: {
       name: "Guidewire",
+      heroImageHint: "A policy or claims workflow screen",
       outcome: "Move PolicyCenter, BillingCenter and ClaimCenter forward without stopping the business on them.",
       intro:
         "Claims still have to be paid while you upgrade. Everything about how we sequence an implementation, a version move or a cloud migration follows from that one constraint.",
@@ -258,6 +281,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     sap: {
       name: "SAP",
+      heroImageHint: "An SAP module screen, or a rollout workshop in progress",
       outcome: "Extend SAP without rebuilding the problems clean core was meant to remove.",
       intro:
         "The discipline that matters in SAP work is knowing what belongs in the core and what belongs beside it. We build extensions and integrations that keep that line intact, including AI agents that reach real ERP context.",
@@ -279,6 +303,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "product-engineering": {
       name: "Product Engineering",
+      heroImageHint: "Engineers working — a real team, not a stock photo of laptops",
       outcome: "Ship software on a date you can commit to in front of a customer.",
       intro:
         "Full-cycle delivery from architecture through QA, run by people who stay accountable after the release rather than handing over a repository.",
@@ -300,6 +325,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "offshore-nearshore": {
       name: "Offshore & Nearshore Delivery",
+      heroImageHint: "A distributed team mid-call across locations",
       outcome: "Add engineering capacity without adding coordination overhead.",
       intro:
         "Offshore delivery in India for depth and cost-efficient capacity, nearshore across the Americas for time-zone overlap. One engagement model, chosen per workstream rather than per contract.",
@@ -324,6 +350,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
   fr: {
     "ai-data": {
       name: "IA et données",
+      heroImageHint: "Un modèle ou un pipeline en usage réel — ni robot ni réseau de neurones de banque d'images",
       outcome: "Faire passer l'IA du prototype à des systèmes sur lesquels l'entreprise peut compter.",
       intro:
         "Beaucoup de projets d'IA en entreprise atteignent le stade d'une bonne démonstration et s'arrêtent là, faute de quelqu'un prêt à la mettre devant des clients. Combler cet écart, c'est un travail de recherche, d'orchestration et d'évaluation — et la plateforme de données en dessous.",
@@ -345,6 +372,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     analytics: {
       name: "Analytique",
+      heroImageHint: "Un véritable écran de reporting ou tableau de bord, flouté si nécessaire",
       outcome: "Transformer des rapports fragmentés en décisions fiables.",
       intro:
         "ZEDventures aide les organisations à évaluer, moderniser, migrer et optimiser leurs environnements analytiques, pour que les équipes métier disposent d'informations plus cohérentes, plus exploitables et plus fiables.",
@@ -392,6 +420,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "gis-geospatial": {
       name: "SIG et géomatique",
+      heroImageHint: "Une carte ou visualisation spatiale issue d'un projet livré",
       outcome: "Faire de la localisation une dimension analysable, et non une carte que l'on regarde.",
       intro:
         "Les données spatiales sont souvent traitées comme une discipline à part, greffée sur le reste du parc. Nous les intégrons aux mêmes pipelines et aux mêmes analyses que tout le reste.",
@@ -413,6 +442,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     guidewire: {
       name: "Guidewire",
+      heroImageHint: "Un écran de gestion de police ou de sinistre",
       outcome: "Faire évoluer PolicyCenter, BillingCenter et ClaimCenter sans arrêter l'activité qui en dépend.",
       intro:
         "Les sinistres doivent continuer d'être réglés pendant la montée de version. Toute notre façon de séquencer une implémentation, un changement de version ou une migration infonuagique découle de cette seule contrainte.",
@@ -434,6 +464,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     sap: {
       name: "SAP",
+      heroImageHint: "Un écran de module SAP, ou un atelier de déploiement",
       outcome: "Étendre SAP sans recréer les problèmes que le clean core devait éliminer.",
       intro:
         "La discipline qui compte dans le travail SAP consiste à savoir ce qui appartient au cœur et ce qui doit rester à côté. Nous construisons des extensions et des intégrations qui préservent cette frontière, y compris des agents d'IA reliés au contexte ERP réel.",
@@ -455,6 +486,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "product-engineering": {
       name: "Ingénierie produit",
+      heroImageHint: "Des ingénieurs au travail — une vraie équipe, pas une photo de banque d'images",
       outcome: "Livrer un logiciel à une date que vous pouvez annoncer devant un client.",
       intro:
         "Une livraison de bout en bout, de l'architecture à l'assurance qualité, assurée par des gens qui restent responsables après la mise en production plutôt que de remettre un dépôt de code.",
@@ -476,6 +508,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     "offshore-nearshore": {
       name: "Livraison délocalisée et de proximité",
+      heroImageHint: "Une équipe distribuée en visioconférence",
       outcome: "Ajouter de la capacité d'ingénierie sans ajouter de coordination.",
       intro:
         "Une livraison délocalisée en Inde pour la profondeur et une capacité économique, et de proximité dans les Amériques pour le chevauchement horaire. Un seul modèle d'engagement, choisi par chantier plutôt que par contrat.",
