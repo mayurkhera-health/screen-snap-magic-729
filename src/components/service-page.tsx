@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
-import { SERVICE_PAGES, type ServiceSlug } from "@/lib/service-pages";
+import { SERVICE_PAGES, SHOW_SERVICE_PROOF, type ServiceSlug } from "@/lib/service-pages";
 
 /**
  * Service detail page — spec v1.2.
@@ -222,11 +222,13 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
       {/* ---------------------------------------------------------------
           06A — PROOF (S31-S33)
-          Renders only when a real case study exists. No empty card, no
-          "coming soon", no unrelated project. When `proof` is absent the
-          block does not exist and the next step follows directly.
+
+          Currently hidden site-wide by SHOW_SERVICE_PROOF; see the note on
+          that flag in service-pages.ts. When it is on, the block still
+          renders only where a real case study exists - no empty card, no
+          "coming soon", no unrelated project.
           --------------------------------------------------------------- */}
-      {study && s.proof && (
+      {SHOW_SERVICE_PROOF && study && s.proof && (
         <section className="border-b border-border" aria-label={t.services.proofEyebrow}>
           <div className="container-page section-y">
             {/* Eyebrow only, no H2. A heading here ("We've done this.") narrated

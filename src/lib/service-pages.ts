@@ -12,6 +12,21 @@
  */
 export const DRAFT_SERVICE_PAGES = true;
 
+/**
+ * The proof block on service detail pages.
+ *
+ * Off. Only three of the seven services have a case study behind them, so the
+ * block appears on three pages and is absent from four - and the spec's
+ * conditional rendering, while correct, makes that gap visible rather than
+ * hiding it. Turned off until there is proof for every service, or until the
+ * uneven version is judged better than none.
+ *
+ * Flip to true to bring it back everywhere it has data. The component and the
+ * per-service `proof` records are left intact so that is a one-line change,
+ * not a rebuild. Nothing else needs to move.
+ */
+export const SHOW_SERVICE_PROOF = false;
+
 export type ServiceCapability = { title: string; desc: string };
 
 /**
