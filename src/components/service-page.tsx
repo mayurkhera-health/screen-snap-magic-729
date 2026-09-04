@@ -227,17 +227,18 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           block does not exist and the next step follows directly.
           --------------------------------------------------------------- */}
       {study && s.proof && (
-        <section className="border-b border-border">
+        <section className="border-b border-border" aria-label={t.services.proofEyebrow}>
           <div className="container-page section-y">
-            <SectionHeader
-              align="left"
-              eyebrow={t.services.proofEyebrow}
-              heading={t.services.proofHeading}
-            />
+            {/* Eyebrow only, no H2. A heading here ("We've done this.") narrated
+                the card immediately below it without adding anything the card
+                does not already say, and put a claim in ZED's voice directly
+                above the client's evidence. The eyebrow labels the section and
+                the case study speaks for itself. */}
+            <SectionHeader align="left" eyebrow={t.services.proofEyebrow} />
             <Link
               to="/case-studies"
               hash={`case-${s.proof.index}`}
-              className="group mt-9 flex max-w-[52rem] flex-col gap-4 border-l-[3px] border-l-primary bg-surface py-7 pl-7 pr-7 transition-colors hover:bg-secondary"
+              className="group mt-7 flex max-w-[52rem] flex-col gap-4 border-l-[3px] border-l-primary bg-surface py-7 pl-7 pr-7 transition-colors hover:bg-secondary"
               style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
             >
               <p className="font-display text-[1.375rem] leading-[1.2] tracking-[-0.02em] sm:text-2xl">
@@ -260,24 +261,28 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
 
       {/* ---------------------------------------------------------------
           06B — NEXT STEP (S35-S37)
+
           White, not dark: S3 reserves the single dark band for Why ZED.
-          The reassurance line is the point of this section — every
-          competitor page reviewed ends with a button and no statement of
-          what follows it. It is also a promise, and only worth making if
-          it is kept.
+
+          No heading. The spec's "Let's talk about your analytics priorities."
+          sat directly above a button reading "Discuss your analytics
+          priorities", one screen below a hero CTA reading "Talk to our
+          Analytics team" — the same sentence three times, and the third time
+          it stops being a call to action and becomes noise.
+
+          What survives is the part no competitor page has: a statement of what
+          actually happens after you write. That is a promise, and only worth
+          making if it is kept.
           --------------------------------------------------------------- */}
-      <section>
-        {/* S39 asks for roughly 70/30 here rather than the site's even .split:
-            the closing heading is service-specific and therefore longer than
-            the generic one, and a half-width column breaks it over four lines. */}
-        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] lg:items-start">
-          <SectionHeader
-            align="left"
-            eyebrow={t.contact.eyebrow}
-            heading={s.finalCta?.title ?? t.services.ctaHeading}
-            sub={t.services.startNext}
-          />
-          <div className="lg:justify-self-end lg:pt-2">
+      <section aria-label={t.contact.eyebrow}>
+        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center">
+          <div className="flex max-w-[42rem] flex-col gap-4">
+            <p className="eyebrow text-accent">{t.contact.eyebrow}</p>
+            <p className="font-display text-[1.5rem] leading-[1.25] tracking-[-0.02em] sm:text-[1.875rem]">
+              {t.services.startNext}
+            </p>
+          </div>
+          <div className="lg:justify-self-end">
             <Link to="/contact" className="btn btn-wrap btn-primary">
               {s.finalCta?.buttonLabel ?? t.services.pageCta}
               <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
@@ -285,6 +290,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           </div>
         </div>
       </section>
+
     </>
   );
 }

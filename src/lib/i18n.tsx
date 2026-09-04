@@ -49,7 +49,6 @@ const en = {
     /** Interpolated with the service name: "Why ZED for Analytics". */
     whyHeading: "Why ZED for",
     proofEyebrow: "Our work",
-    proofHeading: "We've done this.",
     proofCta: "Read the case study",
     // [CONFIRM] Answers "what happens if I get in touch" — the friction that
     // stops people writing. Same line on every service page.
@@ -474,7 +473,6 @@ const fr: Copy = {
     whyEyebrow: "Pourquoi ZED",
     whyHeading: "Pourquoi ZED pour",
     proofEyebrow: "Nos réalisations",
-    proofHeading: "Nous l'avons déjà fait.",
     proofCta: "Lire l'étude de cas",
     startNext:
       "Votre message est lu par un membre senior de notre équipe de livraison. Nous répondons sous un jour ouvré.",

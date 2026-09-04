@@ -76,9 +76,10 @@ export type ServiceContent = {
   whyIntro?: string;
   /** Exactly three, and they must differ from every other service's (S29). */
   whyPillars?: { title: string; body: string }[];
-  /** Service-specific closing block. The generic "Let's talk about your next
-   *  project" is the same on seven pages and reads as a template (S35, S37). */
-  finalCta?: { title: string; buttonLabel: string };
+  /** Service-specific CTA label (S37). The spec's matching closing headline
+   *  was dropped: it repeated this button word for word, one screen below a
+   *  hero CTA saying the same thing a third time. */
+  finalCta?: { buttonLabel: string };
 };
 
 export const SERVICE_SLUGS = [
@@ -199,7 +200,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       ],
       proof: { index: 3, headline: "Real-time visibility across every country" },
       finalCta: {
-        title: "Let's talk about your analytics priorities.",
         buttonLabel: "Discuss your analytics priorities",
       },
       seoTitle: "Analytics Consulting & Modernization Services | ZEDventures",
@@ -379,7 +379,6 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
       ],
       proof: { index: 3, headline: "Visibilité en temps réel sur tous les pays" },
       finalCta: {
-        title: "Parlons de vos priorités analytiques.",
         buttonLabel: "Discuter de vos priorités analytiques",
       },
       seoTitle: "Conseil et modernisation analytique | ZEDventures",
