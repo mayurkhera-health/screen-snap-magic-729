@@ -127,10 +127,18 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           }`}
         >
           <div>
-            {/* The eyebrow is the service name, because the H1 is deliberately
-                an outcome and no longer says which page this is. */}
-            <p className="eyebrow text-accent">{s.name}</p>
-            <h1 className="font-display mt-3 max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+            {/* No eyebrow. The service name in red above the headline was
+                spec S6, on the reasoning that the H1 is an outcome and does
+                not say which page you are on. Removed at Mayur's direction —
+                the H1 opens the page on its own, and the red label was the
+                only thing between the header rule and the headline.
+
+                One consequence, recorded rather than argued: "Modernize SAP"
+                still names its service, but "Turn fragmented reporting into
+                trusted business decisions" never says the word Analytics. On
+                that page the only remaining answer to "am I in the right
+                place" is the Services nav item and the CTA button. */}
+            <h1 className="font-display max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
               {s.outcome}
             </h1>
             <p className="mt-7 max-w-[42rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
