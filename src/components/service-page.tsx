@@ -123,7 +123,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       <section className="border-b border-border">
         <div
           className={`container-page section-y ${
-            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-start lg:gap-14" : ""
+            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-end lg:gap-14" : ""
           }`}
         >
           <div>
