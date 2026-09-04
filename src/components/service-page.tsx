@@ -1,0 +1,290 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
+import { SectionHeader } from "@/components/section-header";
+import { SERVICE_PAGES, type ServiceSlug } from "@/lib/service-pages";
+
+/**
+ * Service detail page — spec v1.2.
+ *
+ * One template, seven records. This is the whole layout; nothing about it is
+ * per-service except the data it reads. A service that has not had its v1.2
+ * copy written keeps the older template (see services_.$slug.tsx), so the
+ * seven convert one at a time rather than drifting apart.
+ *
+ * Six sections, answering the five buyer questions in the order they are asked:
+ *
+ *   01 HERO           white     am I in the right place
+ *   02 SITUATION      surface   do they understand my situation
+ *   03 CAPABILITIES   white     can they do this
+ *   04 TECHNOLOGY     surface   ...with what
+ *   05 WHY ZED        #0a0a0b   why them specifically
+ *   06 PROOF + NEXT   white     have they done it / what happens if I write
+ *
+ * The background rhythm is load-bearing (S3). One dark band, and it is the
+ * page's only visual event; a second one at the bottom would spend it. That is
+ * why section 06 is white even though a dark closing band is the more common
+ * pattern.
+ *
+ * Colour constraints on this page are measured, not chosen (S38):
+ *   #E31937 on #FFFFFF   4.71  eyebrows allowed
+ *   #E31937 on #FBFBFA   4.55  eyebrows allowed
+ *   #E31937 on #F7F7F5   4.39  FAILS — --secondary carries no red small text
+ *   #E31937 on #0A0A0B   4.20  FAILS — dark band uses --dark-lead instead
+ */
+export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
+  const { t, lang } = useLanguage();
+  const s = SERVICE_PAGES[lang][slug];
+  const study = s.proof ? t.caseStudies.items[s.proof.index - 1] : undefined;
+
+  // Guaranteed by the caller, which only renders this template for a service
+  // that has whyPillars. Narrowed here so the JSX does not need optional chains.
+  const groups = s.technologyGroups ?? [];
+  const pillars = s.whyPillars ?? [];
+
+  return (
+    <>
+      {/* ---------------------------------------------------------------
+          01 — HERO (S5-S10)
+          Text-led. No decorative image: whitespace is the composition, and
+          an illustration added to fill the right column is a confession
+          that the copy is thin.
+          --------------------------------------------------------------- */}
+      <section className="border-b border-border">
+        <div className="container-page section-y">
+          {/* S6: the eyebrow is the service name, because the H1 is
+              deliberately an outcome and no longer says which page this is. */}
+          <p className="eyebrow text-accent">{s.name}</p>
+          <h1 className="font-display mt-3 max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+            {s.outcome}
+          </h1>
+          <p className="mt-7 max-w-[45rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
+            {s.intro}
+          </p>
+          <Link to="/contact" className="btn btn-wrap btn-primary mt-9">
+            {t.services.heroCtaBefore} {s.name} {t.services.heroCtaAfter}
+            <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------
+          02 — THE SITUATION (S11-S12)
+          The client's world before they called. No ZED, no product names,
+          no capability list. This is the one section that cannot be drafted
+          from the service description, and the only one a competitor could
+          not have written.
+          --------------------------------------------------------------- */}
+      <section className="border-b border-border bg-surface">
+        <div className="container-page section-y split">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.situationEyebrow}
+            heading={t.services.situationHeading}
+          />
+          <p className="max-w-[38rem] text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]">
+            {s.situation}
+          </p>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------
+          03 — WHAT WE HELP YOU DO (S13-S18)
+          Editorial grid, not cards: numbering, typography, whitespace and
+          a hairline. Rows are not links — there is nowhere to send the
+          reader, and a hover that implies navigation and delivers none is
+          worse than no hover at all (S17).
+          --------------------------------------------------------------- */}
+      <section className="border-b border-border">
+        <div className="container-page section-y">
+          <SectionHeader
+            align="left"
+            eyebrow={t.services.buildEyebrow}
+            heading={t.services.buildHeading}
+          />
+          <ol className="mt-11 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+            {s.capabilities.map((c, i) => (
+              <li key={c.title} className="group border-t border-border pt-6">
+                <span
+                  className="eyebrow block text-accent transition-opacity group-hover:opacity-80"
+                  style={{ transitionDuration: "var(--dur)" }}
+                  aria-hidden="true"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3
+                  className="font-display mt-3.5 max-w-[20ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-2xl"
+                  style={{
+                    transitionDuration: "var(--dur)",
+                    transitionTimingFunction: "var(--ease)",
+                  }}
+                >
+                  {c.title}
+                </h3>
+                <p className="mt-3 max-w-[30rem] text-base leading-[1.55] text-muted-foreground">
+                  {c.desc}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------
+          04 — PLATFORMS WE WORK WITH (S19-S23)
+          Text, not logo tiles. Tiles cost a licensing question per mark,
+          imply partner status that may not exist, and turn the section
+          into the logo wall the spec warns against. Three columns of names
+          at 15px say the same thing in a tenth of the markup.
+          --------------------------------------------------------------- */}
+      {groups.length > 0 && (
+        <section className="border-b border-border bg-surface">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={t.services.platformsEyebrow}
+              heading={t.services.platformsHeading}
+              sub={t.services.platformsSub}
+            />
+            <div
+              className={`mt-11 grid gap-x-10 gap-y-10 sm:grid-cols-2 ${
+                groups.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+              }`}
+            >
+              {groups.map((g) => (
+                <div key={g.label} className="border-t border-border pt-6">
+                  <h3 className="eyebrow text-subtle-foreground">{g.label}</h3>
+                  <ul className="mt-4 space-y-1">
+                    {g.items.map((item) => (
+                      <li
+                        key={item}
+                        className="text-[0.9375rem] font-medium leading-[1.8] text-foreground"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          05 — WHY ZED (S24-S29)
+          The page's one dark band. Eyebrow and pillar numerals use
+          --dark-lead (#c7c7ca, 11.73:1) rather than brand red, which
+          measures 4.20:1 here and fails AA. The red survives as a short
+          decorative rule beside each numeral, which is not load-bearing
+          text (S27).
+          --------------------------------------------------------------- */}
+      {pillars.length > 0 && (
+        <section className="section-dark">
+          <div className="container-page section-y">
+            <p className="eyebrow text-dark-lead">{t.services.whyEyebrow}</p>
+            <h2 className="font-display mt-3 max-w-[20ch] text-[2rem] leading-[1.08] tracking-[-0.025em] sm:text-[2.75rem]">
+              {t.services.whyHeading} {s.name}
+            </h2>
+            {s.whyIntro && (
+              <p className="mt-5 max-w-[47rem] text-[1.0625rem] leading-[1.55] text-dark-lead sm:text-[1.125rem]">
+                {s.whyIntro}
+              </p>
+            )}
+
+            <ol className="mt-12 grid gap-px overflow-hidden bg-border lg:grid-cols-3">
+              {pillars.map((pillar, i) => (
+                <li
+                  key={pillar.title}
+                  className="bg-background py-7 lg:px-8 lg:py-0 lg:first:pl-0"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="eyebrow text-dark-lead" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className="h-px w-8 bg-primary"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="font-display mt-5 max-w-[18ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] sm:text-2xl">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 max-w-[30rem] text-[0.9375rem] leading-[1.6] text-muted-foreground">
+                    {pillar.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          06A — PROOF (S31-S33)
+          Renders only when a real case study exists. No empty card, no
+          "coming soon", no unrelated project. When `proof` is absent the
+          block does not exist and the next step follows directly.
+          --------------------------------------------------------------- */}
+      {study && s.proof && (
+        <section className="border-b border-border">
+          <div className="container-page section-y">
+            <SectionHeader
+              align="left"
+              eyebrow={t.services.proofEyebrow}
+              heading={t.services.proofHeading}
+            />
+            <Link
+              to="/case-studies"
+              hash={`case-${s.proof.index}`}
+              className="group mt-9 flex max-w-[52rem] flex-col gap-4 border-l-[3px] border-l-primary bg-surface py-7 pl-7 pr-7 transition-colors hover:bg-secondary"
+              style={{ transitionDuration: "var(--dur)", transitionTimingFunction: "var(--ease)" }}
+            >
+              <p className="font-display text-[1.375rem] leading-[1.2] tracking-[-0.02em] sm:text-2xl">
+                {study.title}
+              </p>
+              <p className="font-display text-lg leading-[1.25] tracking-[-0.015em] text-accent">
+                {s.proof.headline}
+              </p>
+              <p className="text-sm leading-[1.55] text-muted-foreground">
+                {study.stack.join(" · ")}
+              </p>
+              <span className="flex items-center gap-1.5 text-sm font-bold text-accent">
+                {t.services.proofCta}
+                <ArrowUpRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ---------------------------------------------------------------
+          06B — NEXT STEP (S35-S37)
+          White, not dark: S3 reserves the single dark band for Why ZED.
+          The reassurance line is the point of this section — every
+          competitor page reviewed ends with a button and no statement of
+          what follows it. It is also a promise, and only worth making if
+          it is kept.
+          --------------------------------------------------------------- */}
+      <section>
+        {/* S39 asks for roughly 70/30 here rather than the site's even .split:
+            the closing heading is service-specific and therefore longer than
+            the generic one, and a half-width column breaks it over four lines. */}
+        <div className="container-page section-y grid gap-8 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] lg:items-start">
+          <SectionHeader
+            align="left"
+            eyebrow={t.contact.eyebrow}
+            heading={s.finalCta?.title ?? t.services.ctaHeading}
+            sub={t.services.startNext}
+          />
+          <div className="lg:justify-self-end lg:pt-2">
+            <Link to="/contact" className="btn btn-wrap btn-primary">
+              {s.finalCta?.buttonLabel ?? t.services.pageCta}
+              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

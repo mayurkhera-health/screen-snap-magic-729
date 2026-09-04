@@ -32,16 +32,33 @@ const en = {
     ctaSub: "Tell us what you're trying to solve. A senior member of our team will read it.",
     // Five-question framework — see the note in src/lib/service-pages.ts.
     situationEyebrow: "The situation",
-    situationHeading: "What we usually walk into.",
-    buildEyebrow: "What we do about it",
-    buildHeading: "What we do about it.",
-    proofEyebrow: "Proof",
-    proofHeading: "We have done this.",
+    // S11: "Where organizations get stuck" keeps the client at the centre.
+    // v1.1's "What we usually walk into" put ZED in the sentence and read as a
+    // judgement on whoever built the current system.
+    situationHeading: "Where organizations get stuck.",
+    // Hero CTA is service-aware (S9): "Talk to our Analytics team".
+    heroCtaBefore: "Talk to our",
+    heroCtaAfter: "team",
+    buildEyebrow: "What we do",
+    buildHeading: "What we help you do.",
+    platformsEyebrow: "Technology",
+    platformsHeading: "Platforms we work with.",
+    platformsSub:
+      "Experience across the platforms commonly used in enterprise environments and modernization programs.",
+    whyEyebrow: "Why ZED",
+    /** Interpolated with the service name: "Why ZED for Analytics". */
+    whyHeading: "Why ZED for",
+    proofEyebrow: "Our work",
+    proofHeading: "We've done this.",
     proofCta: "Read the case study",
     // [CONFIRM] Answers "what happens if I get in touch" — the friction that
     // stops people writing. Same line on every service page.
+    // [CONFIRM] S36 makes this conditional: use the one-business-day version
+    // only if ZED can operationally hold it. If not, the spec's fallback is
+    // "...who will follow up directly." Breaking this once costs more than the
+    // sentence earns.
     startNext:
-      "A senior engineer reads it, not a form queue. You will hear back within one business day.",
+      "Your message is reviewed by a senior member of our delivery team. We'll respond within one business day.",
     items: [
       {
         title: "AI & Data",
@@ -443,14 +460,24 @@ const fr: Copy = {
     ctaHeading: "Parlons de votre prochain projet.",
     ctaSub: "Dites-nous ce que vous cherchez à résoudre. Un membre senior de notre équipe le lira.",
     situationEyebrow: "La situation",
-    situationHeading: "Ce que nous trouvons en arrivant.",
+    situationHeading: "Là où les organisations se bloquent.",
+    // French puts the service name last, so the suffix is empty:
+    // "Parler à notre équipe Analytique".
+    heroCtaBefore: "Parler à notre équipe",
+    heroCtaAfter: "",
     buildEyebrow: "Ce que nous faisons",
-    buildHeading: "Ce que nous faisons face à cela.",
-    proofEyebrow: "Preuve",
+    buildHeading: "Ce que nous vous aidons à faire.",
+    platformsEyebrow: "Technologies",
+    platformsHeading: "Les plateformes que nous maîtrisons.",
+    platformsSub:
+      "Une expérience des plateformes couramment utilisées dans les environnements d'entreprise et les programmes de modernisation.",
+    whyEyebrow: "Pourquoi ZED",
+    whyHeading: "Pourquoi ZED pour",
+    proofEyebrow: "Nos réalisations",
     proofHeading: "Nous l'avons déjà fait.",
     proofCta: "Lire l'étude de cas",
     startNext:
-      "Un ingénieur senior le lit, pas une file d'attente. Vous aurez une réponse sous un jour ouvré.",
+      "Votre message est lu par un membre senior de notre équipe de livraison. Nous répondons sous un jour ouvré.",
     items: [
       {
         title: "IA et données",

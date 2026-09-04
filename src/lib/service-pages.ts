@@ -59,6 +59,26 @@ export type ServiceContent = {
   situation?: string;
   /** Omit entirely when this service has no case study. The block then does not render. */
   proof?: ServiceProof;
+
+  // ---------------------------------------------------------------------------
+  // SPEC v1.2 FIELDS
+  //
+  // A service carrying `whyPillars` renders the v1.2 six-section layout. The
+  // rest keep the older template until their copy is written, so services
+  // convert one at a time and can be compared live (spec S58).
+  // ---------------------------------------------------------------------------
+
+  /** 3-4 named groups, 8-12 entries in total (S21, S47). Replaces the flat
+   *  `technologies` strip: an ungrouped list of ten product names tells a
+   *  reader nothing about where the depth is. */
+  technologyGroups?: { label: string; items: string[] }[];
+  /** One positioning sentence under the Why ZED heading. <=25 words (S25). */
+  whyIntro?: string;
+  /** Exactly three, and they must differ from every other service's (S29). */
+  whyPillars?: { title: string; body: string }[];
+  /** Service-specific closing block. The generic "Let's talk about your next
+   *  project" is the same on seven pages and reads as a template (S35, S37). */
+  finalCta?: { title: string; buttonLabel: string };
 };
 
 export const SERVICE_SLUGS = [
@@ -120,29 +140,71 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     analytics: {
       name: "Analytics",
-      outcome: "Turn reporting that nobody trusts into numbers leadership will actually decide on.",
+      // S7: the H1 states the outcome. v1.1 used "reporting that nobody
+      // trusts", which S7 rejects as accusatory - the reader being blamed is
+      // the person we want to hear from.
+      outcome: "Turn fragmented reporting into trusted business decisions.",
       intro:
-        "The dashboard is almost never the hard part. Getting two teams to agree what a number means, and building a pipeline that produces it the same way every month — that is the work. We start there.",
+        "ZEDventures helps organizations assess, modernize, migrate and optimize analytics environments so business teams can work with more consistent, usable and reliable information.",
       problems: [
         "Two teams reporting different numbers for the same measure.",
         "Reports assembled by hand every month because the pipeline never landed.",
         "Dashboards that answer questions nobody is asking.",
       ],
-      capabilities: [
-        { title: "BI and dashboards", desc: "Reporting built on agreed definitions, so the number means the same thing in every room." },
-        { title: "Data warehousing", desc: "Modelled, documented storage that reporting and analysis can both sit on." },
-        { title: "Predictive analytics", desc: "Forecasting and scoring tied to a decision somebody is going to make." },
-        { title: "Reporting automation", desc: "Removing the manual assembly step that quietly consumes a week of every month." },
-      ],
-      technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
-      // [CONFIRM] Drafted from the existing intro and problem list. This is the
-      // block that does the most work on the page — worth getting exactly right.
+      // S12: the client's environment. No ZED, no product names, no selling.
+      // The last sentence rejects the false solution - that is the line that
+      // signals experience, and it names the situation rather than the reader.
       situation:
-        "Every team reports its own numbers, and two of them rarely agree. Someone rebuilds the monthly pack by hand because the pipeline never landed, and by the time leadership sees a figure nobody is confident enough to decide on it. The dashboard is not the problem.",
+        "Reporting often grows one team at a time. Definitions drift, manual workarounds become permanent, and users begin questioning which numbers they can rely on. Adding another dashboard rarely fixes the underlying data, governance and process issues.",
+      // S14: six capabilities, range 5-7. Managed support stays in the sales
+      // conversation - nobody arrives here looking for the seventh thing we do.
+      capabilities: [
+        { title: "Analytics strategy & assessment", desc: "Evaluate the analytics environment, identify gaps, and define a practical modernization roadmap." },
+        { title: "Platform upgrades", desc: "Modernize existing BI environments while minimizing disruption to business reporting." },
+        { title: "Platform migration", desc: "Move legacy or fragmented analytics environments to modern enterprise and cloud platforms." },
+        { title: "Reporting & dashboard modernization", desc: "Improve the usability, consistency, performance and effectiveness of enterprise reporting." },
+        { title: "Data visualization & UX", desc: "Turn complex business information into clearer analytical experiences users can act on." },
+        { title: "Performance & governance", desc: "Improve performance, standards, data consistency, ownership and reporting practices across the environment." },
+      ],
+      /**
+       * [CONFIRM] Every name here is a claim S20 requires ZEDventures to be
+       * able to substantiate. Six of these nine appear on the current live
+       * site; Tableau, Microsoft Fabric and Databricks do not. Confirm each or
+       * cut it - a CTO who asks about Databricks and gets silence has learned
+       * more than the longer list gained.
+       */
+      technologyGroups: [
+        { label: "Business intelligence", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
+        { label: "Data platforms", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
+        { label: "Cloud & engineering", items: ["Microsoft Azure", "SQL Server", "Python"] },
+      ],
+      // Kept so the legacy template still renders for any service that has not
+      // been converted; the v1.2 layout reads technologyGroups instead.
+      technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
+      whyIntro:
+        "We combine analytics engineering, enterprise data expertise and business context to modernize reporting without losing what already works.",
+      whyPillars: [
+        {
+          title: "Modernize without starting over",
+          body: "We work across legacy and modern analytics environments, helping organizations preserve what works while progressively replacing what no longer does.",
+        },
+        {
+          title: "Business + technology",
+          body: "We connect reporting requirements, KPIs, architecture, governance, data and UX rather than treating analytics as purely a technology implementation.",
+        },
+        {
+          title: "Assessment to production",
+          body: "We support the lifecycle from assessment and architecture through migration, implementation, optimization and ongoing production support.",
+        },
+      ],
       proof: { index: 3, headline: "Real-time visibility across every country" },
-      seoTitle: "Enterprise Analytics Services | Zed Ventures",
+      finalCta: {
+        title: "Let's talk about your analytics priorities.",
+        buttonLabel: "Discuss your analytics priorities",
+      },
+      seoTitle: "Analytics Consulting & Modernization Services | ZEDventures",
       seoDescription:
-        "Zed Ventures designs and builds enterprise analytics — BI dashboards, data warehousing and predictive analytics built on definitions the business agrees on.",
+        "ZEDventures helps enterprises assess, modernize, migrate and optimize analytics environments across Power BI, SAP BusinessObjects and modern data platforms.",
     },
     "gis-geospatial": {
       name: "GIS & Geospatial",
@@ -275,27 +337,54 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     },
     analytics: {
       name: "Analytique",
-      outcome: "Transformer des rapports auxquels personne ne se fie en chiffres sur lesquels la direction décide.",
+      outcome: "Transformer des rapports fragmentés en décisions fiables.",
       intro:
-        "Le tableau de bord n'est presque jamais le plus difficile. Faire convenir deux équipes du sens d'un chiffre, puis construire un pipeline qui le produit de la même façon chaque mois — voilà le travail. C'est par là que nous commençons.",
+        "ZEDventures aide les organisations à évaluer, moderniser, migrer et optimiser leurs environnements analytiques, pour que les équipes métier disposent d'informations plus cohérentes, plus exploitables et plus fiables.",
       problems: [
         "Deux équipes qui publient des chiffres différents pour la même mesure.",
         "Des rapports assemblés à la main chaque mois faute de pipeline.",
         "Des tableaux de bord qui répondent à des questions que personne ne pose.",
       ],
+      situation:
+        "Le reporting se construit souvent équipe par équipe. Les définitions divergent, les contournements manuels s'installent, et les utilisateurs finissent par douter des chiffres. Ajouter un tableau de bord de plus règle rarement les problèmes sous-jacents de données, de gouvernance et de processus.",
       capabilities: [
-        { title: "Décisionnel et tableaux de bord", desc: "Des rapports fondés sur des définitions convenues, pour que le chiffre ait le même sens partout." },
-        { title: "Entreposage de données", desc: "Un stockage modélisé et documenté sur lequel reposent le reporting et l'analyse." },
-        { title: "Analytique prédictive", desc: "Prévision et scorage rattachés à une décision que quelqu'un va réellement prendre." },
-        { title: "Automatisation du reporting", desc: "Supprimer l'assemblage manuel qui consomme discrètement une semaine par mois." },
+        { title: "Stratégie et évaluation analytique", desc: "Évaluer l'environnement analytique, identifier les écarts et définir une feuille de route réaliste." },
+        { title: "Montées de version", desc: "Moderniser les environnements décisionnels existants en limitant les interruptions du reporting métier." },
+        { title: "Migration de plateforme", desc: "Migrer des environnements analytiques anciens ou fragmentés vers des plateformes modernes et cloud." },
+        { title: "Modernisation du reporting", desc: "Améliorer l'ergonomie, la cohérence, la performance et l'efficacité du reporting d'entreprise." },
+        { title: "Visualisation et expérience", desc: "Rendre une information métier complexe lisible et exploitable par ceux qui décident." },
+        { title: "Performance et gouvernance", desc: "Améliorer la performance, les standards, la cohérence des données et les responsabilités sur l'ensemble de l'environnement." },
+      ],
+      technologyGroups: [
+        { label: "Décisionnel", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
+        { label: "Plateformes de données", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
+        { label: "Cloud et ingénierie", items: ["Microsoft Azure", "SQL Server", "Python"] },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
-      situation:
-        "Chaque équipe publie ses propres chiffres, et deux d'entre elles s'accordent rarement. Quelqu'un reconstitue le rapport mensuel à la main faute de pipeline, et quand la direction voit enfin un chiffre, personne n'est assez sûr pour décider. Le tableau de bord n'est pas le problème.",
+      whyIntro:
+        "Nous associons ingénierie analytique, expertise des données d'entreprise et compréhension du métier pour moderniser le reporting sans perdre ce qui fonctionne déjà.",
+      whyPillars: [
+        {
+          title: "Moderniser sans tout reprendre",
+          body: "Nous intervenons sur les environnements anciens comme modernes, en préservant ce qui fonctionne et en remplaçant progressivement ce qui ne suffit plus.",
+        },
+        {
+          title: "Métier et technologie",
+          body: "Nous relions besoins de reporting, indicateurs, architecture, gouvernance, données et expérience utilisateur, au lieu de traiter l'analytique comme un seul chantier technique.",
+        },
+        {
+          title: "De l'évaluation à la production",
+          body: "Nous couvrons le cycle complet : évaluation, architecture, migration, mise en œuvre, optimisation et exploitation en production.",
+        },
+      ],
       proof: { index: 3, headline: "Visibilité en temps réel sur tous les pays" },
-      seoTitle: "Services d'analytique d'entreprise | Zed Ventures",
+      finalCta: {
+        title: "Parlons de vos priorités analytiques.",
+        buttonLabel: "Discuter de vos priorités analytiques",
+      },
+      seoTitle: "Conseil et modernisation analytique | ZEDventures",
       seoDescription:
-        "Zed Ventures conçoit l'analytique d'entreprise — tableaux de bord, entreposage de données et analytique prédictive fondés sur des définitions convenues.",
+        "ZEDventures aide les entreprises à évaluer, moderniser, migrer et optimiser leurs environnements analytiques : Power BI, SAP BusinessObjects et plateformes de données modernes.",
     },
     "gis-geospatial": {
       name: "SIG et géomatique",

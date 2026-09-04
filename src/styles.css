@@ -32,6 +32,7 @@
   --color-surface: var(--surface);
   --color-subtle-foreground: var(--subtle-foreground);
   --color-border-strong: var(--border-strong);
+  --color-dark-lead: var(--dark-lead);
   --color-primary-hover: var(--primary-hover);
 }
 
@@ -74,6 +75,11 @@
   /* ---- brand ----
      #E31937 is kept, not the spec's #ED1B35: the brand red scores 4.71 white-on-red
      where #ED1B35 scores 4.37 and fails AA on the very buttons S19 specifies. */
+  /* Lead text on the dark band (spec v1.2 S38 --dark-lead). 11.73:1 on
+     #0a0a0b. Used for the Why ZED eyebrow and pillar numerals, because brand
+     red measures 4.20:1 there and fails AA at those sizes. */
+  --dark-lead: #c7c7ca;
+
   --primary: #e31937;
   --primary-hover: #c31530;
   --primary-foreground: #ffffff;
@@ -228,6 +234,19 @@
       transform var(--dur) var(--ease),
       box-shadow var(--dur) var(--ease);
   }
+  /* Service-page CTAs carry service-specific labels ("Discuss your analytics
+     priorities"), which are much longer than the site's other buttons and
+     overflow a 320px viewport under .btn's white-space: nowrap. This modifier
+     lets the label wrap and the button grow, keeping the 48px minimum target. */
+  .btn-wrap {
+    height: auto;
+    min-height: 3rem;
+    padding-block: 0.75rem;
+    white-space: normal;
+    text-align: left;
+    max-width: 100%;
+  }
+
   .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-primary-foreground);

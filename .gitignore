@@ -33,3 +33,4 @@ dist-ssr
 
 # Screenshots and files delivered into the chat, not part of the site
 Claude outputs/
+*.tar.gz
