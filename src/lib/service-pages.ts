@@ -353,6 +353,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     sap: {
       name: "SAP",
       heroImageHint: "An SAP module screen, or a rollout workshop in progress",
+      heroImage: {
+        src: "/sap-hero.webp",
+        alt: "A manufacturing floor and loading dock, overlaid with a five-step process flow: plan, produce, manage, deliver, grow.",
+      },
       // S7: outcome, not the service name, and not accusatory. The client is
       // not being blamed for the customisation they inherited.
       outcome: "Modernize SAP without disrupting the business it runs.",
@@ -586,6 +590,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     sap: {
       name: "SAP",
       heroImageHint: "Un écran de module SAP, ou un atelier de déploiement",
+      heroImage: {
+        src: "/sap-hero.webp",
+        alt: "Un atelier de production et un quai de chargement, avec un flux en cinq étapes superposé : planifier, produire, gérer, livrer, développer.",
+      },
       outcome: "Moderniser SAP sans perturber l'activité qu'il fait tourner.",
       intro:
         "ZEDventures livre migration S/4HANA, extensions BTP et ingénierie Fiori avec une discipline clean core, pour que le système continue d'accepter les montées de version après le départ de l'équipe projet.",
