@@ -182,9 +182,20 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
             eyebrow={t.services.situationEyebrow}
             heading={t.services.situationHeading}
           />
-          <p className="max-w-[38rem] text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]">
-            {s.situation}
-          </p>
+          {/* Blank line separates paragraphs. Most services need one; SAP's
+              runs to two, because the second is the consequence and the first
+              does not land without it. Splitting here rather than storing
+              markup keeps the data record plain text. */}
+          <div className="max-w-[38rem] space-y-4">
+            {(s.situation ?? "").split("\n\n").map((para) => (
+              <p
+                key={para.slice(0, 24)}
+                className="text-[1.0625rem] leading-[1.65] text-muted-foreground sm:text-[1.125rem]"
+              >
+                {para}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 

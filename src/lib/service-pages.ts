@@ -368,14 +368,17 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         "AI pilots that cannot see live ERP data, so they stay pilots.",
       ],
       /**
-       * [CONFIRM] Drafted, not written from experience. Mayur has not yet
-       * supplied the SAP situation paragraph, and this is the one section on
-       * the page that cannot be produced from a service description — it is
-       * meant to prove someone has been in the room. Read it as a placeholder
-       * with the right shape rather than as finished copy.
+       * Mayur's words, not drafted. This is the one section on a service page
+       * that cannot be produced from a service description, and the only one a
+       * competitor could not have written — it exists to show someone has been
+       * in the room.
+       *
+       * Two paragraphs, separated by a blank line. Longer than the spec's
+       * 60-word guideline and kept that way: the second paragraph is the
+       * consequence, and the first does not land without it.
        */
       situation:
-        "The system was fitted to the business years ago, and every fit was a change to the core. Upgrades now mean regression-testing work nobody has documented, so they get deferred. Each deferral makes the next one larger, and the platform quietly stops being something anyone wants to touch.",
+        "The system was fitted to the business years ago, and every fit was a change to the core. Over time, custom reports, integrations, workarounds, and business rules pile up. The people who built them move on, documentation falls behind, and no one is completely sure what will break when something changes.\n\nUpgrades become bigger than they should be. Testing takes longer, integrations need rework, and each change uncovers another dependency. So upgrades get deferred, technical debt grows, and the platform becomes something the business depends on\u2014but nobody wants to touch.",
       capabilities: [
         { title: "S/4HANA migration", desc: "Move to S/4HANA with the core kept clean enough to keep taking upgrades afterwards." },
         { title: "Clean-core remediation", desc: "Move logic out of the core where it blocks upgrades, without changing what the business sees." },
@@ -621,7 +624,7 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         "Des pilotes d'IA sans accès aux données ERP réelles, qui restent des pilotes.",
       ],
       situation:
-        "Le système a été ajusté à l'entreprise il y a des années, et chaque ajustement a touché le cœur. Les montées de version imposent aujourd'hui des tests de non-régression que personne n'a documentés : on les reporte. Chaque report rend le suivant plus lourd, et la plateforme devient peu à peu ce que personne ne veut toucher.",
+        "Le système a été ajusté à l'entreprise il y a des années, et chaque ajustement a touché le cœur. Avec le temps, rapports sur mesure, intégrations, contournements et règles de gestion s'accumulent. Ceux qui les ont construits sont partis, la documentation a pris du retard, et plus personne ne sait vraiment ce qui cassera au prochain changement.\n\nLes montées de version deviennent plus lourdes qu'elles ne devraient l'être. Les tests s'allongent, les intégrations demandent des reprises, et chaque changement révèle une dépendance de plus. On reporte donc les montées de version, la dette technique s'accumule, et la plateforme devient ce dont l'entreprise dépend \u2014 sans que personne ne veuille y toucher.",
       capabilities: [
         { title: "Migration S/4HANA", desc: "Passer à S/4HANA en gardant un cœur assez propre pour rester évolutif ensuite." },
         { title: "Assainissement du cœur", desc: "Sortir du cœur la logique qui bloque les montées de version, sans rien changer pour les utilisateurs." },
