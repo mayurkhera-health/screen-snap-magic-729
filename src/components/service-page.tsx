@@ -172,7 +172,9 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       {/* ---------------------------------------------------------------
           03 — WHAT WE HELP YOU DO (S13-S18)
           Editorial grid, not cards: numbering, typography, whitespace and
-          a hairline. Rows are not links — there is nowhere to send the
+          a hairline. Spacing is deliberately tight — six short entries in
+          two columns, where generous leading made each one read like a
+          separate announcement rather than one list. Rows are not links — there is nowhere to send the
           reader, and a hover that implies navigation and delivers none is
           worse than no hover at all (S17).
           --------------------------------------------------------------- */}
@@ -183,9 +185,9 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
             eyebrow={t.services.buildEyebrow}
             heading={t.services.buildHeading}
           />
-          <ol className="mt-11 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+          <ol className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2">
             {s.capabilities.map((c, i) => (
-              <li key={c.title} className="group border-t border-border pt-6">
+              <li key={c.title} className="group border-t border-border pt-4">
                 <span
                   className="eyebrow block text-accent transition-opacity group-hover:opacity-80"
                   style={{ transitionDuration: "var(--dur)" }}
@@ -194,7 +196,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3
-                  className="font-display mt-3.5 max-w-[20ch] text-[1.375rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-2xl"
+                  className="font-display mt-2.5 max-w-[22ch] text-[1.3125rem] leading-[1.15] tracking-[-0.02em] transition-transform group-hover:translate-x-1 sm:text-[1.375rem]"
                   style={{
                     transitionDuration: "var(--dur)",
                     transitionTimingFunction: "var(--ease)",
@@ -202,7 +204,7 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
                 >
                   {c.title}
                 </h3>
-                <p className="mt-3 max-w-[30rem] text-base leading-[1.55] text-muted-foreground">
+                <p className="mt-2 max-w-[30rem] text-[0.9375rem] leading-[1.5] text-muted-foreground">
                   {c.desc}
                 </p>
               </li>
