@@ -262,22 +262,28 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
       )}
 
       {/* ---------------------------------------------------------------
-          NO CLOSING CTA SECTION.
+          06B — WHAT HAPPENS NEXT
 
-          Removed at Mayur's direction. The v1.2 spec's section 06B carried a
-          headline, a reassurance line and a service-specific button; the
-          headline duplicated the button, and the whole block duplicated the
-          "Let's talk" button that is pinned in the header on every scroll
-          position of every page.
+          One sentence. No heading, no button, no eyebrow.
 
-          Consequence, recorded so it is a decision rather than an oversight:
-          this page now has no in-page conversion point. The header button is
-          the only path to /contact, and the one-business-day commitment - the
-          only line on the page a competitor site does not also have - is gone
-          with it. If service pages later prove to convert poorly, this is the
-          first thing to put back, and the reassurance line is the part worth
-          restoring, not the headline.
+          The spec's full closing block was removed: its headline repeated its
+          button, and the button repeated the "Let's talk" control pinned in
+          the header at every scroll position. What is left is the only part
+          that was not a duplicate — a statement of what happens after someone
+          writes, which no competitor service page reviewed for this project
+          provides.
+
+          It is intentionally not a call to action. Nothing here competes with
+          the header control; this closes the argument rather than asking for
+          the click.
           --------------------------------------------------------------- */}
+      <section>
+        <div className="container-page section-y">
+          <p className="font-display max-w-[34ch] text-[1.375rem] leading-[1.3] tracking-[-0.02em] sm:text-[1.625rem]">
+            {t.services.startNext}
+          </p>
+        </div>
+      </section>
 
     </>
   );
