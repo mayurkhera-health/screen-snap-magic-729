@@ -30,6 +30,14 @@ export const SHOW_SERVICE_PROOF = false;
 export type ServiceCapability = { title: string; desc: string };
 
 /**
+ * Icon for a technology group. A closed set rather than a free string: the
+ * categories differ per service (Analytics has Business intelligence / Data
+ * platforms / Cloud; SAP has Core platform / Extension / Integration), so an
+ * open field would drift and a fixed three-icon list would only fit Analytics.
+ */
+export type TechIcon = "chart" | "cube" | "cloud" | "layers" | "plug" | "shield";
+
+/**
  * A linked case study. Index matches the order on /case-studies, which is where
  * the anchor ids come from.
  */
@@ -86,7 +94,7 @@ export type ServiceContent = {
   /** 3-4 named groups, 8-12 entries in total (S21, S47). Replaces the flat
    *  `technologies` strip: an ungrouped list of ten product names tells a
    *  reader nothing about where the depth is. */
-  technologyGroups?: { label: string; items: string[] }[];
+  technologyGroups?: { label: string; items: string[]; icon?: TechIcon }[];
   /** One positioning sentence under the Why ZED heading. <=25 words (S25). */
   whyIntro?: string;
   /** Exactly three, and they must differ from every other service's (S29). */
@@ -207,9 +215,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        * more than the longer list gained.
        */
       technologyGroups: [
-        { label: "Business intelligence", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
-        { label: "Data platforms", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
-        { label: "Cloud & engineering", items: ["Microsoft Azure", "SQL Server", "Python"] },
+        { label: "Business intelligence", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
+        { label: "Data platforms", icon: "cube", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
+        { label: "Cloud & engineering", icon: "cloud", items: ["Microsoft Azure", "SQL Server", "Python"] },
       ],
       // Kept so the legacy template still renders for any service that has not
       // been converted; the v1.2 layout reads technologyGroups instead.
@@ -315,9 +323,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
        * been added to lengthen the list.
        */
       technologyGroups: [
-        { label: "Core platform", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
-        { label: "Extension", items: ["SAP BTP", "CAP", "OData"] },
-        { label: "Integration", items: ["SAP Integration Suite", "Microsoft Azure"] },
+        { label: "Core platform", icon: "layers", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        { label: "Extension", icon: "cube", items: ["SAP BTP", "CAP", "OData"] },
+        { label: "Integration", icon: "plug", items: ["SAP Integration Suite", "Microsoft Azure"] },
       ],
       technologies: ["S/4HANA", "SAP BTP", "Fiori", "CAP", "ABAP", "OData"],
       whyIntro:
@@ -431,9 +439,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "Performance et gouvernance", desc: "Améliorer la performance, les standards, la cohérence des données et les responsabilités sur l'ensemble de l'environnement." },
       ],
       technologyGroups: [
-        { label: "Décisionnel", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
-        { label: "Plateformes de données", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
-        { label: "Cloud et ingénierie", items: ["Microsoft Azure", "SQL Server", "Python"] },
+        { label: "Décisionnel", icon: "chart", items: ["Power BI", "Tableau", "SAP BusinessObjects"] },
+        { label: "Plateformes de données", icon: "cube", items: ["Snowflake", "Microsoft Fabric", "Databricks"] },
+        { label: "Cloud et ingénierie", icon: "cloud", items: ["Microsoft Azure", "SQL Server", "Python"] },
       ],
       technologies: ["Power BI", "Azure Data Factory", "SQL Server", "Snowflake", "dbt", "Python"],
       whyIntro:
@@ -523,9 +531,9 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
         { title: "IA ancrée dans SAP", desc: "Des agents disposant d'un accès gouverné au contexte ERP réel plutôt qu'à un extrait copié." },
       ],
       technologyGroups: [
-        { label: "Plateforme", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
-        { label: "Extension", items: ["SAP BTP", "CAP", "OData"] },
-        { label: "Intégration", items: ["SAP Integration Suite", "Microsoft Azure"] },
+        { label: "Plateforme", icon: "layers", items: ["SAP S/4HANA", "ABAP", "Fiori"] },
+        { label: "Extension", icon: "cube", items: ["SAP BTP", "CAP", "OData"] },
+        { label: "Intégration", icon: "plug", items: ["SAP Integration Suite", "Microsoft Azure"] },
       ],
       technologies: ["S/4HANA", "SAP BTP", "Fiori", "CAP", "ABAP", "OData"],
       whyIntro:

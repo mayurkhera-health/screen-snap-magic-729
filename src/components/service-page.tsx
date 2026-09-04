@@ -1,5 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BarChart3,
+  Box,
+  Cloud,
+  Layers,
+  Plug,
+  ShieldCheck,
+} from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { SectionHeader } from "@/components/section-header";
 import {
@@ -7,7 +16,21 @@ import {
   SERVICE_PAGES,
   SHOW_SERVICE_PROOF,
   type ServiceSlug,
+  type TechIcon,
 } from "@/lib/service-pages";
+
+/**
+ * Category icons. Lucide, not Ionicons — the site already ships lucide and
+ * adding a second icon library for six glyphs is weight for nothing.
+ */
+const TECH_ICONS: Record<TechIcon, typeof BarChart3> = {
+  chart: BarChart3,
+  cube: Box,
+  cloud: Cloud,
+  layers: Layers,
+  plug: Plug,
+  shield: ShieldCheck,
+};
 
 /**
  * Service detail page — spec v1.2.
@@ -197,39 +220,60 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
               heading={t.services.platformsHeading}
               sub={t.services.platformsSub}
             />
-            {/* A bordered rail rather than three loose columns. Each category
-                is a row: label on the left, tools on the right as pills.
+            {/* One card, three rows, flat dot-marked chips.
+                Adapted from the chip spec: 170px label column, 12px/18px row
+                padding, 5px chip radius, no chip border, 6px chip gap, leading
+                dot bullet. Denser than the rounded pills it replaces, and a
+                flat chip reads as a label rather than as a button nobody can
+                press.
 
-                Three things this fixes over the column layout. Categories with
-                different counts no longer leave ragged white space. The eye
-                reads label-then-tools in one direction instead of scanning
-                three stacks. And on a phone it degrades to label-above-tools
-                rather than three columns collapsing into one long list where
-                the group boundaries disappear.
+                Its colours are NOT adopted. That spec is FuelUp Youth's
+                system — #064E3B, #1B4332, #40916C, #F7FAF5 are a green
+                palette belonging to a different brand. Everything here maps to
+                ZEDventures tokens instead: chip ground --secondary, chip text
+                --foreground, label --subtle-foreground, dot and icon --accent.
 
-                Still no logos: names only, so there is no licensing question
-                per mark and no implied partner status. */}
+                Still names only, no logos: no licensing question per mark and
+                no implied partner status. */}
             <dl className="mt-7 max-w-[54rem] overflow-hidden rounded-xl border border-border bg-background">
-              {groups.map((g, i) => (
-                <div
-                  key={g.label}
-                  className={`grid gap-2 px-5 py-3.5 sm:px-6 lg:grid-cols-[minmax(0,12rem)_minmax(0,1fr)] lg:items-center lg:gap-6 ${
-                    i > 0 ? "border-t border-border" : ""
-                  }`}
-                >
-                  <dt className="eyebrow text-subtle-foreground">{g.label}</dt>
-                  <dd className="flex flex-wrap gap-1.5">
-                    {g.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-border-strong px-3 py-1 text-[0.875rem] font-medium leading-[1.5] text-foreground"
-                      >
-                        {item}
+              {groups.map((g, i) => {
+                const Icon = g.icon ? TECH_ICONS[g.icon] : null;
+                return (
+                  <div
+                    key={g.label}
+                    className={`grid gap-2 px-4 py-3 sm:px-[18px] lg:grid-cols-[minmax(0,170px)_minmax(0,1fr)] lg:items-center lg:gap-3 ${
+                      i > 0 ? "border-t border-border" : ""
+                    }`}
+                  >
+                    <dt className="flex items-center gap-1.5">
+                      {Icon && (
+                        <Icon
+                          className="h-[13px] w-[13px] shrink-0 text-accent"
+                          strokeWidth={2}
+                          aria-hidden="true"
+                        />
+                      )}
+                      <span className="text-[10px] font-bold uppercase leading-none tracking-[0.1em] text-subtle-foreground">
+                        {g.label}
                       </span>
-                    ))}
-                  </dd>
-                </div>
-              ))}
+                    </dt>
+                    <dd className="flex flex-wrap gap-1.5">
+                      {g.items.map((item) => (
+                        <span
+                          key={item}
+                          className="inline-flex items-center gap-1.5 rounded-[5px] bg-secondary py-1 pl-[7px] pr-[9px] text-[12.5px] font-semibold leading-[1.5] text-foreground"
+                        >
+                          <span
+                            className="h-1 w-1 shrink-0 rounded-full bg-accent"
+                            aria-hidden="true"
+                          />
+                          {item}
+                        </span>
+                      ))}
+                    </dd>
+                  </div>
+                );
+              })}
             </dl>
           </div>
         </section>
