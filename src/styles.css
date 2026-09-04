@@ -33,6 +33,10 @@
   --color-subtle-foreground: var(--subtle-foreground);
   --color-border-strong: var(--border-strong);
   --color-dark-lead: var(--dark-lead);
+  --color-tone-a: var(--tone-a);
+  --color-tone-b: var(--tone-b);
+  --color-tone-c: var(--tone-c);
+  --color-tone-d: var(--tone-d);
   --color-primary-hover: var(--primary-hover);
 }
 
@@ -75,6 +79,25 @@
   /* ---- brand ----
      #E31937 is kept, not the spec's #ED1B35: the brand red scores 4.71 white-on-red
      where #ED1B35 scores 4.37 and fails AA on the very buttons S19 specifies. */
+  /* ---- secondary accents ----
+     A four-colour set, added for the platform table's per-row accents. The
+     site otherwise runs on one accent and a grey ramp; these are the only
+     other colours in it, so they are kept to a set of four and used as a set.
+
+     Measured on white / --surface / --secondary:
+       --tone-a  #e31937  4.71 / 4.55 / 4.39   brand red; no small text on --secondary
+       --tone-b  #1f6f5c  6.02 / 5.82 / 5.62
+       --tone-c  #2f5da8  6.46 / 6.24 / 6.02
+       --tone-d  #b4651a  4.36 / 4.21 / 4.06   DECORATIVE ONLY - fails AA as text anywhere
+
+     Today they paint only icons and dots, where contrast does not apply. If
+     one is ever used for text, check this table first: amber does not clear
+     4.5:1 on any ground the site uses. */
+  --tone-a: #e31937;
+  --tone-b: #1f6f5c;
+  --tone-c: #2f5da8;
+  --tone-d: #b4651a;
+
   /* Lead text on the dark band (spec v1.2 S38 --dark-lead). 11.73:1 on
      #0a0a0b. Used for the Why ZED eyebrow and pillar numerals, because brand
      red measures 4.20:1 there and fails AA at those sizes. */

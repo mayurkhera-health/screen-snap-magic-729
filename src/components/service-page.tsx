@@ -26,18 +26,21 @@ import {
 /**
  * Row accents for the platform table.
  *
- * [CONFIRM] These are the only colours on the site other than brand red.
- * styles.css defines one accent and a grey ramp, deliberately, so three of
- * these four are new. They are applied ONLY to the 13px category icon and the
- * 4px chip dot — both decorative, neither carrying text — so no contrast
- * requirement is involved and no type colour changes. Nothing else on the page
- * uses them.
+ * The values live in styles.css as --tone-a..d, not here: they are a secondary
+ * palette for the site, not a detail of this component, and the measured
+ * contrast table for all four is recorded beside them.
  *
- * Chosen to sit at similar weight to the brand red so no row shouts louder
- * than another, and desaturated enough not to read as a chart legend. If these
- * stay, they belong in styles.css as tokens rather than living in a component.
+ * Applied only to the 13px category icon and the 4px chip dot. Both are
+ * decorative and carry no text, so no contrast requirement is involved.
+ * --tone-d fails AA as text on every ground the site uses; if any of these is
+ * ever used for type, read the table in styles.css first.
  */
-const ROW_TONES = ["#E31937", "#1F6F5C", "#2F5DA8", "#B4651A"] as const;
+const ROW_TONES = [
+  "var(--tone-a)",
+  "var(--tone-b)",
+  "var(--tone-c)",
+  "var(--tone-d)",
+] as const;
 
 const TECH_ICONS: Record<TechIcon, typeof BarChart3> = {
   chart: BarChart3,
