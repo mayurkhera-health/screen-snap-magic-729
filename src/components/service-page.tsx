@@ -121,65 +121,72 @@ export function ServicePageV12({ slug }: { slug: ServiceSlug }) {
           restores a hero that still reads correctly without them.
           --------------------------------------------------------------- */}
       <section className="border-b border-border">
-        <div
-          className={`container-page section-y ${
-            showImageSlot ? "grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-end lg:gap-14" : ""
-          }`}
-        >
-          <div>
-            {/* No eyebrow. The service name in red above the headline was
-                spec S6, on the reasoning that the H1 is an outcome and does
-                not say which page you are on. Removed at Mayur's direction —
-                the H1 opens the page on its own, and the red label was the
-                only thing between the header rule and the headline.
+        <div className="container-page section-y">
+          {/* The headline spans the full width; the intro, CTA and image sit
+              in two columns beneath it.
 
-                One consequence, recorded rather than argued: "Modernize SAP"
-                still names its service, but "Turn fragmented reporting into
-                trusted business decisions" never says the word Analytics. On
-                that page the only remaining answer to "am I in the right
-                place" is the Services nav item and the CTA button. */}
-            <h1 className="font-display max-w-[18ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              {s.outcome}
-            </h1>
-            <p className="mt-7 max-w-[42rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
-              {s.intro}
-            </p>
-            <Link to="/contact" className="btn btn-wrap btn-primary mt-9">
-              {t.services.heroCtaBefore} {s.name} {t.services.heroCtaAfter}
-              <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
-            </Link>
+              Previously the H1 shared a column with the intro and the image
+              sat beside all of it. That works when the headline is three
+              lines and breaks when it is five: "Get AI out of the
+              proof-of-concept stage and into systems your business can
+              depend on" pushed the image into the lower right corner with a
+              350px hole above it, and no amount of aligning fixed a layout
+              where one column carried twice the content of the other.
+
+              Spanning the headline makes the hero independent of how long it
+              is. The two columns below it now hold comparable amounts —
+              three or four lines of intro plus a button against a 16:9 image
+              — which is why they line up on every service rather than on the
+              ones whose headline happens to be short. */}
+          <h1 className="font-display max-w-[24ch] text-[2.5rem] leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+            {s.outcome}
+          </h1>
+
+          <div
+            className={`mt-10 ${
+              showImageSlot
+                ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14"
+                : ""
+            }`}
+          >
+            <div>
+              <p className="max-w-[42rem] text-[1.0625rem] leading-[1.55] text-muted-foreground sm:text-[1.1875rem]">
+                {s.intro}
+              </p>
+              <Link to="/contact" className="btn btn-wrap btn-primary mt-8">
+                {t.services.heroCtaBefore} {s.name} {t.services.heroCtaAfter}
+                <ArrowRight className="arrow-shift h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+
+            {s.heroImage ? (
+              <img
+                src={s.heroImage.src}
+                alt={s.heroImage.alt}
+                width={1280}
+                height={720}
+                loading="eager"
+                /* A 1px frame, not decoration. These images are light at the
+                   edges — the AI one is almost white in its top-left corner —
+                   and on a white page an unframed photograph bleeds into the
+                   ground and stops reading as an object. */
+                className="aspect-[16/9] w-full rounded-2xl border border-border-strong object-cover"
+              />
+            ) : (
+              showImageSlot && (
+                <div
+                  className="flex aspect-[16/9] w-full flex-col justify-end rounded-2xl border border-dashed border-border-strong bg-secondary p-6"
+                  role="note"
+                  aria-label="Hero image not yet supplied"
+                >
+                  <p className="eyebrow text-subtle-foreground">Hero image</p>
+                  <p className="mt-2 max-w-[34ch] text-sm leading-[1.5] text-muted-foreground">
+                    {s.heroImageHint}
+                  </p>
+                </div>
+              )
+            )}
           </div>
-
-          {s.heroImage ? (
-            <img
-              src={s.heroImage.src}
-              alt={s.heroImage.alt}
-              width={1280}
-              height={720}
-              loading="eager"
-              /* A 1px frame, not decoration. These images are light at the
-                 edges — the AI one is almost white in its top-left corner —
-                 and on a white page an unframed photograph bleeds into the
-                 ground and stops reading as an object. --border-strong
-                 (#d8d8d5) is the same weight the platform table's dividers
-                 use, so the frame belongs to the system rather than to this
-                 element. */
-              className="aspect-[16/9] w-full rounded-2xl border border-border-strong object-cover"
-            />
-          ) : (
-            showImageSlot && (
-              <div
-                className="flex aspect-[16/9] w-full flex-col justify-end rounded-2xl border border-dashed border-border-strong bg-secondary p-6"
-                role="note"
-                aria-label="Hero image not yet supplied"
-              >
-                <p className="eyebrow text-subtle-foreground">Hero image</p>
-                <p className="mt-2 max-w-[34ch] text-sm leading-[1.5] text-muted-foreground">
-                  {s.heroImageHint}
-                </p>
-              </div>
-            )
-          )}
         </div>
       </section>
 
