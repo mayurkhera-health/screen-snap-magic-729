@@ -350,56 +350,85 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "gis-geospatial": {
       name: "GIS & Geospatial",
       heroImageHint: "A map or spatial visualization from actual delivered work",
+      // Headline kept, not replaced. The clearer alternative — "Make location
+      // part of how your business makes decisions" — could sit on any of the
+      // four competitor sites reviewed. This one takes a position against what
+      // most GIS firms sell, which is the whole test.
       outcome: "Make location a dimension your business can analyze, not a map you look at.",
       intro:
-        "Spatial data is usually treated as a separate discipline bolted onto the side of the estate. We build it into the same pipelines and the same analysis as everything else.",
+        "We connect geospatial data with the systems, workflows, and analytics your business already uses\u2014so location becomes part of everyday decision-making, not a separate mapping exercise owned by a small group of specialists.",
       problems: [
         "Spatial data held in a system only one team can query.",
         "Exposure and risk assessed on addresses rather than actual geography.",
         "Imagery and sensor data arriving faster than anything can process it.",
       ],
-      capabilities: [
-        { title: "Spatial data platforms", desc: "Storage and pipelines built for geometry, not retrofitted around it." },
-        { title: "Exposure and risk mapping", desc: "Location-aware assessment for portfolios where geography drives the number." },
-        { title: "Imagery analysis", desc: "Automated interpretation of aerial and satellite imagery at production volume." },
-        { title: "Location analytics", desc: "Spatial questions answered in the same tools as the rest of the business." },
-      ],
-      technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
-      /**
-       * [CONFIRM] PLACEHOLDER. Restructured from the copy already in this
-       * file, not written from experience. The situation paragraph in
-       * particular has to come from someone who has been in the room — that
-       * is what it is for, and it is the reason the Analytics and SAP pages
-       * read differently from a competitor's. This service stays in
-       * DRAFT_SERVICES until it is replaced.
-       */
       situation:
-        "Spatial data usually lives in its own system, queried by the one team that knows the tooling. Everyone else works from addresses and postcodes, so exposure and risk get assessed on approximations of geography rather than geography. Imagery and sensor data keep arriving, and most of it is never looked at.",
-      technologyGroups: [
-        { label: "Spatial platforms", icon: "cube", items: ["PostGIS", "Apache Sedona"] },
-        { label: "GIS tooling", icon: "layers", items: ["ArcGIS", "QGIS"] },
-        { label: "Analysis", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
-      ],
-      platformsSub:
-        "We work with the open and commercial geospatial stack, alongside the platforms the rest of the business already uses.",
-      whyIntro:
-        "We build location into the same pipelines and the same analysis as the rest of the estate, rather than beside it.",
-      whyPillars: [
+        "Useful spatial data ends up spread across systems, teams, files and applications. The GIS team knows where the assets, customers, facilities and risks are, but that knowledge does not reach the people making operational and commercial decisions \u2014 so location stays an interesting map rather than an input to anything.",
+      capabilities: [
         {
-          title: "Spatial and enterprise data together",
-          body: "Geometry belongs in the same platform as everything else, so a spatial question can be answered in the tools the business already uses.",
+          title: "Enterprise GIS",
+          desc: "Build GIS as a shared capability rather than a team's tool. Geospatial platforms that make trusted location data available across teams, applications and workflows.",
         },
         {
-          title: "Operational, not cartographic",
-          body: "The output is a number a decision depends on — exposure, routing, coverage — rather than a map somebody looks at.",
+          title: "Spatial data & governance",
+          desc: "Organize spatial data, improve its quality, set standards and establish clear ownership, so teams work from information they can rely on.",
+        },
+        {
+          title: "Location analytics",
+          desc: "Combine spatial data with operational and business data to understand patterns, coverage, demand and risk \u2014 location as another dimension of analysis.",
+        },
+        {
+          title: "Risk & exposure analysis",
+          desc: "Use geography to evaluate exposure around facilities, assets, customers, infrastructure and supply chains, and to see where risk is concentrated.",
+        },
+        {
+          title: "Field data & imagery",
+          desc: "Capture location, asset, sensor, imagery and inspection data in the field and make it available to operational teams without a manual step in the middle.",
+        },
+        {
+          title: "GIS modernization & integration",
+          desc: "Upgrade legacy environments, move the right workloads to cloud, and integrate GIS with the systems the business already runs \u2014 without creating another silo.",
+        },
+      ],
+      /**
+       * [CONFIRM] Four groups, eleven entries — inside the spec's 3-4 groups
+       * and 8-12 range.
+       *
+       * The content review proposed six groups and roughly nineteen entries,
+       * adding Databricks, Snowflake, GeoServer, GDAL, AWS, Power BI and
+       * "Web GIS". None of those were taken: the same review warns against
+       * listing technologies to match competitors, and none of them appears
+       * on the current live site. What was added is ArcGIS Enterprise and
+       * ArcGIS Pro (naming the ArcGIS already listed more precisely) and
+       * PostgreSQL, which PostGIS runs on. Confirm those or cut them.
+       */
+      technologyGroups: [
+        { label: "GIS platforms", icon: "layers", items: ["ArcGIS Enterprise", "ArcGIS Pro", "QGIS"] },
+        { label: "Spatial data", icon: "cube", items: ["PostGIS", "PostgreSQL", "Apache Sedona"] },
+        { label: "Imagery & analysis", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
+        { label: "Cloud & integration", icon: "cloud", items: ["Microsoft Azure", "Python", "REST APIs"] },
+      ],
+      technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
+      platformsSub:
+        "We work across commercial, open-source, cloud and analytics platforms, choosing what fits the environment rather than forcing the environment to fit a tool.",
+      whyIntro:
+        "We treat geospatial technology as part of the enterprise architecture, not as a separate mapping environment.",
+      whyPillars: [
+        {
+          title: "GIS + enterprise data",
+          body: "We connect spatial information with operational, financial, asset and customer data, so location can be analysed alongside everything else that matters rather than on its own.",
+        },
+        {
+          title: "Built for operations",
+          body: "Where is risk concentrated? Which assets need attention? Where is coverage weak? GIS becomes a way to answer business questions, not a way to produce maps.",
         },
         {
           title: "From field to enterprise",
-          body: "Collection, imagery and sensor feeds through to the models and reports that consume them, as one path.",
+          body: "Field data, sensors, imagery, spatial databases, applications and reporting connected as one flow, so information is not re-created at every step.",
         },
       ],
       finalCta: {
-        title: "Let's talk about your GIS environment.",
+        title: "Have a location problem hiding inside a business problem?",
         buttonLabel: "Start a conversation",
       },
       seoTitle: "GIS & Geospatial Solutions | Zed Ventures",
@@ -815,48 +844,69 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "gis-geospatial": {
       name: "SIG et géomatique",
       heroImageHint: "Une carte ou visualisation spatiale issue d'un projet livré",
-      outcome: "Faire de la localisation une dimension analysable, et non une carte que l'on regarde.",
+      outcome: "Faire de la localisation une dimension analysable, pas une carte que l'on regarde.",
       intro:
-        "Les données spatiales sont souvent traitées comme une discipline à part, greffée sur le reste du parc. Nous les intégrons aux mêmes pipelines et aux mêmes analyses que tout le reste.",
+        "Nous relions la donnée géospatiale aux systèmes, aux processus et à l'analytique que votre entreprise utilise déjà \u2014 pour que la localisation entre dans les décisions quotidiennes, au lieu de rester un exercice cartographique réservé à quelques spécialistes.",
       problems: [
         "Des données spatiales dans un système qu'une seule équipe sait interroger.",
-        "Une exposition évaluée sur des adresses plutôt que sur la géographie réelle.",
+        "Exposition et risque évalués sur des adresses plutôt que sur la géographie réelle.",
         "Imagerie et capteurs qui arrivent plus vite qu'on ne peut les traiter.",
       ],
-      capabilities: [
-        { title: "Plateformes de données spatiales", desc: "Stockage et pipelines conçus pour la géométrie, et non adaptés après coup." },
-        { title: "Cartographie de l'exposition", desc: "Évaluation géolocalisée pour les portefeuilles où la géographie détermine le chiffre." },
-        { title: "Analyse d'imagerie", desc: "Interprétation automatisée d'images aériennes et satellitaires à l'échelle de la production." },
-        { title: "Analytique de localisation", desc: "Des questions spatiales traitées dans les mêmes outils que le reste de l'entreprise." },
-      ],
-      technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
       situation:
-        "La donnée spatiale vit généralement dans son propre système, interrogée par la seule équipe qui en maîtrise les outils. Les autres travaillent sur des adresses et des codes postaux : l'exposition et le risque sont donc évalués sur une approximation de la géographie plutôt que sur la géographie. Imagerie et données de capteurs continuent d'arriver, et l'essentiel n'est jamais exploité.",
-      technologyGroups: [
-        { label: "Plateformes spatiales", icon: "cube", items: ["PostGIS", "Apache Sedona"] },
-        { label: "Outils SIG", icon: "layers", items: ["ArcGIS", "QGIS"] },
-        { label: "Analyse", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
-      ],
-      platformsSub:
-        "Nous travaillons avec l'écosystème géospatial libre et commercial, aux côtés des plateformes déjà en place.",
-      whyIntro:
-        "Nous intégrons la localisation aux mêmes pipelines et aux mêmes analyses que le reste du patrimoine applicatif, plutôt qu'à côté.",
-      whyPillars: [
+        "Les données spatiales utiles finissent dispersées entre systèmes, équipes, fichiers et applications. L'équipe SIG sait où se trouvent les actifs, les clients, les sites et les risques, mais cette connaissance n'atteint pas ceux qui décident \u2014 la localisation reste une carte intéressante plutôt qu'une donnée d'entrée.",
+      capabilities: [
         {
-          title: "Données spatiales et données d'entreprise ensemble",
-          body: "La géométrie a sa place dans la même plateforme que le reste : une question spatiale se répond dans les outils que le métier utilise déjà.",
+          title: "SIG d'entreprise",
+          desc: "Faire du SIG une capacité partagée plutôt que l'outil d'une équipe : des plateformes qui rendent la donnée de localisation disponible à travers les équipes, les applications et les processus.",
         },
         {
-          title: "Opérationnel, pas cartographique",
-          body: "Le résultat est un chiffre sur lequel une décision repose — exposition, tournées, couverture — et non une carte que l'on regarde.",
+          title: "Données spatiales et gouvernance",
+          desc: "Organiser les données spatiales, en améliorer la qualité, poser des standards et clarifier les responsabilités, pour que chacun travaille sur une information fiable.",
+        },
+        {
+          title: "Analytique de localisation",
+          desc: "Croiser données spatiales et données métier pour comprendre motifs, couverture, demande et risque \u2014 la localisation comme dimension d'analyse supplémentaire.",
+        },
+        {
+          title: "Analyse du risque et de l'exposition",
+          desc: "Utiliser la géographie pour évaluer l'exposition autour des sites, actifs, clients, infrastructures et chaînes d'approvisionnement, et voir où le risque se concentre.",
+        },
+        {
+          title: "Données terrain et imagerie",
+          desc: "Collecter localisation, actifs, capteurs, imagerie et inspections sur le terrain et les rendre disponibles aux équipes d'exploitation, sans étape manuelle intermédiaire.",
+        },
+        {
+          title: "Modernisation et intégration SIG",
+          desc: "Faire évoluer les environnements anciens, porter les bons traitements vers le cloud et intégrer le SIG aux systèmes déjà en place \u2014 sans créer un silo de plus.",
+        },
+      ],
+      technologyGroups: [
+        { label: "Plateformes SIG", icon: "layers", items: ["ArcGIS Enterprise", "ArcGIS Pro", "QGIS"] },
+        { label: "Données spatiales", icon: "cube", items: ["PostGIS", "PostgreSQL", "Apache Sedona"] },
+        { label: "Imagerie et analyse", icon: "chart", items: ["GeoPandas", "Google Earth Engine"] },
+        { label: "Cloud et intégration", icon: "cloud", items: ["Microsoft Azure", "Python", "API REST"] },
+      ],
+      technologies: ["PostGIS", "ArcGIS", "QGIS", "GeoPandas", "Google Earth Engine", "Apache Sedona"],
+      platformsSub:
+        "Nous travaillons avec des plateformes commerciales, open source, cloud et analytiques, en choisissant ce qui convient à l'environnement plutôt que l'inverse.",
+      whyIntro:
+        "Nous traitons la technologie géospatiale comme une composante de l'architecture d'entreprise, et non comme un environnement cartographique à part.",
+      whyPillars: [
+        {
+          title: "SIG et données d'entreprise",
+          body: "Nous relions l'information spatiale aux données d'exploitation, financières, d'actifs et clients, pour analyser la localisation avec le reste plutôt qu'isolément.",
+        },
+        {
+          title: "Conçu pour l'exploitation",
+          body: "Où le risque se concentre-t-il ? Quels actifs demandent attention ? Où la couverture est-elle faible ? Le SIG devient un moyen de répondre à des questions métier, pas de produire des cartes.",
         },
         {
           title: "Du terrain à l'entreprise",
-          body: "De la collecte, de l'imagerie et des capteurs jusqu'aux modèles et rapports qui les consomment, en un seul parcours.",
+          body: "Données terrain, capteurs, imagerie, bases spatiales, applications et reporting reliés en un seul flux, pour que l'information ne soit pas recréée à chaque étape.",
         },
       ],
       finalCta: {
-        title: "Parlons de votre environnement SIG.",
+        title: "Un problème de localisation caché dans un problème métier ?",
         buttonLabel: "Démarrer la conversation",
       },
       seoTitle: "Solutions SIG et géospatiales | Zed Ventures",
