@@ -350,6 +350,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "gis-geospatial": {
       name: "GIS & Geospatial",
       heroImageHint: "A map or spatial visualization from actual delivered work",
+      heroImage: {
+        src: "/gis-hero.webp",
+        alt: "A map and chart panel joined by lines to six surrounding cards representing data sources on one side and business teams on the other, over a softly blurred office.",
+      },
       // Headline kept, not replaced. The clearer alternative — "Make location
       // part of how your business makes decisions" — could sit on any of the
       // four competitor sites reviewed. This one takes a position against what
@@ -844,6 +848,10 @@ export const SERVICE_PAGES: Record<Locale, Record<ServiceSlug, ServiceContent>> 
     "gis-geospatial": {
       name: "SIG et géomatique",
       heroImageHint: "Une carte ou visualisation spatiale issue d'un projet livré",
+      heroImage: {
+        src: "/gis-hero.webp",
+        alt: "Un panneau carte et graphiques relié par des traits à six cartes autour : sources de données d'un côté, équipes métier de l'autre, sur un bureau flouté.",
+      },
       outcome: "Faire de la localisation une dimension analysable, pas une carte que l'on regarde.",
       intro:
         "Nous relions la donnée géospatiale aux systèmes, aux processus et à l'analytique que votre entreprise utilise déjà \u2014 pour que la localisation entre dans les décisions quotidiennes, au lieu de rester un exercice cartographique réservé à quelques spécialistes.",
