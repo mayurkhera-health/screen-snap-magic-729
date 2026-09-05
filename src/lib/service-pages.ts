@@ -8,8 +8,8 @@
  *
  * A service listed in DRAFT_SERVICES (below) carries a visible draft banner and
  * a noindex robots tag, so its text cannot be indexed before it is replaced.
- * Analytics and SAP have been through the copy review and are no longer
- * listed. The five that remain still carry sample text.
+ * Analytics, SAP and GIS & Geospatial have been through the copy review and
+ * are no longer listed. The four that remain still carry sample text.
  */
 
 
@@ -164,7 +164,6 @@ export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
  */
 export const DRAFT_SERVICES: readonly ServiceSlug[] = [
   "ai-data",
-  "gis-geospatial",
   "guidewire",
   "product-engineering",
   "offshore-nearshore",
